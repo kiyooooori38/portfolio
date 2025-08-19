@@ -1,0 +1,184 @@
+@charset "utf-8";
+
+/* ヘッダー */
+
+header {
+    position: relative
+}
+
+.main_visual {
+    width: 100%;
+}
+
+.main_visual img {
+    display: block;
+    margin: 0 auto;
+}
+
+nav {
+    position: fixed;
+    top: 48px;
+    right: 48px
+}
+
+.header_nav_btn {
+    width: 190px;
+    padding-right: 7px;
+}
+
+.header_list {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 40px;
+}
+
+
+.pf_title {
+    display: flex;
+    align-items: flex-end;
+    font-size: 18px;
+}
+
+.pf_title > div >p:last-child {
+    margin-top: 11px;
+}
+
+.pf_title span{
+    padding-left: 4px;
+}
+
+h1 {
+    position: absolute;
+    top: clamp(200px, 40vh, 400px);
+    left: clamp(100px, 12.5vw, 250px);
+
+}
+h1 div:last-child {
+    margin-top: 32px;
+}
+.pf_concept{
+    width: 262px;
+}
+
+/* スクロールバー */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap');
+
+.scroll_down a{
+  position: absolute;
+  top:632px;
+  left: 111px;
+  color: var(--accent_color_gd);
+  font-size: 16px;
+  writing-mode: vertical-lr;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.scroll_down:after{
+  content:"";
+  position: absolute;
+  top:725px;
+  left:119px;
+  width:1px;
+  height: 272px;
+  background: var(--accent_color_gd);
+  z-index: 1;
+}
+
+.scroll_down:before {
+  content: "";
+  position: absolute;
+  top: 750px;
+  left: 113px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent_color_gd);
+  animation:
+    circlemove 1.8s ease-in-out infinite,
+    cirlemovehide 1.8s ease-out infinite;
+    z-index: 10;
+}
+
+@keyframes circlemove{
+  0%{top:750px;}
+  100%{top:990px;}
+}
+
+@keyframes cirlemovehide{
+  0%{opacity:0}
+  50%{opacity:1;}
+  80%{opacity:0.9;}
+  100%{opacity:0;}
+}
+
+/* WORKS parallaxまで手をつけれたらいいな*/
+  h2 { /*グラデーションの動きをつける*/
+    font-weight: bold;
+    text-align: right;
+  }
+
+  article > div {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 110px;
+  }
+
+  .works_category,
+  .works_sub_category {
+    font-size: 12px;
+  }
+
+  .works_sub_category {
+    color: var(--base_color_light);
+    margin-top: 20px;
+  }
+
+  .works_title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 24px;
+  }
+
+  .works_discription {
+    font-size: 14px;
+    line-height: 1.86;
+    margin-top: 40px;
+  }
+
+  .works_sub_category::after {
+    content: "";
+    display: block;
+    width: 149px;
+    border-bottom: 1px dotted var(--accent_color);
+    padding-top: 4px;
+  }
+
+  .works_item {
+    max-width: 510px;
+  }
+
+/* .header_list_item:last-child {
+    border-style: dotted;
+    border-image: linear-gradient(to left, #181e4d, #4e7fa1, #8aecff) 1;
+     padding: 12px 30px;
+     border-radius: 5px;
+     一旦位置むしして、文字と線が美しくそろうようにする
+} */
+
+/* 
+　　配置。この位置で固定したいときどうしたらいいのか
+【htmlファイル】
+・４０行目：「/」左右にsapnタグを用いて余白を調整しているが、良い方法か？
+
+【cssファイル】
+.コンセプトの配置に苦戦。
+　１）vhで計算したものの、1340px幅（本当は1440pxでデザインしなくてはいけなかったのに間違えていました・・・）にしたときの見え方が、aiデータより下に見える。なぜか？
+　２）画面幅を拡大・縮小したときに位置が大きくずれる
+
+・scroll
+　グラデーションが反映しない。
+　colorプロパティには単色しか反映しない？ 
+  background-cripプロパティを使用して背景色を文字にクリッピングするのがよい方法なのか？
+
+*/

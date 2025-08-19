@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+/* cssリセット */
+
+/*利用するタグによってこちらの内容は増やす*/
+
+html,
+body,
+h1,
+h2,
+h3,
+p,
+dl,
+dt,
+dd,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  /*デフォルトの文字色、font-familyを予め当てておく*/
+  color: #3e3e3e;
+  font-family: Shippori Mincho, "游明朝", YuMincho, "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  font-size: 24px;
+  font-weight: normal; 
+  font-feature-settings: "palt";
+}
+
+a {
+  /*下線を消す*/
+  text-decoration: none;
+  /*色を消す*/
+  color: inherit;
+}
+
+ul {
+  /*左の「・」を消す*/
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+  border: none;
+}
+
+section {
+  max-width: 1000px;
+  margin:  550px auto 0 auto;
+  padding: 0 10px;
+}
+
+
+/* css変数 */
+:root {
+    --accent_color_gd: linear-gradient(#181e4d, #4e7fa1, #8aecff);
+    --accent_color_gd90: linear-gradient(90deg, #181e4d, #4e7fa1, #8aecff);
+    --accent_color: #186ead;
+    --base_color_light: #666;
+
+}

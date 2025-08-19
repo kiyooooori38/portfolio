@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1255.12 988.82">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: url(#_名称未設定グラデーション_126);
+        stroke-miterlimit: 10;
+        stroke-width: 1.07px;
+      }
+    </style>
+    <linearGradient id="_名称未設定グラデーション_126" data-name="名称未設定グラデーション 126" x1="719.05" y1="51.66" x2="2072.09" y2="51.66" gradientTransform="translate(-765.65 756.45) rotate(-12.48)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#181e4d"/>
+      <stop offset=".57" stop-color="#5a95b4"/>
+      <stop offset="1" stop-color="#8aecff"/>
+    </linearGradient>
+  </defs>
+  <g id="_編集_ワイヤーフレーム" data-name="編集_ワイヤーフレーム">
+    <path class="cls-1" d="M1171.48.35c-118.58,134.2-199.81,296.46-298.72,445.75-82.43,124.42-178.3,241.06-293.57,335.87-115.27,94.81-250.73,167.34-396.85,197.74-42.3,8.8-88.71,16.51-127.67-7.26-26.85-16.38-46.28-44.45-52.15-75.35-7.94-41.8,8.72-85.52,36.11-118.09,80.07-95.21,230-124.93,344.55-155.06,134.11-35.26,267.61-67.55,398.07-114.78,129.9-47.03,257.02-101.74,380.48-163.74,31.17-15.66,62.38-31.5,93.14-47.9"/>
+  </g>
+</svg>
