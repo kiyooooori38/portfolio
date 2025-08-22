@@ -4,6 +4,7 @@
 
 /*利用するタグによってこちらの内容は増やす*/
 
+
 html,
 body,
 h1,
@@ -44,18 +45,13 @@ img {
   border: none;
 }
 
-section {
-  max-width: 1000px;
-  margin:  550px auto 0 auto;
-  padding: 0 10px;
-}
-
 
 /* css変数 */
 :root {
     --accent_color_gd: linear-gradient(#181e4d, #4e7fa1, #8aecff);
     --accent_color_gd90: linear-gradient(90deg, #181e4d, #4e7fa1, #8aecff);
-    --accent_color: #186ead;
+    --accent_color01: #186ead;
+    --accent_color02:#181e4d;
     --base_color_light: #666;
-
+       --accent_color_gdbtn: linear-gradient(90deg, #181e4d, #4e7fa1, #8aecff);
 }

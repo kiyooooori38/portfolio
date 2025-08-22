@@ -113,9 +113,19 @@ h1 div:last-child {
 }
 
 /* WORKS parallaxまで手をつけれたらいいな*/
+.works_section {
+  max-width: 1000px;
+  margin:  550px auto 0 auto;
+  padding: 0 10px;
+}
+
   h2 { /*グラデーションの動きをつける*/
     font-weight: bold;
     text-align: right;
+  }
+
+  article:not(:first-child) {
+    margin-top: 146px;
   }
 
   article > div {
@@ -123,6 +133,16 @@ h1 div:last-child {
     justify-content: space-around;
     margin-top: 110px;
   }
+
+  article:not(:first-of-type) > div > div {
+  width: 48.4%;
+  /* (1000px-32px)/2=484px*/
+  /* 484/1000=0.484 */
+}
+
+.works_content {
+  padding-top: 38px;
+}  
 
   .works_category,
   .works_sub_category {
@@ -150,7 +170,7 @@ h1 div:last-child {
     content: "";
     display: block;
     width: 149px;
-    border-bottom: 1px dotted var(--accent_color);
+    border-bottom: 1px dotted var(--accent_color01);
     padding-top: 4px;
   }
 
@@ -158,27 +178,174 @@ h1 div:last-child {
     max-width: 510px;
   }
 
-/* .header_list_item:last-child {
-    border-style: dotted;
-    border-image: linear-gradient(to left, #181e4d, #4e7fa1, #8aecff) 1;
-     padding: 12px 30px;
-     border-radius: 5px;
-     一旦位置むしして、文字と線が美しくそろうようにする
+  /*WORKS_ボタン*/
+.works_btn{
+  display: inline-block;
+  width: 226px;
+  font-size: 14px;
+  border: 1px dotted #3e3e3e;
+  border-radius: 5px;
+  padding: 16px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 48px;
+}
+
+.works_btn::after {
+  content: "";
+  display: block;
+  width: 16px;
+  border-bottom: 1px solid var(--base_color_light);
+  margin-left: 16px;
+}
+
+/*WORKS_ViewAllボタン*/
+
+.view_all_btn {
+  display: inline-block;
+  width: 314px;
+  font-size: 18px;
+  color: #fff;
+  background: var(--accent_color_gd90);
+  border: 1px dotted var(--accent_color02);
+  border-radius: 5px;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 150px auto 0 auto;
+}
+
+.view_all_btn::after {
+  content: "";
+  display: block;
+  width: 32px;
+  border-bottom: 1px solid #fff;
+  margin-left: 24px;
+}
+
+/*ABOUT*/
+main h2 { 
+    max-width: 1000px;
+    margin:0 auto;
+    padding-top: 88px;
+    text-align: left;
+    color: #fff;
+    margin-left: 12.5%;
+  }
+
+.about_section {
+  background-image: url(../images/1x/about_back-80.jpg);
+    width: 100vw;         
+    background-size: cover; 
+    background-position: center;
+    margin-top: 420px;
+    box-sizing: border-box;
+    position: relative;
+  
+ } 
+
+
+.about_wrapper {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin:  118px auto 0 auto;
+  padding-bottom: 224px;
+
+  
+}
+
+.about_wrapper > div {
+  width: 45%;
+}
+
+.name_wrapper {
+  display: flex;
+  align-items: flex-end;
+}
+
+.name_wrapper p {
+  color: #fff; /* 共通の文字色 */
+}
+
+.name_wrapper p:first-child {
+  font-size: 18px; /* 1つ目のp */
+}
+
+.name_wrapper p:last-child {
+  font-size: 14px; /* 2つ目のp */
+}
+
+.about_discription {
+  font-size: 14px;
+  color: #fff;
+  line-height: 1.86;
+  padding-top: 28px;
+}
+
+
+.about_img {
+   max-width: 312px;
+}
+
+.about_btn {
+display: inline-block;
+  width: 226px;
+  font-size: 14px;
+  background-color: #fff;
+  border: 1px dotted #3e3e3e;
+  border-radius: 5px;
+  padding: 16px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 56px;
+}
+
+.about_btn::after {
+  content: "";
+  display: block;
+  width: 16px;
+  border-bottom: 1px solid var(--base_color_light);
+  margin-left: 16px;
+}
+
+/* .about_wrapper > div {
+  display: flex;
+  align-items: center;
 } */
 
 /* 
-　　配置。この位置で固定したいときどうしたらいいのか
+
 【htmlファイル】
-・４０行目：「/」左右にsapnタグを用いて余白を調整しているが、良い方法か？
+
 
 【cssファイル】
-.コンセプトの配置に苦戦。
-　１）vhで計算したものの、1340px幅（本当は1440pxでデザインしなくてはいけなかったのに間違えていました・・・）にしたときの見え方が、aiデータより下に見える。なぜか？
+・ABOUT部分、文章と画像の位置がうまくいかない。imgタグを囲っているdivタグが大きいのが邪魔していると思うが、うまく調節できない。（試したこと：inline-blockを記述など）
+・ABOUT部分、画面幅変わると配置がかなりずれてしまう。
+・横スクロールが発生。box-sizing:border-boxを記述すればいいと思うが、どこに記述すべきか？はみ出ている部分はどう探すのか？
+・WORKSの「View all Works」の現時点のイメージが異なるため画像を入れるのがいいかと思っている。その場合は、JPG?また、線は動きを加えたいため線以外を画像で書き出す？
+・WORKSの「view more」ボタンの下のラインを画像に合わせたい・・・。今はマージンで調節してしまっているけど（そもそもデザイン通り指定したつもりだが、デザインとおりになっていない）flexで調節したりできるのか？け
+・WORKSの文章と画像の幅はデザイン通りといえるのか・・・
+
+.(回答いただき済み：授業）コンセプトの配置に苦戦。
+　1)vhで計算したものの、1340px幅（本当は1440pxでデザインしなくてはいけなかったのに間違えていました・・・）にしたときの見え方が、aiデータより下に見える。なぜか？
 　２）画面幅を拡大・縮小したときに位置が大きくずれる
 
-・scroll
+・（回答いただき済み：自分で挑戦）scroll
 　グラデーションが反映しない。
 　colorプロパティには単色しか反映しない？ 
   background-cripプロパティを使用して背景色を文字にクリッピングするのがよい方法なのか？
 
-*/
+★自分で確認
+・DESIGN CAFEのカテゴリー　ラインが長い
+
+★細かい質問　いつかききたい
+・ファビコンずれてる？デザインの問題か？
+・実感worksのボタンの文字と線が真ん中でない？
+・画像が荒い。書き出しの問題というよりは、もともとのデータのせいか？
+ 
+
+  */
