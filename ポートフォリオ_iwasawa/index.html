@@ -47,16 +47,16 @@
                <img class="pf_concept" src="./images/1x/concept.svg" alt="">
            </div>
        </h1>
-
-       <div class="scroll_down" id="type02">
-          <a href="#">SCROLL</a>
+        <!-- スクロールバー -->
+       <div class="scroll_down">
+          <p>SCROLL</p>
        </div>
     </header>
 
     <main>
         <!-- Works -->
          <section class="works_section">
-            <h2>Works</h2>
+            <h2 class="works_header">Works</h2>
             <!-- ポートフォリオ -->
                <article>
                 <div>
@@ -116,12 +116,9 @@
          </section>
 
 
-             <!-- <div>
-               <img class="about_back_img" src="./images/1x/about_back-80.jpg" alt="青いグラデーションの背景画像">
-            </div> -->
          <section class="about_section">
             <div>
-            <h2>About</h2>
+            <h2 class="about_header">About</h2>
                <div class="about_wrapper"> 
                   <div>
                       <div class="name_wrapper">
@@ -134,11 +131,57 @@
                        <a class="about_btn" href="about.html">View more</a>
                   </div>
                   <div>
-                      <img class="about_img" src="./images/1x/about.png" alt="岩沢 清里の写真">
+                      <img  class="about_img" src="./images/1x/about.png" alt="岩沢 清里の写真">
                   </div>
                </div>
                </div>
          </section>
+           
+           <div class="bar">
+             <div></div>
+           </div>
+
+           <section class="contact_section">
+              <h2 class="contact_header">Contact</h2>
+                 <div class="contact_wrapper"> 
+                    <div>
+                        <p>ご覧いただきありがとうございます。<br>制作のご依頼、ご相談などお気軽にお問い合わせください。 2営業日以内に返信いたします。</p>
+                    </div>
+
+                    <form action="?" class="c-form">
+                        <div class="c-form_item">
+                           <label class="c-form_label" for="field_company_name">貴社名</label>
+                           <input type="text" class="c-form_input" id="field_company_name" placeholder=" 株式会社サンプル">
+                        </div>
+
+                        <div class="c-form_item">
+                           <label class="c-form_label" for="field_name">お名前</label>
+                           <input type="text" class="c-form_input" id="field_name" placeholder=" 山田 太郎" required="required">
+                        </div>
+
+                        <div class="c-form_item">
+                           <label class="c-form_label" for="field_mail">メールアドレス</label>
+                           <input type="text" class="c-form_input" id="field_mail" placeholder=" info@sample.co.jp" required="required">
+                        </div>
+
+                        <div class="c-form_item">
+                           <label class="c-form_label" for="field_phone_num">電話番号</label>
+                           <input type="text" class="c-form_input" id="field_phone_num" placeholder=" 090-1234-5678">
+                        </div>
+
+                         <div class="c-form_item">
+                           <label class="c-form_label" for="field_message">お問い合わせ内容</label>
+                           <textarea class="c-form_input" id="field_message" required="required"></textarea>
+                        </div>
+                        <div class="c-form_submit">
+		                     <button type="submit">
+                                <img src="./images/1x/送信ボタン.svg" alt="ボタンの画像">内容を送信する</button>
+	                     </div>
+                    </form>
+                  </div>
+           </section>
     </main>
+
+
 </body>
 </html>

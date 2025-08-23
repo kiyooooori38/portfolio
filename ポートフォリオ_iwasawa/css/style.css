@@ -64,7 +64,7 @@ h1 div:last-child {
 /* スクロールバー */
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap');
 
-.scroll_down a{
+.scroll_down p{
   position: absolute;
   top:632px;
   left: 111px;
@@ -119,7 +119,7 @@ h1 div:last-child {
   padding: 0 10px;
 }
 
-  h2 { /*グラデーションの動きをつける*/
+  .works_header { /*グラデーションの動きをつける*/
     font-weight: bold;
     text-align: right;
   }
@@ -128,18 +128,36 @@ h1 div:last-child {
     margin-top: 146px;
   }
 
+  /*文章と画像を横並びにする*/
   article > div {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 110px;
   }
 
+  /*画像を510pxまでにする*/ 
+  article > div:nth-child(2) {
+    max-width: 510px;
+  }
+
+  /*ポートフォリオ紹介*/
+article > div > div:first-child {
+  width: 48.5%;
+}
+
+article > div > div:last-child {
+  width: 51.8%;
+}
+
+
+/*ポートフォリオ以外紹介*/
   article:not(:first-of-type) > div > div {
   width: 48.4%;
   /* (1000px-32px)/2=484px*/
   /* 484/1000=0.484 */
 }
 
+/*WORKSの共通コンテンツ*/
 .works_content {
   padding-top: 38px;
 }  
@@ -174,10 +192,6 @@ h1 div:last-child {
     padding-top: 4px;
   }
 
-  .works_item {
-    max-width: 510px;
-  }
-
   /*WORKS_ボタン*/
 .works_btn{
   display: inline-block;
@@ -200,7 +214,8 @@ h1 div:last-child {
   margin-left: 16px;
 }
 
-/*WORKS_ViewAllボタン*/
+
+/*WORKS_ViewAllボタン のちほどボタン背景だけ画像で準備する*/
 
 .view_all_btn {
   display: inline-block;
@@ -226,7 +241,7 @@ h1 div:last-child {
 }
 
 /*ABOUT*/
-main h2 { 
+.about_header { 
     max-width: 1000px;
     margin:0 auto;
     padding-top: 88px;
@@ -236,7 +251,7 @@ main h2 {
   }
 
 .about_section {
-  background-image: url(../images/1x/about_back-80.jpg);
+  background-image: url(../images/1x/about_back.png);
     width: 100vw;         
     background-size: cover; 
     background-position: center;
@@ -250,15 +265,20 @@ main h2 {
 .about_wrapper {
   display: flex;
   justify-content: space-between;
-  max-width: 1000px;
+  max-width: 830px;
   margin:  118px auto 0 auto;
   padding-bottom: 224px;
 
   
 }
 
-.about_wrapper > div {
+.about_wrapper > div:first-child {
   width: 45%;
+}
+
+.about_wrapper > div:last-child {
+  width: 312px;
+  max-width: 312px;
 }
 
 .name_wrapper {
@@ -276,6 +296,7 @@ main h2 {
 
 .name_wrapper p:last-child {
   font-size: 14px; /* 2つ目のp */
+  padding-left: 8px;
 }
 
 .about_discription {
@@ -287,7 +308,7 @@ main h2 {
 
 
 .about_img {
-   max-width: 312px;
+   width: 100%;
 }
 
 .about_btn {
@@ -301,7 +322,7 @@ display: inline-block;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 56px;
+  margin-top: 48px;
 }
 
 .about_btn::after {
@@ -311,6 +332,151 @@ display: inline-block;
   border-bottom: 1px solid var(--base_color_light);
   margin-left: 16px;
 }
+
+/*ページ中間のバー*/
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap');
+
+.bar {
+  height: 546px;
+  position: relative;
+}
+
+.bar div:after{
+  content:"";
+  position: absolute;
+  top: 50%;   /* 親要素の縦の真ん中 */
+  left: 50%;  /* 親要素の横の真ん中 */
+  transform: translate(-50%, -50%); /* 要素自身の大きさ分ずらして中央揃え */
+  width:1px;
+  height: 196px;
+  background: var(--accent_color_gd);
+  z-index: 1;
+}
+
+/*FVをコピペすればいいかとおもったけど、こっちを揃えるとFVがずれる・・・＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+/* .bar div:before {
+  content: "";
+  position: absolute;
+  top: 50%;   
+  left: 50%;  
+  transform: translate(-50%, -50%); 
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent_color_gd);
+  animation:
+    circlemove 1.8s ease-in-out infinite,
+    cirlemovehide 1.8s ease-out infinite;
+    z-index: 10;
+} */
+
+/* @keyframes circlemove{
+ 0% { transform: translate(-50%, -50%) translateY(-72px); }
+  100% { transform: translate(-50%, -50%) translateY(88px); } 
+}
+
+@keyframes cirlemovehide{
+  0%{opacity:0}
+  50%{opacity:1;}
+  80%{opacity:0.9;}
+  100%{opacity:0;}
+}============================================================================================================ */
+
+/*コンタクト*/
+/*h2*/
+.contact_section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.contact_header {
+  font-weight: bold;
+    text-align: left;
+}
+
+
+.contact_wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 64px;
+}
+.contact_wrapper > div {
+  width: 31.4%;
+}
+
+.contact_wrapper > form {
+  width: 48.3%;
+}
+
+.c-form_item {
+  display: flex;
+  flex-direction: column;
+}
+
+.c-form_label {
+  font-size: 16px;
+}
+
+
+.c-form_item:not(:first-child) .c-form_label {
+  margin-top: 38px;
+}
+
+/*アスタリスク*/
+.c-form_item:nth-child(2) .c-form_label::after,
+.c-form_item:nth-child(3) .c-form_label::after,
+.c-form_item:nth-child(4) .c-form_label::after{
+  content: "*";
+  vertical-align: top;
+  color: #ed1c24;
+  font-size: 10px;
+}
+
+.c-form_item:nth-child(2) .c-form_label::after,
+.c-form_item:nth-child(4) .c-form_label::after {
+    padding-left: 3px;
+}
+
+.c-form_item:nth-child(3) .c-form_label::after{
+  padding-left: 1px;
+}
+
+/*入力欄*/
+.c-form_input {
+  width: 100%;
+  margin-top: 14px;
+  padding: 11.5px 0;
+  border:1px solid var(--accent_color02);
+  border-radius: 5px;
+  box-sizing: border-box;
+
+}
+
+.c-form_input:focus {
+border:1px solid var(--accent_color01);
+outline:0;
+}
+
+.contact_wrapper p {
+  font-size: 14px;
+  line-height: 1.86;
+}
+
+textarea.c-form_input {
+  line-height: 1.5em;
+  padding: 48px 0;
+  font-family: none;
+}
+
+/*送信ボタン*/
+.c-form_submit {
+  max-width: 276px;
+}
+.c-form_submit img {
+  width: 100%
+}
+
 
 /* .about_wrapper > div {
   display: flex;
@@ -323,12 +489,7 @@ display: inline-block;
 
 
 【cssファイル】
-・ABOUT部分、文章と画像の位置がうまくいかない。imgタグを囲っているdivタグが大きいのが邪魔していると思うが、うまく調節できない。（試したこと：inline-blockを記述など）
-・ABOUT部分、画面幅変わると配置がかなりずれてしまう。
-・横スクロールが発生。box-sizing:border-boxを記述すればいいと思うが、どこに記述すべきか？はみ出ている部分はどう探すのか？
-・WORKSの「View all Works」の現時点のイメージが異なるため画像を入れるのがいいかと思っている。その場合は、JPG?また、線は動きを加えたいため線以外を画像で書き出す？
-・WORKSの「view more」ボタンの下のラインを画像に合わせたい・・・。今はマージンで調節してしまっているけど（そもそもデザイン通り指定したつもりだが、デザインとおりになっていない）flexで調節したりできるのか？け
-・WORKSの文章と画像の幅はデザイン通りといえるのか・・・
+・ABOUT背景画像、境目がくっきり・・・
 
 .(回答いただき済み：授業）コンセプトの配置に苦戦。
 　1)vhで計算したものの、1340px幅（本当は1440pxでデザインしなくてはいけなかったのに間違えていました・・・）にしたときの見え方が、aiデータより下に見える。なぜか？
@@ -341,11 +502,30 @@ display: inline-block;
 
 ★自分で確認
 ・DESIGN CAFEのカテゴリー　ラインが長い
+・WORKSの「View all Works」の現時点のイメージが異なるため画像を入れるのがいいかと思っている。その場合は、svg
 
-★細かい質問　いつかききたい
+★(回答いただき済み)
 ・ファビコンずれてる？デザインの問題か？
 ・実感worksのボタンの文字と線が真ん中でない？
 ・画像が荒い。書き出しの問題というよりは、もともとのデータのせいか？
  
 
+0823授業聞きたいこと
+・FVの位置調整
+・ページ中間のアニメーション
+FVコピペして、位置の数値の調整だけすればいいとおもったけど、数値を変えてしまうと、FWの方も変わってしまう！！
+URL先の記述の数値指定するクラス名てきなやつが一緒だから、、、どうするべきか
+・フォームのaction リンクはどれ・・・・
+・項目入力の位置を変えられるか。
+・あしらい、画像でいれといていいのか？それとも動きの際に入れるべきなのか？
+
+・クラス名でなく、divとかpに記述するとき。＞をつけるか　スペースをつけるか、、、など迷いがち。いいサイトがあれば教えていただきたい。
+・まだコードきれいにならないね？？？
+・入力位置も半角スペース開けられるのか？
+
+
+ボタン 画像で。WORKSALLのボタンも差し替え
+コピーライト
+文字をpxから変更
+ヘッダーの視認性UPのために・・・・
   */
