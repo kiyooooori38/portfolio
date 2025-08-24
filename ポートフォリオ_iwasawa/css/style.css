@@ -3,83 +3,96 @@
 /* ヘッダー */
 
 header {
-    position: relative
+  position: relative;
 }
 
 .main_visual {
-    width: 100%;
+  width: 555px;
+  margin: 0 auto;
+  position: relative;
 }
 
 .main_visual img {
-    display: block;
-    margin: 0 auto;
+  /* display: block; */
+  width: 100%;
 }
 
 nav {
-    position: fixed;
-    top: 48px;
-    right: 48px
+  position: fixed;
+  top: 48px;
+  right: 48px;
+}
+
+nav a {
+  font-size: 1.5rem;
 }
 
 .header_nav_btn {
-    width: 190px;
-    padding-right: 7px;
+  width: 190px;
+  padding-right: 7px;
 }
 
 .header_list {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 40px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 40px;
 }
-
 
 .pf_title {
-    display: flex;
-    align-items: flex-end;
-    font-size: 18px;
+  display: flex;
+  align-items: flex-end;
 }
 
-.pf_title > div >p:last-child {
-    margin-top: 11px;
+.pf_title > div p {
+  font-size: 1.125rem;
 }
 
-.pf_title span{
-    padding-left: 4px;
+.pf_title > div > p:last-child {
+  margin-top: 11px;
+}
+
+.pf_title span {
+  padding-left: 4px;
 }
 
 h1 {
-    position: absolute;
-    top: clamp(200px, 40vh, 400px);
-    left: clamp(100px, 12.5vw, 250px);
+  position: absolute;
+  top: 400px;
+  left: -50%;
+}
 
-}
 h1 div:last-child {
-    margin-top: 32px;
+  margin-top: 32px;
 }
-.pf_concept{
-    width: 262px;
+
+.pf_concept {
+  width: 262px;
 }
 
 /* スクロールバー */
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap");
 
-.scroll_down p{
+.scroll_down p {
   position: absolute;
-  top:632px;
+  top: 632px;
   left: 111px;
-  color: var(--accent_color_gd);
-  font-size: 16px;
+  font-size: 1rem;
   writing-mode: vertical-lr;
   text-decoration: none;
   text-transform: uppercase;
+
+  /* グラデーション */
+  background: linear-gradient(#181e4d, #4e7fa1, #8aecff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-.scroll_down:after{
-  content:"";
+.scroll_down:after {
+  content: "";
   position: absolute;
-  top:725px;
-  left:119px;
-  width:1px;
+  top: 725px;
+  left: 119px;
+  width: 1px;
   height: 272px;
   background: var(--accent_color_gd);
   z-index: 1;
@@ -94,53 +107,73 @@ h1 div:last-child {
   height: 12px;
   border-radius: 50%;
   background: var(--accent_color_gd);
-  animation:
-    circlemove 1.8s ease-in-out infinite,
+  animation: circlemove 1.8s ease-in-out infinite,
     cirlemovehide 1.8s ease-out infinite;
-    z-index: 10;
+  z-index: 10;
 }
 
-@keyframes circlemove{
-  0%{top:750px;}
-  100%{top:990px;}
+@keyframes circlemove {
+  0% {
+    top: 750px;
+  }
+  100% {
+    top: 990px;
+  }
 }
 
-@keyframes cirlemovehide{
-  0%{opacity:0}
-  50%{opacity:1;}
-  80%{opacity:0.9;}
-  100%{opacity:0;}
+@keyframes cirlemovehide {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 /* WORKS parallaxまで手をつけれたらいいな*/
 .works_section {
   max-width: 1000px;
-  margin:  550px auto 0 auto;
+  margin: 550px auto 0 auto;
   padding: 0 10px;
 }
 
-  .works_header { /*グラデーションの動きをつける*/
-    font-weight: bold;
-    text-align: right;
-  }
+.works_header {
+  font-weight: bold;
+  text-align: right;
+  font-size: 1.5rem;
+}
 
-  article:not(:first-child) {
-    margin-top: 146px;
-  }
+.works_header span {
+  /* グラデーション 動きをつける*/
+  background: linear-gradient(90deg, #181e4d, 80%, #8aecff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-  /*文章と画像を横並びにする*/
-  article > div {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 110px;
-  }
+article:not(:first-child) {
+  margin-top: 146px;
+}
 
-  /*画像を510pxまでにする*/ 
-  article > div:nth-child(2) {
-    max-width: 510px;
-  }
+/*文章と画像を横並びにする*/
+article > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 110px;
+}
 
-  /*ポートフォリオ紹介*/
+/*画像を510pxまでにする*/
+article > div:nth-child(2) {
+  max-width: 510px;
+}
+
+/*ポートフォリオ紹介*/
 article > div > div:first-child {
   width: 48.5%;
 }
@@ -149,9 +182,8 @@ article > div > div:last-child {
   width: 51.8%;
 }
 
-
 /*ポートフォリオ以外紹介*/
-  article:not(:first-of-type) > div > div {
+article:not(:first-of-type) > div > div {
   width: 48.4%;
   /* (1000px-32px)/2=484px*/
   /* 484/1000=0.484 */
@@ -160,43 +192,53 @@ article > div > div:last-child {
 /*WORKSの共通コンテンツ*/
 .works_content {
   padding-top: 38px;
-}  
+}
 
-  .works_category,
-  .works_sub_category {
-    font-size: 12px;
-  }
+.works_category,
+.works_sub_category,
+.works_sub_category02 {
+  font-size: 0.75rem;
+}
 
-  .works_sub_category {
-    color: var(--base_color_light);
-    margin-top: 20px;
-  }
+.works_sub_category,
+.works_sub_category02 {
+  color: var(--base_color_light);
+  margin-top: 20px;
+}
 
-  .works_title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 24px;
-  }
+.works_title {
+  font-size: 1.125rem;
+  font-weight: bold;
+  margin-top: 24px;
+}
 
-  .works_discription {
-    font-size: 14px;
-    line-height: 1.86;
-    margin-top: 40px;
-  }
+.works_discription {
+  font-size: 0.875rem;
+  line-height: 1.86;
+  margin-top: 40px;
+}
 
-  .works_sub_category::after {
-    content: "";
-    display: block;
-    width: 149px;
-    border-bottom: 1px dotted var(--accent_color01);
-    padding-top: 4px;
-  }
+/*カテゴリーの青い点線*/
+.works_sub_category::after {
+  content: "";
+  display: block;
+  width: 149px;
+  border-bottom: 1px dotted var(--accent_color01);
+  padding-top: 4px;
+}
 
-  /*WORKS_ボタン*/
-.works_btn{
+.works_sub_category02::after {
+  content: "";
+  display: block;
+  width: 108px;
+  border-bottom: 1px dotted var(--accent_color01);
+  padding-top: 4px;
+}
+/*WORKS_ボタン*/
+.works_btn {
   display: inline-block;
   width: 226px;
-  font-size: 14px;
+  font-size: 0.875rem;
   border: 1px dotted #3e3e3e;
   border-radius: 5px;
   padding: 16px 0;
@@ -208,68 +250,72 @@ article > div > div:last-child {
 
 .works_btn::after {
   content: "";
-  display: block;
+  display: inline-block;
   width: 16px;
   border-bottom: 1px solid var(--base_color_light);
   margin-left: 16px;
 }
 
-
 /*WORKS_ViewAllボタン のちほどボタン背景だけ画像で準備する*/
 
-.view_all_btn {
-  display: inline-block;
-  width: 314px;
-  font-size: 18px;
-  color: #fff;
-  background: var(--accent_color_gd90);
-  border: 1px dotted var(--accent_color02);
-  border-radius: 5px;
-  padding: 40px 0;
+.view_all_wrapper {
+  max-width: 312px;
+  margin: 150px auto 0 auto;
+  position: relative;
+}
+
+.view_all_wrapper img {
+  width: 100%;
+}
+
+.view_all_wrapper p {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 150px auto 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 1rem;
 }
 
-.view_all_btn::after {
+.view_all_wrapper p::after {
   content: "";
-  display: block;
+  display: inline-block;
   width: 32px;
   border-bottom: 1px solid #fff;
-  margin-left: 24px;
+  border-radius: 5px;
+  margin-left: 16px;
 }
 
 /*ABOUT*/
-.about_header { 
-    max-width: 1000px;
-    margin:0 auto;
-    padding-top: 88px;
-    text-align: left;
-    color: #fff;
-    margin-left: 12.5%;
-  }
+.about_header {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 88px;
+  text-align: left;
+  color: #fff;
+  margin-left: 12.5%;
+  font-size: 1.5rem;
+}
 
 .about_section {
   background-image: url(../images/1x/about_back.png);
-    width: 100vw;         
-    background-size: cover; 
-    background-position: center;
-    margin-top: 420px;
-    box-sizing: border-box;
-    position: relative;
-  
- } 
-
+  background-size: cover;
+  background-position: center;
+  margin-top: 420px;
+  box-sizing: border-box;
+  position: relative;
+}
 
 .about_wrapper {
   display: flex;
   justify-content: space-between;
   max-width: 830px;
-  margin:  118px auto 0 auto;
+  margin: 118px auto 0 auto;
   padding-bottom: 224px;
-
-  
 }
 
 .about_wrapper > div:first-child {
@@ -291,30 +337,29 @@ article > div > div:last-child {
 }
 
 .name_wrapper p:first-child {
-  font-size: 18px; /* 1つ目のp */
+  font-size: 1.125rem; /* 1つ目のp */
 }
 
 .name_wrapper p:last-child {
-  font-size: 14px; /* 2つ目のp */
+  font-size: 0.875rem; /* 2つ目のp */
   padding-left: 8px;
 }
 
 .about_discription {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #fff;
   line-height: 1.86;
   padding-top: 28px;
 }
 
-
 .about_img {
-   width: 100%;
+  width: 100%;
 }
 
 .about_btn {
-display: inline-block;
+  display: inline-block;
   width: 226px;
-  font-size: 14px;
+  font-size: 0.875rem;
   background-color: #fff;
   border: 1px dotted #3e3e3e;
   border-radius: 5px;
@@ -334,53 +379,46 @@ display: inline-block;
 }
 
 /*ページ中間のバー*/
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap');
-
 .bar {
   height: 546px;
   position: relative;
 }
 
-.bar div:after{
-  content:"";
+.bar div:after {
+  content: "";
   position: absolute;
-  top: 50%;   /* 親要素の縦の真ん中 */
-  left: 50%;  /* 親要素の横の真ん中 */
+  top: 50%; /* 親要素の縦の真ん中 */
+  left: 50%; /* 親要素の横の真ん中 */
   transform: translate(-50%, -50%); /* 要素自身の大きさ分ずらして中央揃え */
-  width:1px;
+  width: 1px;
   height: 196px;
   background: var(--accent_color_gd);
   z-index: 1;
 }
 
-/*FVをコピペすればいいかとおもったけど、こっちを揃えるとFVがずれる・・・＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
-/* .bar div:before {
+.bar div:before {
   content: "";
   position: absolute;
-  top: 50%;   
-  left: 50%;  
-  transform: translate(-50%, -50%); 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 12px;
   height: 12px;
   border-radius: 50%;
   background: var(--accent_color_gd);
-  animation:
-    circlemove 1.8s ease-in-out infinite,
+  animation: circlemove_aaa 1.8s ease-in-out infinite,
     cirlemovehide 1.8s ease-out infinite;
-    z-index: 10;
-} */
-
-/* @keyframes circlemove{
- 0% { transform: translate(-50%, -50%) translateY(-72px); }
-  100% { transform: translate(-50%, -50%) translateY(88px); } 
+  z-index: 10;
 }
 
-@keyframes cirlemovehide{
-  0%{opacity:0}
-  50%{opacity:1;}
-  80%{opacity:0.9;}
-  100%{opacity:0;}
-}============================================================================================================ */
+@keyframes circlemove_aaa {
+  0% {
+    transform: translate(-50%, -50%) translateY(-72px);
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(88px);
+  }
+}
 
 /*コンタクト*/
 /*h2*/
@@ -392,9 +430,16 @@ display: inline-block;
 
 .contact_header {
   font-weight: bold;
-    text-align: left;
+  text-align: left;
+  font-size: 1.5rem;
 }
 
+.contact_header > span {
+  /* グラデーション 動きをつける*/
+  background: linear-gradient(90deg, #181e4d, 80%, #8aecff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 .contact_wrapper {
   display: flex;
@@ -415,9 +460,8 @@ display: inline-block;
 }
 
 .c-form_label {
-  font-size: 16px;
+  font-size: 1rem;
 }
-
 
 .c-form_item:not(:first-child) .c-form_label {
   margin-top: 38px;
@@ -426,19 +470,19 @@ display: inline-block;
 /*アスタリスク*/
 .c-form_item:nth-child(2) .c-form_label::after,
 .c-form_item:nth-child(3) .c-form_label::after,
-.c-form_item:nth-child(4) .c-form_label::after{
+.c-form_item:nth-child(4) .c-form_label::after {
   content: "*";
   vertical-align: top;
   color: #ed1c24;
-  font-size: 10px;
+  font-size: 0.625rem;
 }
 
 .c-form_item:nth-child(2) .c-form_label::after,
 .c-form_item:nth-child(4) .c-form_label::after {
-    padding-left: 3px;
+  padding-left: 3px;
 }
 
-.c-form_item:nth-child(3) .c-form_label::after{
+.c-form_item:nth-child(3) .c-form_label::after {
   padding-left: 1px;
 }
 
@@ -446,37 +490,71 @@ display: inline-block;
 .c-form_input {
   width: 100%;
   margin-top: 14px;
-  padding: 11.5px 0;
-  border:1px solid var(--accent_color02);
+  padding: 11.5px 4px;
+  border: 1px solid var(--accent_color02);
   border-radius: 5px;
   box-sizing: border-box;
-
 }
 
 .c-form_input:focus {
-border:1px solid var(--accent_color01);
-outline:0;
+  border: 1px solid var(--accent_color01);
+  outline: 0;
 }
 
 .contact_wrapper p {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.86;
 }
 
 textarea.c-form_input {
   line-height: 1.5em;
-  padding: 48px 0;
+  padding: 8px 4px 96px 4px;
   font-family: none;
 }
 
 /*送信ボタン*/
 .c-form_submit {
   max-width: 276px;
+  margin-top: 56px;
+  margin-left: auto;
+  position: relative;
 }
 .c-form_submit img {
-  width: 100%
+  width: 100%;
+}
+.c-form_submit button {
+  font-size: 1rem;
 }
 
+/*文字表示や位置の調節*/
+.c-form_submit p {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+}
+.c-form_submit p::after {
+  content: "";
+  display: inline-block;
+  width: 32px;
+  border-bottom: 1px solid #fff;
+  border-radius: 5px;
+  margin-left: 20px;
+}
+
+/* フッター */
+footer {
+  margin: 672px 0 72px 0;
+}
+footer p {
+  font-size: 0.625rem;
+  text-align: center;
+}
 
 /* .about_wrapper > div {
   display: flex;
@@ -485,12 +563,14 @@ textarea.c-form_input {
 
 /* 
 
-【htmlファイル】
+〜新しい質問〜
+・pf_conceptクラスは、1340pxのとき262pxにしたいが、デベロッパーツールでみるとなぜか300pxになっている。
+・works 「view more」ボタンと画像の下のラインはそろえることができたが、「＃Website」なども画像の頭と揃えたい。
+・aboutの背景画像。次のセクションとの境目がくっきりわかれてしまっている。本当はデザインデータのように境目をなくしたい。
+・about_headerを常にデザインとおりの位置に配置したい。今は％で記述してしまっていることが原因かと思うが、うまく変更できなかった。
 
 
-【cssファイル】
-・ABOUT背景画像、境目がくっきり・・・
-
+〜回答済み〜
 .(回答いただき済み：授業）コンセプトの配置に苦戦。
 　1)vhで計算したものの、1340px幅（本当は1440pxでデザインしなくてはいけなかったのに間違えていました・・・）にしたときの見え方が、aiデータより下に見える。なぜか？
 　２）画面幅を拡大・縮小したときに位置が大きくずれる
@@ -500,32 +580,20 @@ textarea.c-form_input {
 　colorプロパティには単色しか反映しない？ 
   background-cripプロパティを使用して背景色を文字にクリッピングするのがよい方法なのか？
 
-★自分で確認
-・DESIGN CAFEのカテゴリー　ラインが長い
-・WORKSの「View all Works」の現時点のイメージが異なるため画像を入れるのがいいかと思っている。その場合は、svg
-
 ★(回答いただき済み)
 ・ファビコンずれてる？デザインの問題か？
-・実感worksのボタンの文字と線が真ん中でない？
 ・画像が荒い。書き出しの問題というよりは、もともとのデータのせいか？
  
 
-0823授業聞きたいこと
+
+〜自分用メモ〜
+・ヘッダーの視認性UPどうするか？
 ・FVの位置調整
-・ページ中間のアニメーション
-FVコピペして、位置の数値の調整だけすればいいとおもったけど、数値を変えてしまうと、FWの方も変わってしまう！！
-URL先の記述の数値指定するクラス名てきなやつが一緒だから、、、どうするべきか
-・フォームのaction リンクはどれ・・・・
-・項目入力の位置を変えられるか。
-・あしらい、画像でいれといていいのか？それとも動きの際に入れるべきなのか？
-
-・クラス名でなく、divとかpに記述するとき。＞をつけるか　スペースをつけるか、、、など迷いがち。いいサイトがあれば教えていただきたい。
-・まだコードきれいにならないね？？？
-・入力位置も半角スペース開けられるのか？
+・あしらいを画像に。
+・スマフォ版
 
 
-ボタン 画像で。WORKSALLのボタンも差し替え
-コピーライト
-文字をpxから変更
-ヘッダーの視認性UPのために・・・・
+・コンタクトフォームうまくできているのか？
+・サンクスページ未対応
+・コピーライトこれでいいのか？
   */

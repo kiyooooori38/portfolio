@@ -4,7 +4,6 @@
 
 /*利用するタグによってこちらの内容は増やす*/
 
-
 html,
 body,
 h1,
@@ -21,9 +20,11 @@ li {
   line-height: 1;
   /*デフォルトの文字色、font-familyを予め当てておく*/
   color: #3e3e3e;
-  font-family: Shippori Mincho, "游明朝", YuMincho, "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
-  font-size: 24px;
-  font-weight: normal; 
+  font-family: Shippori Mincho, "游明朝", YuMincho, "Hiragino Mincho ProN W3",
+    "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝",
+    "ＭＳ 明朝", serif;
+  font-size: 16px;
+  font-weight: normal;
   font-feature-settings: "palt";
 }
 
@@ -51,15 +52,15 @@ button {
   outline: none;
   font: inherit;
   color: inherit;
-  background: none
+  background: none;
 }
 
 /* css変数 */
 :root {
-    --accent_color_gd: linear-gradient(#181e4d, #4e7fa1, #8aecff);
-    --accent_color_gd90: linear-gradient(90deg, #181e4d, #4e7fa1, #8aecff);
-    --accent_color01: #186ead;
-    --accent_color02:#181e4d;
-    --base_color_light: #666;
-       --accent_color_gdbtn: linear-gradient(90deg, #181e4d, #4e7fa1, #8aecff);
+  --accent_color_gd: linear-gradient(#181e4d, #4e7fa1, #8aecff);
+  --accent_color_gd90: linear-gradient(90deg, #181e4d, #4e7fa1, #8aecff);
+  --accent_color01: #186ead;
+  --accent_color02: #181e4d;
+  --base_color_light: #666;
+  --accent_color_gdbtn: linear-gradient(90deg, #181e4d, #4e7fa1, #8aecff);
 }

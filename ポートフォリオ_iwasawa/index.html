@@ -1,187 +1,283 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>portfolio</title>
-    <link rel="icon" href="./images/1x/favicon.png">
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
-
+    <link rel="icon" href="./images/1x/favicon.png" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
     <!-- FV -->
     <header>
-        <div class="main_visual">
-           <img src="./images/1x/fv-80.jpg" alt="メインビジュアル_ポートフォリオ作者の画像">
-       </div>
+      <div class="main_visual">
+        <h1>
+          <div class="pf_title">
+            <div>
+              <p>KIYORI</p>
+              <p>IWASAWA</p>
+            </div>
+            <div>
+              <p><span></span>/<span></span>design</p>
+            </div>
+          </div>
+          <div>
+            <img
+              class="pf_concept"
+              src="./images/1x/concept.svg"
+              alt="コンセプト「8:∞」の画像"
+            />
+          </div>
+        </h1>
+        <img
+          src="./images/1x/fv-80.jpg"
+          alt="メインビジュアル_ポートフォリオ作者の画像"
+        />
+      </div>
+      <!-- ナビゲーション -->
+      <nav>
+        <ul class="header_list">
+          <li class="header_list_item">
+            <a href="#">/ Home</a>
+          </li>
+          <li class="header_list_item">
+            <a href="#">/ Works</a>
+          </li>
+          <li class="header_list_item">
+            <a href="#">/ About</a>
+          </li>
+          <li class="header_list_item">
+            <a href="#"
+              ><img
+                class="header_nav_btn"
+                src="./images/1x/header_nav.svg"
+                alt="contact button"
+            /></a>
+          </li>
+        </ul>
+      </nav>
 
-       <nav>
-           <ul class="header_list">
-               <li class="header_list_item">
-                <a href="#">/ Home</a>
-            </li>
-               <li class="header_list_item">
-                <a href="#">/ Works</a>
-            </li>
-            <li class="header_list_item">
-                <a href="#">/ About</a>
-            </li>
-               <li class="header_list_item">
-                 <a href="#"><img class="header_nav_btn" src="./images/1x/header_nav.svg" alt="contact button"></a>
-            </li>
-           </ul>
-       </nav>
-
-       <h1>
-           <div class="pf_title">
-               <div>
-                  <p>KIYORI</p>
-                  <p>IWASAWA</p>
-               </div>
-               <div>
-                  <p><span></span>/<span></span>design</p>
-               </div>
-           </div>
-           <div>
-               <img class="pf_concept" src="./images/1x/concept.svg" alt="">
-           </div>
-       </h1>
-        <!-- スクロールバー -->
-       <div class="scroll_down">
-          <p>SCROLL</p>
-       </div>
+      <!-- FVスクロールバー -->
+      <div class="scroll_down">
+        <p>SCROLL</p>
+      </div>
     </header>
 
     <main>
-        <!-- Works -->
-         <section class="works_section">
-            <h2 class="works_header">Works</h2>
-            <!-- ポートフォリオ -->
-               <article>
-                <div>
-                   <div>
-                      <p class="works_category">#Website</p>                   
-                      <h3 class="works_title">ポートフォリオ</h3>
-                      <p class="works_discription">コンセプト設定から実装まで、いまの自分にできる全てをこのポートフォリオに詰め込みました。“お客さまに長く愛されるデザインを届けたい”<br>“人と人のつながりを大切にし、長く寄り添える存在でありたい”<br>そんな想いから「∞（インフィニティ）」と「輪（つながり）」をコンセプトにしています。</p>
-                      <p class="works_sub_category">[ Category : design, coding ]</p>
-                      <a class="works_btn" href="works_pf.html">View more</a>
-                   </div>
-                
-                   <div>
-                       <img class="works_item" src="./images/1x/works_01_pc.png" alt="ポートフォリオのモックアップ">
-                   </div>
-                </div>
-               </article>
-
-             <!-- ヘアサイト -->
-               <article>
-                <div>
-                   <div>
-                       <img class="works_item" src="./images/1x/works_02_pc.png" alt="ヘアサロンサイトのモックアップ">
-                   </div>
-
-                   <div class="works_content">
-                      <p class="works_category">#Website</p>                   
-                      <h3 class="works_title">Re LIFE様</h3>
-                      <p class="works_discription">仮想のヘアサロンサイトをデザインしました。コーポレートカラーのピンクを基調に、お店の雰囲気や人が感じられるサイトに仕上げました。</p>
-                      <p class="works_sub_category">[ Category : design, coding ]</p>
-                      <a class="works_btn" href="works_hairsalon.html">View more</a>
-                   </div>
-
-                </div>
-               </article>
-
-               <!-- カフェサイト -->
-               <article>
-                <div>
-                   <div class="works_content">
-                      <p class="works_category">#Website</p>                   
-                      <h3 class="works_title">DESIGN CAFE様</h3>
-                      <p class="works_discription">コ仮想のカフェサイトを制作しました。レスポンシブ対応で、スマートフォンからPCまで快適に閲覧できるよう設計しています。また、jQueryを活用し、スクロールやボタン操作にアニメーションを取り入れることで、サイト全体にやさしい動きを加え心地よく閲覧できる工夫をこらしました。</p>
-                      <p class="works_sub_category">[ Category : coding ]</p>
-                      <a class="works_btn" href="works_cafesite.html">View more</a>
-                   </div>
-                
-                   <div>
-                       <img class="works_item" src="./images/1x/works_03_pc.png" alt="ポートフォリオのモックアップ">
-                   </div>
-                </div>
-               </article>
-
-               <div class="view_all_wrapper">
-                   <a class="view_all_btn" href="works_all.html">View all Works</a>
-               </div>
-
-         </section>
-
-
-         <section class="about_section">
+      <!-- Works -->
+      <section class="works_section">
+        <h2 class="works_header"><span>Works</span></h2>
+        <!-- ポートフォリオ -->
+        <article>
+          <div>
             <div>
-            <h2 class="about_header">About</h2>
-               <div class="about_wrapper"> 
-                  <div>
-                      <div class="name_wrapper">
-                         <p>岩沢 清里</p>
-                         <p>IWASAWA KIYORI</p>
-                      </div>
-                      
-                      <p class="about_discription">2025年10月より、地域でお店を営んでいる方や、個人でサービスを提供されている事業者さまを中心に、ホームページやバナー制作を承っております。<br>お客さまに安心いただけるよう、丁寧なヒアリングと適切な進捗のご報告を心がけながら、一つ一つ誠実に制作を進めてまいります。<br>
-                         制作を開始する前には、まずWEB面談にてご要望や状況をお伺いしております。その上で、ご依頼いただくかどうかをご判断いただけますので、ぜひお気軽にご相談ください。</p>
-                       <a class="about_btn" href="about.html">View more</a>
-                  </div>
-                  <div>
-                      <img  class="about_img" src="./images/1x/about.png" alt="岩沢 清里の写真">
-                  </div>
-               </div>
-               </div>
-         </section>
-           
-           <div class="bar">
-             <div></div>
-           </div>
+              <p class="works_category">#Website</p>
+              <h3 class="works_title">ポートフォリオ</h3>
+              <p class="works_discription">
+                コンセプト設定から実装まで、いまの自分にできる全てをこのポートフォリオに詰め込みました。“お客さまに長く愛されるデザインを届けたい”<br />“人と人のつながりを大切にし、長く寄り添える存在でありたい”<br />そんな想いから「∞（インフィニティ）」と「輪（つながり）」をコンセプトにしています。
+              </p>
+              <p class="works_sub_category">[ Category : design, coding ]</p>
+              <a class="works_btn" href="works_pf.html">View more</a>
+            </div>
 
-           <section class="contact_section">
-              <h2 class="contact_header">Contact</h2>
-                 <div class="contact_wrapper"> 
-                    <div>
-                        <p>ご覧いただきありがとうございます。<br>制作のご依頼、ご相談などお気軽にお問い合わせください。 2営業日以内に返信いたします。</p>
-                    </div>
+            <div>
+              <img
+                class="works_item"
+                src="./images/1x/works_01_pc.png"
+                alt="ポートフォリオのモックアップ"
+              />
+            </div>
+          </div>
+        </article>
 
-                    <form action="?" class="c-form">
-                        <div class="c-form_item">
-                           <label class="c-form_label" for="field_company_name">貴社名</label>
-                           <input type="text" class="c-form_input" id="field_company_name" placeholder=" 株式会社サンプル">
-                        </div>
+        <!-- ヘアサイト -->
+        <article>
+          <div>
+            <div>
+              <img
+                class="works_item"
+                src="./images/1x/works_02_pc.png"
+                alt="ヘアサロンサイトのモックアップ"
+              />
+            </div>
 
-                        <div class="c-form_item">
-                           <label class="c-form_label" for="field_name">お名前</label>
-                           <input type="text" class="c-form_input" id="field_name" placeholder=" 山田 太郎" required="required">
-                        </div>
+            <div class="works_content">
+              <p class="works_category">#Website</p>
+              <h3 class="works_title">Re LIFE様</h3>
+              <p class="works_discription">
+                仮想のヘアサロンサイトをデザインしました。コーポレートカラーのピンクを基調に、お店の雰囲気や人が感じられるサイトに仕上げました。
+              </p>
+              <p class="works_sub_category">[ Category : design, coding ]</p>
+              <a class="works_btn" href="works_hairsalon.html">View more</a>
+            </div>
+          </div>
+        </article>
 
-                        <div class="c-form_item">
-                           <label class="c-form_label" for="field_mail">メールアドレス</label>
-                           <input type="text" class="c-form_input" id="field_mail" placeholder=" info@sample.co.jp" required="required">
-                        </div>
+        <!-- カフェサイト -->
+        <article>
+          <div>
+            <div class="works_content">
+              <p class="works_category">#Website</p>
+              <h3 class="works_title">DESIGN CAFE様</h3>
+              <p class="works_discription">
+                コ仮想のカフェサイトを制作しました。レスポンシブ対応で、スマートフォンからPCまで快適に閲覧できるよう設計しています。また、jQueryを活用し、スクロールやボタン操作にアニメーションを取り入れることで、サイト全体にやさしい動きを加え心地よく閲覧できる工夫をこらしました。
+              </p>
+              <p class="works_sub_category02">[ Category : coding ]</p>
+              <a class="works_btn" href="works_cafesite.html">View more</a>
+            </div>
 
-                        <div class="c-form_item">
-                           <label class="c-form_label" for="field_phone_num">電話番号</label>
-                           <input type="text" class="c-form_input" id="field_phone_num" placeholder=" 090-1234-5678">
-                        </div>
+            <div>
+              <img
+                class="works_item"
+                src="./images/1x/works_03_pc.png"
+                alt="ポートフォリオのモックアップ"
+              />
+            </div>
+          </div>
+        </article>
 
-                         <div class="c-form_item">
-                           <label class="c-form_label" for="field_message">お問い合わせ内容</label>
-                           <textarea class="c-form_input" id="field_message" required="required"></textarea>
-                        </div>
-                        <div class="c-form_submit">
-		                     <button type="submit">
-                                <img src="./images/1x/送信ボタン.svg" alt="ボタンの画像">内容を送信する</button>
-	                     </div>
-                    </form>
-                  </div>
-           </section>
+        <!-- WORKS Viewallボタン -->
+        <!-- <div class="view_all_wrapper">
+          <img src="./images/1x/ViewAllボタン.svg" alt="ボタンの画像" /><a
+            href="works_all.html"
+            ><p>View all Works</p></a
+          >
+        </div> -->
+        <div class="view_all_wrapper">
+          <a href="works_all.html">
+            <img src="./images/1x/ViewAllボタン.svg" alt="ボタンの画像" />
+            <p>View all Works</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section class="about_section">
+        <div>
+          <h2 class="about_header">About</h2>
+          <div class="about_wrapper">
+            <div>
+              <div class="name_wrapper">
+                <p>岩沢 清里</p>
+                <p>IWASAWA KIYORI</p>
+              </div>
+
+              <p class="about_discription">
+                2025年10月より、地域でお店を営んでいる方や、個人でサービスを提供されている事業者さまを中心に、ホームページやバナー制作を承っております。<br />お客さまに安心いただけるよう、丁寧なヒアリングと適切な進捗のご報告を心がけながら、一つ一つ誠実に制作を進めてまいります。<br />
+                制作を開始する前には、まずWEB面談にてご要望や状況をお伺いしております。その上で、ご依頼いただくかどうかをご判断いただけますので、ぜひお気軽にご相談ください。
+              </p>
+              <a class="about_btn" href="about.html">View more</a>
+            </div>
+            <div>
+              <img
+                class="about_img"
+                src="./images/1x/about.png"
+                alt="岩沢 清里の写真"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 中間のスクロールバー -->
+      <div class="bar">
+        <div></div>
+      </div>
+
+      <!-- コンタクト -->
+      <section class="contact_section">
+        <h2 class="contact_header"><span>Contact</span></h2>
+        <div class="contact_wrapper">
+          <div>
+            <p>
+              ご覧いただきありがとうございます。<br />制作のご依頼、ご相談などお気軽にお問い合わせください。
+              2営業日以内に返信いたします。
+            </p>
+          </div>
+
+          <!-- 入力欄 -->
+          <form
+            action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSe2Pr8kreH8T8xvp2tSu7jWVv3pyG5WksktmjyHAs8JZQhkfw/formResponse"
+            method="POST"
+            class="c-form"
+          >
+            <div class="c-form_item">
+              <label class="c-form_label" for="field_company_name"
+                >貴社名</label
+              >
+              <input
+                name="entry.193574675"
+                type="text"
+                class="c-form_input"
+                id="field_company_name"
+                placeholder=" 株式会社サンプル"
+              />
+            </div>
+
+            <div class="c-form_item">
+              <label class="c-form_label" for="field_name">お名前</label>
+              <input
+                name="entry.479767945"
+                type="text"
+                class="c-form_input"
+                id="field_name"
+                placeholder=" 山田 太郎"
+                required="required"
+              />
+            </div>
+
+            <div class="c-form_item">
+              <label class="c-form_label" for="field_mail"
+                >メールアドレス</label
+              >
+              <input
+                name="entry.575046759"
+                type="text"
+                class="c-form_input"
+                id="field_mail"
+                placeholder=" info@sample.co.jp"
+                required="required"
+              />
+            </div>
+
+            <div class="c-form_item">
+              <label class="c-form_label" for="field_phone_num">電話番号</label>
+              <input
+                name="entry.1542452913"
+                type="text"
+                class="c-form_input"
+                id="field_phone_num"
+                placeholder=" 090-1234-5678"
+              />
+            </div>
+
+            <div class="c-form_item">
+              <label class="c-form_label" for="field_message"
+                >お問い合わせ内容</label
+              >
+              <textarea
+                name="entry.1725306659"
+                class="c-form_input"
+                id="field_message"
+                required="required"
+              ></textarea>
+            </div>
+
+            <!-- 送信ボタン -->
+            <div class="c-form_submit">
+              <button type="submit">
+                <img src="./images/1x/送信ボタン.svg" alt="ボタンの画像" />
+                <p>内容を送信する</p>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <footer>
+        <p>&copy;2025 Kiyori Iwasawa</p>
+      </footer>
     </main>
-
-
-</body>
+  </body>
 </html>
