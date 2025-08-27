@@ -10,7 +10,7 @@
   </head>
   <body>
     <!-- FV -->
-    <header>
+    <header id="top">
       <div class="main_visual">
         <h1>
           <div class="pf_title">
@@ -30,25 +30,43 @@
             />
           </div>
         </h1>
-        <img
-          src="./images/1x/fv-80.jpg"
-          alt="メインビジュアル_ポートフォリオ作者の画像"
-        />
+        <picture>
+          <source srcset="./images/1x/FV_SP-80.jpg" media="(max-width:767px)" />
+          <img
+            class="hero_img"
+            src="./images/1x/fv-80.jpg"
+            alt="メインビジュアル_ポートフォリオ作者の画像"
+          />
+        </picture>
+        <!-- あしらい１ -->
+        <!-- <div class="roop_wrapper">
+          <img
+            src="./images/1x/roop_design01.svg"
+            alt=""
+            class="roop_design01"
+          />
+        </div> -->
       </div>
-      <!-- ナビゲーション -->
-      <nav>
+
+      <!-- あしらい１ -->
+      <div class="roop_wrapper">
+        <img src="./images/1x/roop_design01.svg" alt="" class="roop_design01" />
+      </div>
+
+      <!-- PCナビゲーション -->
+      <nav class="pc_nav">
         <ul class="header_list">
           <li class="header_list_item">
-            <a href="#">/ Home</a>
+            <a href="#top">/ Home</a>
           </li>
           <li class="header_list_item">
-            <a href="#">/ Works</a>
+            <a href="#works_all">/ Works</a>
           </li>
           <li class="header_list_item">
-            <a href="#">/ About</a>
+            <a href="#about_me">/ About</a>
           </li>
           <li class="header_list_item">
-            <a href="#"
+            <a href="#c-form"
               ><img
                 class="header_nav_btn"
                 src="./images/1x/header_nav.svg"
@@ -58,6 +76,35 @@
         </ul>
       </nav>
 
+      <!--SPナビゲーション -->
+      <div class="sp_btn"><span></span></div>
+      <nav class="sp_nav">
+        <ul class="sp_header_list">
+          <li class="sp_header_list_item">
+            <a href="#">/ Home</a>
+          </li>
+          <li class="sp_header_list_item">
+            <a href="#">/ Works</a>
+          </li>
+          <li class="sp_header_list_item">
+            <a href="#">/ About</a>
+          </li>
+          <li class="sp_header_list_item">
+            <a href="#"
+              ><img
+                class="sp_header_nav_btn"
+                src="./images/1x/header_nav.svg"
+                alt="contact button"
+            /></a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- SP固定メールあいこん -->
+      <div class="mail_icon">
+      <img src="./images/1x/SP_mail_icon.svg" alt="メールのアイコン" />
+      </div>
+
       <!-- FVスクロールバー -->
       <div class="scroll_down">
         <p>SCROLL</p>
@@ -66,12 +113,12 @@
 
     <main>
       <!-- Works -->
-      <section class="works_section">
+      <section class="works_section" id="works_all">
         <h2 class="works_header"><span>Works</span></h2>
         <!-- ポートフォリオ -->
-        <article>
+        <article class="sp_order_wrapper_01">
           <div>
-            <div>
+            <div class="order_item_01">
               <p class="works_category">#Website</p>
               <h3 class="works_title">ポートフォリオ</h3>
               <p class="works_discription">
@@ -81,7 +128,7 @@
               <a class="works_btn" href="works_pf.html">View more</a>
             </div>
 
-            <div>
+            <div class="order_item_02">
               <img
                 class="works_item"
                 src="./images/1x/works_01_pc.png"
@@ -92,9 +139,9 @@
         </article>
 
         <!-- ヘアサイト -->
-        <article>
+        <article class="sp_order_wrapper_02">
           <div>
-            <div>
+            <div class="order_item_03">
               <img
                 class="works_item"
                 src="./images/1x/works_02_pc.png"
@@ -102,7 +149,7 @@
               />
             </div>
 
-            <div class="works_content">
+            <div class="works_content order_item_04">
               <p class="works_category">#Website</p>
               <h3 class="works_title">Re LIFE様</h3>
               <p class="works_discription">
@@ -115,8 +162,8 @@
         </article>
 
         <!-- カフェサイト -->
-        <article>
-          <div>
+        <article class="sp_order_wrapper_03">
+          <div class="order_item_05">
             <div class="works_content">
               <p class="works_category">#Website</p>
               <h3 class="works_title">DESIGN CAFE様</h3>
@@ -127,7 +174,7 @@
               <a class="works_btn" href="works_cafesite.html">View more</a>
             </div>
 
-            <div>
+            <div class="order_item_06">
               <img
                 class="works_item"
                 src="./images/1x/works_03_pc.png"
@@ -153,11 +200,11 @@
       </section>
 
       <!-- About -->
-      <section class="about_section">
+      <section class="about_section" id="about_me">
         <div>
           <h2 class="about_header">About</h2>
           <div class="about_wrapper">
-            <div>
+            <div class=>
               <div class="name_wrapper">
                 <p>岩沢 清里</p>
                 <p>IWASAWA KIYORI</p>
@@ -186,7 +233,7 @@
       </div>
 
       <!-- コンタクト -->
-      <section class="contact_section">
+      <section class="contact_section" id="c-form">
         <h2 class="contact_header"><span>Contact</span></h2>
         <div class="contact_wrapper">
           <div>

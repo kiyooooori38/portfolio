@@ -12,24 +12,32 @@ header {
   position: relative;
 }
 
-.main_visual img {
+.hero_img {
   /* display: block; */
   width: 100%;
+  position: relative;
 }
 
-nav {
+.pc_nav {
   position: fixed;
   top: 48px;
+  z-index: 1000;
   right: 48px;
 }
 
-nav a {
+.pc_nav a {
   font-size: 1.5rem;
 }
 
 .header_nav_btn {
   width: 190px;
   padding-right: 7px;
+}
+
+/*SPナnav非表示*/
+.sp_btn,
+.sp_nav {
+  display: none;
 }
 
 .header_list {
@@ -39,6 +47,11 @@ nav a {
   gap: 40px;
 }
 
+.header_list_item:hover {
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
 .pf_title {
   display: flex;
   align-items: flex-end;
@@ -46,6 +59,7 @@ nav a {
 
 .pf_title > div p {
   font-size: 1.125rem;
+  letter-spacing: 0.065em;
 }
 
 .pf_title > div > p:last-child {
@@ -58,8 +72,9 @@ nav a {
 
 h1 {
   position: absolute;
-  top: 400px;
-  left: -50%;
+  top: 250px;
+  left: -42%;
+  z-index: 10;
 }
 
 h1 div:last-child {
@@ -70,13 +85,16 @@ h1 div:last-child {
   width: 262px;
 }
 
-/* スクロールバー */
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap");
+/*メールアイコン非表示*/
+.mail_icon {
+  display: none;
+}
 
+/* スクロールバー */
 .scroll_down p {
   position: absolute;
   top: 632px;
-  left: 111px;
+  left: 72px;
   font-size: 1rem;
   writing-mode: vertical-lr;
   text-decoration: none;
@@ -91,7 +109,7 @@ h1 div:last-child {
   content: "";
   position: absolute;
   top: 725px;
-  left: 119px;
+  left: 80px;
   width: 1px;
   height: 272px;
   background: var(--accent_color_gd);
@@ -102,7 +120,7 @@ h1 div:last-child {
   content: "";
   position: absolute;
   top: 750px;
-  left: 113px;
+  left: 74.5px;
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -136,11 +154,31 @@ h1 div:last-child {
   }
 }
 
+/*あしらい０１*/
+/* .roop_wrapper {
+  width: 100vw;
+  margin: 0 calc(50% - 50vw);
+  position: absolute;
+  top: 640px;
+} */
+
+.roop_wrapper {
+  max-width: 1440px;
+  margin-left: auto;
+  position: relative;
+}
+
+.roop_design01 {
+  width: 100%;
+  position: absolute;
+  top: -480px;
+}
+
 /* WORKS parallaxまで手をつけれたらいいな*/
 .works_section {
   max-width: 1000px;
   margin: 550px auto 0 auto;
-  padding: 0 10px;
+  padding: 0 20px;
 }
 
 .works_header {
@@ -164,7 +202,6 @@ article:not(:first-child) {
 article > div {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
   margin-top: 110px;
 }
 
@@ -192,6 +229,15 @@ article:not(:first-of-type) > div > div {
 /*WORKSの共通コンテンツ*/
 .works_content {
   padding-top: 38px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.order_item_01 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .works_category,
@@ -294,20 +340,20 @@ article:not(:first-of-type) > div > div {
 .about_header {
   max-width: 1000px;
   margin: 0 auto;
-  padding-top: 88px;
+  padding: 88px 20px 0 20px;
   text-align: left;
   color: #fff;
-  margin-left: 12.5%;
   font-size: 1.5rem;
 }
 
 .about_section {
   background-image: url(../images/1x/about_back.png);
-  background-size: cover;
+  background-size: 100% 100%;
   background-position: center;
   margin-top: 420px;
   box-sizing: border-box;
   position: relative;
+  background-repeat: no-repeat;
 }
 
 .about_wrapper {
@@ -315,7 +361,7 @@ article:not(:first-of-type) > div > div {
   justify-content: space-between;
   max-width: 830px;
   margin: 118px auto 0 auto;
-  padding-bottom: 224px;
+  padding: 0 20px 24px 20px;
 }
 
 .about_wrapper > div:first-child {
@@ -380,7 +426,7 @@ article:not(:first-of-type) > div > div {
 
 /*ページ中間のバー*/
 .bar {
-  height: 546px;
+  height: 720px;
   position: relative;
 }
 
@@ -425,7 +471,7 @@ article:not(:first-of-type) > div > div {
 .contact_section {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 20px;
 }
 
 .contact_header {
@@ -474,7 +520,7 @@ article:not(:first-of-type) > div > div {
   content: "*";
   vertical-align: top;
   color: #ed1c24;
-  font-size: 0.625rem;
+  font-size: 0.875rem;
 }
 
 .c-form_item:nth-child(2) .c-form_label::after,
@@ -523,6 +569,7 @@ textarea.c-form_input {
   width: 100%;
 }
 .c-form_submit button {
+  width: 100%;
   font-size: 1rem;
 }
 
@@ -556,41 +603,400 @@ footer p {
   text-align: center;
 }
 
-/* .about_wrapper > div {
+/*FVコンセプトやスクロールバーの位置がおかしくなるタイミングで切り替え*/
+@media screen and (max-width: 1150px) {
+  /*コンセプト・スクロールバー*/
+  .pf_concept {
+    width: 220px;
+  }
+
+  h1 {
+    left: -35%;
+  }
+
+  .scroll_down p {
+    left: 36px;
+  }
+  .scroll_down:after {
+    left: 44px;
+  }
+
+  .scroll_down:before {
+    left: 38.5px;
+  }
+
+  /*ナビゲーション*/
+  .pc_nav {
+    display: none;
+  }
+
+  .sp_btn {
+    display: block; /*表示させてあげますよ*/
+    height: 23px;
+    cursor: pointer;
+    /* 位置の調整 */
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    z-index: 100; /*positionが設定されていないと効果なし*/
+  }
+
+  .sp_btn span {
+    display: block; /*spanタグはinline要素なため、幅高さを設定できないためblock要素にしてあげる*/
+    width: 188px;
+    height: 2px;
+    background: #3e3e3e;
+    border-radius: 5px;
+    /* 位置の調整 */
+    position: relative;
+    /* top: 10px; 今ある場所から指定分動かせる */
+    /* transition: 0.3s; */
+  }
+
+  .sp_btn span::after {
+    content: "";
+    display: block;
+    width: 188px;
+    height: 2px;
+    background: #3e3e3e;
+    border-radius: 5px;
+    position: absolute;
+    /* transition: 0.3s; */
+  }
+
+  .sp_btn span::after {
+    top: 18px;
+  }
+
+  /*メニュー動かす*/
+
+  /*わかりにくいから一旦消す*/
+  .roop_wrapper {
+    display: none;
+  }
+
+  /*メールアイコン*/
+  .mail_icon {
+    display: block;
+    width: 72px;
+    height: 72px;
+    border-radius: 5px 0 0 5px;
+    background-color: var(--accent_color02);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .mail_icon > img {
+    width: 40px;
+  }
+}
+
+/*FVの微調整*/
+@media screen and (max-width: 1010px) {
+  /*コンセプト・スクロールバー*/
+  .pf_concept {
+    width: 200px;
+  }
+
+  h1 {
+    left: -32%;
+  }
+}
+
+/*767pxスマフォ版*/
+@media screen and (max-width: 767px) {
+  /*画像*/
+  .main_visual {
+    width: 100%;
+  }
+
+  .hero_img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+  }
+
+  h1 {
+    left: 3%;
+  }
+
+  .scroll_down p {
+    left: 36px;
+  }
+  .scroll_down:after {
+    left: 44px;
+  }
+
+  .scroll_down:before {
+    left: 38.5px;
+  }
+  /*nav*/
+  .sp_btn span {
+    width: 142px;
+    height: 2px;
+  }
+
+  .sp_btn span::after {
+    width: 142px;
+    height: 2px;
+  }
+
+  /*メールアイコン*/
+  .mail_icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .mail_icon > img {
+    width: 28px;
+  }
+
+  .scroll_down {
+    display: none;
+  }
+
+  /*WORKS SP*/
+  /*配置*/
+  .works_section {
+    margin: 96px auto 0 auto;
+  }
+
+  .works_header {
+    margin-right: 7.5%;
+  }
+
+  .works_section article div {
+    flex-direction: column;
+    width: 83.3%;
+    margin: 0 auto;
+  }
+
+  .works_section article div div {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /*文字と画像順番*/
+  /*ポートフォリオ順番*/
+  .sp_order_wrapper_01 .order_item_01,
+  .sp_order_wrapper_01 .order_item_02 {
+    display: contents;
+  }
+
+  .sp_order_wrapper_01 .works_category {
+    order: 1;
+  }
+  .sp_order_wrapper_01 .works_title {
+    order: 2;
+  }
+  .sp_order_wrapper_01 .works_item {
+    order: 3;
+  }
+  .sp_order_wrapper_01 .works_discription {
+    order: 4;
+  }
+  .sp_order_wrapper_01 .works_sub_category {
+    order: 5;
+  }
+  .sp_order_wrapper_01 .works_btn {
+    order: 6;
+  }
+  /*デザインカフェ順番*/
+  /* .sp_order_wrapper_03 .order_item_05,
+  .sp_order_wrapper_03 .order_item_06 {
+    display: contents;
+  }
+
+  .sp_order_wrapper_03 .works_category {
+    order: 1;
+  }
+  .sp_order_wrapper_03 .works_title {
+    order: 2;
+  }
+  .sp_order_wrapper_03 .works_item {
+    order: 3;
+  }
+  .sp_order_wrapper_03 .works_discription {
+    order: 4;
+  }
+  .sp_order_wrapper_03 .works_sub_category {
+    order: 5;
+  }
+  .sp_order_wrapper_03 .works_btn {
+    order: 6;
+  } */
+
+  /*WORKS SPの共通コンテンツ*/
+  .works_category {
+    align-self: flex-start;
+    margin-top: 48px;
+  }
+  .works_title {
+    font-size: 0.875rem;
+    font-weight: bold;
+    margin-top: 8px;
+    align-self: flex-start;
+  }
+
+  .works_discription {
+    font-size: 0.8125rem;
+    line-height: 1.54;
+    margin-top: 24px;
+  }
+
+  /*SPカテゴリーの青い点線*/
+  .works_sub_category::after {
+    content: "";
+    display: block;
+    width: 149px;
+    border-bottom: 1px dotted var(--accent_color01);
+    padding-top: 4px;
+  }
+
+  .works_sub_category02::after {
+    content: "";
+    display: block;
+    width: 108px;
+    border-bottom: 1px dotted var(--accent_color01);
+    padding-top: 4px;
+  }
+  /*WORKS_ボタン*/
+  /* .works_btn {
+  display: inline-block;
+  width: 226px;
+  font-size: 0.875rem;
+  border: 1px dotted #3e3e3e;
+  border-radius: 5px;
+  padding: 16px 0;
   display: flex;
+  justify-content: center;
   align-items: center;
+  margin-top: 48px;
 } */
 
-/* 
+  /* .works_btn::after {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  border-bottom: 1px solid var(--base_color_light);
+  margin-left: 16px;
+} */
 
+  /*SP版ABOUT*/
+  /*flex解除 floatがきかない・・・*/
+  .about_section {
+    padding: 0 40px;
+  }
+
+  .about_wrapper {
+    display: block;
+  }
+
+  .name_wrapper {
+    flex-direction: column;
+  }
+
+  /*SP版ページ中間のバー*/
+  .bar {
+    height: 360px;
+  }
+
+  .bar div:after {
+    height: 168px;
+  }
+
+  .bar div:before {
+    width: 10px;
+    height: 10px;
+  }
+
+  /*SP版コンタクト*/
+  .contact_section {
+    padding: 0 40px;
+  }
+  .contact_wrapper {
+    flex-direction: column;
+    margin-top: 52px;
+  }
+
+  .contact_wrapper > div,
+  .contact_wrapper > form {
+    width: 100%;
+  }
+
+  /*文字位置調整*/
+  .c-form_item:first-child {
+    margin-top: 28px;
+  }
+  .contact_wrapper > div > p {
+    font-size: 0.75rem;
+  }
+
+  .c-form_label {
+    font-size: 0.875rem;
+  }
+
+  .c-form_item:not(:first-child) .c-form_label {
+    margin-top: 33px;
+  }
+
+  .c-form_input {
+    margin-top: 4px;
+  }
+  .c-form_submit {
+    margin: 56px auto 0 auto;
+    max-width: 306px;
+  }
+
+  /* SP版フッター */
+  footer {
+    margin: 268px 0 48px 0;
+  }
+}
+
+/*
 〜新しい質問〜
-・pf_conceptクラスは、1340pxのとき262pxにしたいが、デベロッパーツールでみるとなぜか300pxになっている。
-・works 「view more」ボタンと画像の下のラインはそろえることができたが、「＃Website」なども画像の頭と揃えたい。
-・aboutの背景画像。次のセクションとの境目がくっきりわかれてしまっている。本当はデザインデータのように境目をなくしたい。
-・about_headerを常にデザインとおりの位置に配置したい。今は％で記述してしまっていることが原因かと思うが、うまく変更できなかった。
+・.roop_design01の配置に苦戦。1340px以下になると、どんどん.hero_imgに近づいてやがて画面から消えてしまう。
+本当はどの画面幅でも、比率を保って、.hero_imgとの距離を一定に保ちたい。
+positonの使い方がイマイチ理解できていない・・・.
+top-480pxというのは、headerを親としているのか、.main_visualを親としているのか・・・
+.main_visualを親にすれば、画像同士の距離を一定にできると思ったものの、実現できなかった。
 
+・SP版WORKS部分、文字で画像を挟むデザイン。ポートフォリオの部分は並び替えができたが、
+ヘアサロンやDESIGNCAFEには効かない。
+
+・About部分、文字が画像に沿うようなデザインをしたいが、うまくできない・・・
+floatで試してみましたが、文章と画像が２段に分かれてしまう。
+
+〜授業時に確認〜
+・SP版のFVの相談
+・ギットハブ　スマホ確認できるURLについて
 
 〜回答済み〜
 .(回答いただき済み：授業）コンセプトの配置に苦戦。
 　1)vhで計算したものの、1340px幅（本当は1440pxでデザインしなくてはいけなかったのに間違えていました・・・）にしたときの見え方が、aiデータより下に見える。なぜか？
 　２）画面幅を拡大・縮小したときに位置が大きくずれる
 
-・（回答いただき済み：自分で挑戦）scroll
-　グラデーションが反映しない。
-　colorプロパティには単色しか反映しない？ 
-  background-cripプロパティを使用して背景色を文字にクリッピングするのがよい方法なのか？
-
 ★(回答いただき済み)
 ・ファビコンずれてる？デザインの問題か？
 ・画像が荒い。書き出しの問題というよりは、もともとのデータのせいか？
- 
+・pf_conceptクラスは、1340pxのとき262pxにしたいが、デベロッパーツールでみるとなぜか300pxになっている。
+・works 「view more」ボタンと画像の下のラインはそろえることができたが、「＃Website」なども画像の頭と揃えたい。
+・aboutの背景画像。次のセクションとの境目がくっきりわかれてしまっている。本当はデザインデータのように境目をなくしたい。
+・about_headerを常にデザインとおりの位置に配置したい。今は％で記述してしまっていることが原因かと思うが、うまく変更できなかった。
+
 
 
 〜自分用メモ〜
-・ヘッダーの視認性UPどうするか？
-・FVの位置調整
-・あしらいを画像に。
-・スマフォ版
+・ヘッダーの視認性UPどうするか
+・トップのSP版のボタンリンクしていない
+・画像を入れ替え
+
 
 
 ・コンタクトフォームうまくできているのか？
