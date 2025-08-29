@@ -35,10 +35,6 @@ header {
 }
 
 /*SPナnav非表示*/
-.sp_btn,
-.sp_nav {
-  display: none;
-}
 
 .header_list {
   display: flex;
@@ -626,7 +622,8 @@ footer p {
   }
 
   /*ナビゲーション*/
-  .pc_nav {
+  .pc_nav,
+  .sp_nav {
     display: none;
   }
 
@@ -641,34 +638,73 @@ footer p {
     z-index: 100; /*positionが設定されていないと効果なし*/
   }
 
-  .sp_btn span {
+  .sp_btn span:nth-of-type(1) {
     display: block; /*spanタグはinline要素なため、幅高さを設定できないためblock要素にしてあげる*/
     width: 188px;
-    height: 2px;
+    height: 1.5px;
     background: #3e3e3e;
     border-radius: 5px;
     /* 位置の調整 */
     position: relative;
-    /* top: 10px; 今ある場所から指定分動かせる */
-    /* transition: 0.3s; */
+    transition: 0.3s;
   }
 
-  .sp_btn span::after {
+  .sp_btn span:nth-of-type(2) {
     content: "";
     display: block;
     width: 188px;
-    height: 2px;
+    height: 1.5px;
     background: #3e3e3e;
     border-radius: 5px;
     position: absolute;
-    /* transition: 0.3s; */
-  }
-
-  .sp_btn span::after {
     top: 18px;
+    transition: 0.3s;
   }
 
   /*メニュー動かす*/
+  .sp_btn.open span:nth-of-type(1) {
+    transform: rotate(5deg);
+    transform-origin: center;
+  }
+
+  .sp_btn.open span:nth-of-type(2) {
+    top: 0;
+    transform: rotate(-5deg);
+    transform-origin: center;
+  }
+
+  /*メニューの中身*/
+  .sp_nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(203, 211, 221, 0.6);
+  }
+
+  .sp_nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 150px;
+    gap: 56px;
+    height: 100%;
+    z-index: 1000;
+  }
+
+  .sp_nav ul li {
+    font-size: 1.44rem;
+  }
+
+  .sp_nav ul li:last-child {
+    width: 195px;
+  }
+
+  /*画面を固定・コンセプトやスクロールバーを非表示*/
+  body.menu_fix {
+    overflow: hidden;
+  }
 
   /*わかりにくいから一旦消す*/
   .roop_wrapper {
@@ -734,16 +770,6 @@ footer p {
 
   .scroll_down:before {
     left: 38.5px;
-  }
-  /*nav*/
-  .sp_btn span {
-    width: 142px;
-    height: 2px;
-  }
-
-  .sp_btn span::after {
-    width: 142px;
-    height: 2px;
   }
 
   /*メールアイコン*/
@@ -976,6 +1002,9 @@ floatで試してみましたが、文章と画像が２段に分かれてしま
 〜授業時に確認〜
 ・SP版のFVの相談
 ・ギットハブ　スマホ確認できるURLについて
+..sp_btn.open .sp_btn. open 　や　.openではなぜだめなのか・・・
+・SP版メニュー開いた時、マージンで配置を整えているけど、いいかな？
+
 
 〜回答済み〜
 .(回答いただき済み：授業）コンセプトの配置に苦戦。

@@ -4,9 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>portfolio</title>
+    
     <link rel="icon" href="./images/1x/favicon.png" />
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   </head>
   <body>
     <!-- FV -->
@@ -77,20 +79,20 @@
       </nav>
 
       <!--SPナビゲーション -->
-      <div class="sp_btn"><span></span></div>
+      <div class="sp_btn"><span></span><span></span></div>
       <nav class="sp_nav">
         <ul class="sp_header_list">
           <li class="sp_header_list_item">
-            <a href="#">/ Home</a>
+            <a href="#top">/ Home</a>
           </li>
           <li class="sp_header_list_item">
-            <a href="#">/ Works</a>
+            <a href="#works_all">/ Works</a>
           </li>
           <li class="sp_header_list_item">
-            <a href="#">/ About</a>
+            <a href="#about_me">/ About</a>
           </li>
           <li class="sp_header_list_item">
-            <a href="#"
+            <a href="#c-form"
               ><img
                 class="sp_header_nav_btn"
                 src="./images/1x/header_nav.svg"
@@ -326,5 +328,25 @@
         <p>&copy;2025 Kiyori Iwasawa</p>
       </footer>
     </main>
+<!-- jquery -->
+ <script>
+      $(function(){
+      $('.sp_btn').on('click',function(){
+        // メニュー閉じたり開いたり
+        $('.sp_btn').toggleClass('open');
+        $('.sp_nav').fadeToggle();
+        $("body").toggleClass("menu_fix");
+
+       
+        //コンセプトやメールアイコンを非表示
+        // $('fv_concept').hide();
+        //メニュー開いて閉じた時の動きはOK。あとはリンク先に飛んだ時に、画面が固定される。HOMEに飛ばない
+        //コンセプトとかスクロールバーを非表示にする
+      })
+
+  });
+
+  </script>
   </body>
+
 </html>
