@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>portfolio</title>
-    
+
     <link rel="icon" href="./images/1x/favicon.png" />
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
@@ -40,14 +40,6 @@
             alt="メインビジュアル_ポートフォリオ作者の画像"
           />
         </picture>
-        <!-- あしらい１ -->
-        <!-- <div class="roop_wrapper">
-          <img
-            src="./images/1x/roop_design01.svg"
-            alt=""
-            class="roop_design01"
-          />
-        </div> -->
       </div>
 
       <!-- あしらい１ -->
@@ -104,7 +96,7 @@
 
       <!-- SP固定メールあいこん -->
       <div class="mail_icon">
-      <img src="./images/1x/SP_mail_icon.svg" alt="メールのアイコン" />
+        <img src="./images/1x/SP_mail_icon.svg" alt="メールのアイコン" />
       </div>
 
       <!-- FVスクロールバー -->
@@ -118,9 +110,9 @@
       <section class="works_section" id="works_all">
         <h2 class="works_header"><span>Works</span></h2>
         <!-- ポートフォリオ -->
-        <article class="sp_order_wrapper_01">
+        <article>
           <div>
-            <div class="order_item_01">
+            <div class="works_content01">
               <p class="works_category">#Website</p>
               <h3 class="works_title">ポートフォリオ</h3>
               <p class="works_discription">
@@ -130,7 +122,7 @@
               <a class="works_btn" href="works_pf.html">View more</a>
             </div>
 
-            <div class="order_item_02">
+            <div>
               <img
                 class="works_item"
                 src="./images/1x/works_01_pc.png"
@@ -141,9 +133,9 @@
         </article>
 
         <!-- ヘアサイト -->
-        <article class="sp_order_wrapper_02">
+        <article>
           <div>
-            <div class="order_item_03">
+            <div>
               <img
                 class="works_item"
                 src="./images/1x/works_02_pc.png"
@@ -151,32 +143,32 @@
               />
             </div>
 
-            <div class="works_content order_item_04">
-              <p class="works_category">#Website</p>
-              <h3 class="works_title">Re LIFE様</h3>
-              <p class="works_discription">
+            <div class="works_content">
+              <p class="works_category02">#Website</p>
+              <h3 class="works_title02">Re LIFE様</h3>
+              <p class="works_discription02">
                 仮想のヘアサロンサイトをデザインしました。コーポレートカラーのピンクを基調に、お店の雰囲気や人が感じられるサイトに仕上げました。
               </p>
-              <p class="works_sub_category">[ Category : design, coding ]</p>
-              <a class="works_btn" href="works_hairsalon.html">View more</a>
+              <p class="works_sub_category02">[ Category : design ]</p>
+              <a class="works_btn02" href="works_hairsalon.html">View more</a>
             </div>
           </div>
         </article>
 
         <!-- カフェサイト -->
-        <article class="sp_order_wrapper_03">
-          <div class="order_item_05">
-            <div class="works_content">
+        <article>
+          <div>
+            <div class="works_content02">
               <p class="works_category">#Website</p>
               <h3 class="works_title">DESIGN CAFE様</h3>
               <p class="works_discription">
-                コ仮想のカフェサイトを制作しました。レスポンシブ対応で、スマートフォンからPCまで快適に閲覧できるよう設計しています。また、jQueryを活用し、スクロールやボタン操作にアニメーションを取り入れることで、サイト全体にやさしい動きを加え心地よく閲覧できる工夫をこらしました。
+                仮想のカフェサイトを制作しました。レスポンシブ対応で、スマートフォンからPCまで快適に閲覧できるよう設計しています。また、jQueryを活用し、スクロールやボタン操作にアニメーションを取り入れることで、サイト全体にやさしい動きを加え心地よく閲覧できる工夫をこらしました。
               </p>
-              <p class="works_sub_category02">[ Category : coding ]</p>
+              <p class="works_sub_category03">[ Category : coding ]</p>
               <a class="works_btn" href="works_cafesite.html">View more</a>
             </div>
 
-            <div class="order_item_06">
+            <div class="order">
               <img
                 class="works_item"
                 src="./images/1x/works_03_pc.png"
@@ -206,7 +198,14 @@
         <div>
           <h2 class="about_header">About</h2>
           <div class="about_wrapper">
-            <div class=>
+            <div calss="about_img_wrapper">
+              <img
+                class="about_img"
+                src="./images/1x/about.png"
+                alt="岩沢 清里の写真"
+              />
+            </div>
+            <div class="profile_wrapper">
               <div class="name_wrapper">
                 <p>岩沢 清里</p>
                 <p>IWASAWA KIYORI</p>
@@ -217,13 +216,6 @@
                 制作を開始する前には、まずWEB面談にてご要望や状況をお伺いしております。その上で、ご依頼いただくかどうかをご判断いただけますので、ぜひお気軽にご相談ください。
               </p>
               <a class="about_btn" href="about.html">View more</a>
-            </div>
-            <div>
-              <img
-                class="about_img"
-                src="./images/1x/about.png"
-                alt="岩沢 清里の写真"
-              />
             </div>
           </div>
         </div>
@@ -328,25 +320,33 @@
         <p>&copy;2025 Kiyori Iwasawa</p>
       </footer>
     </main>
-<!-- jquery -->
- <script>
-      $(function(){
-      $('.sp_btn').on('click',function(){
-        // メニュー閉じたり開いたり
-        $('.sp_btn').toggleClass('open');
-        $('.sp_nav').fadeToggle();
-        $("body").toggleClass("menu_fix");
+    <!-- jquery -->
+    <script>
+      $(function () {
+        $(".sp_btn").on("click", function () {
+          // メニュー閉じたり開いたり
+          $(".sp_btn").toggleClass("open");
+          $(".sp_nav").fadeToggle();
+          $("body").toggleClass("menu_fix");
 
-       
-        //コンセプトやメールアイコンを非表示
-        // $('fv_concept').hide();
-        //メニュー開いて閉じた時の動きはOK。あとはリンク先に飛んだ時に、画面が固定される。HOMEに飛ばない
-        //コンセプトとかスクロールバーを非表示にする
-      })
+          //コンセプトやメールアイコンを非表示
+          $(".pf_title").toggleClass("invisible");
+          $(".pf_concept").toggleClass("invisible");
+          $(".mail_icon").toggleClass("invisible");
+          $(".scroll_down").toggleClass("invisible");
+        });
+        //リンク飛んだ後元通りにする
+        $(".sp_header_list_item a").on("click", function () {
+          $("body").removeClass("menu_fix");
+          $(".sp_nav").fadeToggle();
+          $(".sp_btn").removeClass("open");
 
-  });
-
-  </script>
+          $(".pf_title").removeClass("invisible");
+          $(".pf_concept").removeClass("invisible");
+          $(".mail_icon").removeClass("invisible");
+          $(".scroll_down").removeClass("invisible");
+        });
+      });
+    </script>
   </body>
-
 </html>

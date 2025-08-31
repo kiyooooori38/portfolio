@@ -34,7 +34,10 @@ header {
   padding-right: 7px;
 }
 
-/*SPナnav非表示*/
+/*SPnav非表示*/
+.sp_nav {
+  display: none;
+}
 
 .header_list {
   display: flex;
@@ -151,23 +154,17 @@ h1 div:last-child {
 }
 
 /*あしらい０１*/
-/* .roop_wrapper {
-  width: 100vw;
-  margin: 0 calc(50% - 50vw);
-  position: absolute;
-  top: 640px;
-} */
-
 .roop_wrapper {
   max-width: 1440px;
   margin-left: auto;
-  position: relative;
+  position: absolute;
+  bottom: -560px;
+  right: 0;
+  width: 100%;
 }
 
 .roop_design01 {
   width: 100%;
-  position: absolute;
-  top: -480px;
 }
 
 /* WORKS parallaxまで手をつけれたらいいな*/
@@ -223,13 +220,18 @@ article:not(:first-of-type) > div > div {
 }
 
 /*WORKSの共通コンテンツ*/
-.works_content {
-  padding-top: 38px;
+.works_content,
+.works_content01,
+.works_content02 {
+  padding-top: 32px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
 
+.works_content01 {
+  padding-top: 0;
+}
 .order_item_01 {
   display: flex;
   flex-direction: column;
@@ -237,24 +239,29 @@ article:not(:first-of-type) > div > div {
 }
 
 .works_category,
+.works_category02,
 .works_sub_category,
-.works_sub_category02 {
+.works_sub_category02,
+.works_sub_category03 {
   font-size: 0.75rem;
+  color: var(--base_color_light);
 }
 
 .works_sub_category,
-.works_sub_category02 {
-  color: var(--base_color_light);
+.works_sub_category02,
+.works_sub_category03 {
   margin-top: 20px;
 }
 
-.works_title {
+.works_title,
+.works_title02 {
   font-size: 1.125rem;
   font-weight: bold;
   margin-top: 24px;
 }
 
-.works_discription {
+.works_discription,
+.works_discription02 {
   font-size: 0.875rem;
   line-height: 1.86;
   margin-top: 40px;
@@ -269,6 +276,7 @@ article:not(:first-of-type) > div > div {
   padding-top: 4px;
 }
 
+.works_sub_category03::after,
 .works_sub_category02::after {
   content: "";
   display: block;
@@ -277,7 +285,8 @@ article:not(:first-of-type) > div > div {
   padding-top: 4px;
 }
 /*WORKS_ボタン*/
-.works_btn {
+.works_btn,
+.works_btn02 {
   display: inline-block;
   width: 226px;
   font-size: 0.875rem;
@@ -290,7 +299,8 @@ article:not(:first-of-type) > div > div {
   margin-top: 48px;
 }
 
-.works_btn::after {
+.works_btn::after,
+.works_btn02::after {
   content: "";
   display: inline-block;
   width: 16px;
@@ -355,16 +365,17 @@ article:not(:first-of-type) > div > div {
 .about_wrapper {
   display: flex;
   justify-content: space-between;
+  flex-direction: row-reverse;
   max-width: 830px;
   margin: 118px auto 0 auto;
-  padding: 0 20px 24px 20px;
+  padding: 0 20px 168px 20px;
 }
 
-.about_wrapper > div:first-child {
+.profile_wrapper {
   width: 45%;
 }
 
-.about_wrapper > div:last-child {
+.about_img_wrapper {
   width: 312px;
   max-width: 312px;
 }
@@ -599,6 +610,61 @@ footer p {
   text-align: center;
 }
 
+/*別ページ：WORKS_ALL*/
+.works_all_wrapper {
+  max-width: 1000px;
+  margin: 308px auto 0 auto;
+}
+
+.works_all_header {
+  font-weight: bold;
+  text-align: left;
+  font-size: 1.5rem;
+}
+
+.works_all_header > span {
+  /* グラデーション 動きをつける*/
+  background: linear-gradient(90deg, #181e4d, 80%, #8aecff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.works_all_section {
+  max-width: 914px;
+  margin-left: auto;
+  margin-top: 96px;
+}
+.works_all_discription {
+  font-size: 1rem;
+  line-height: 1.62;
+}
+
+/*別ページ：WORKS_ALL 一覧コンテンツ部分 flex */
+.flex_01 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex_01_innner {
+  max-width: 43.8%;
+}
+
+.flex_item {
+  padding: 4px;
+  border: 1px solid var(--accent_color01);
+  border-radius: 5px;
+}
+
+.flex_item_img {
+  width: 100%;
+  filter: grayscale(100%);
+}
+
+.flex_item_img:hover {
+  filter: grayscale(0);
+  transition: 0.5s;
+}
+
 /*FVコンセプトやスクロールバーの位置がおかしくなるタイミングで切り替え*/
 @media screen and (max-width: 1150px) {
   /*コンセプト・スクロールバー*/
@@ -706,8 +772,10 @@ footer p {
     overflow: hidden;
   }
 
-  /*わかりにくいから一旦消す*/
-  .roop_wrapper {
+  .pf_title.invisible,
+  .pf_concept.invisible,
+  .mail_icon.invisible,
+  .scroll_down.invisible {
     display: none;
   }
 
@@ -729,6 +797,141 @@ footer p {
 
   .mail_icon > img {
     width: 40px;
+  }
+
+  /*WORKS*/
+  /*WORKS SP*/
+  /*配置*/
+  .works_section {
+    margin: 96px auto 0 auto;
+  }
+
+  .works_header {
+    margin-right: 7.5%;
+  }
+
+  .works_section article div {
+    flex-direction: column;
+    width: 83.3%;
+    margin: 0 auto;
+  }
+
+  .works_section article div div {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  article:first-of-type {
+    margin-top: 48px;
+  }
+
+  article:not(:first-of-type) {
+    margin-top: 72px;
+  }
+
+  /*文字と画像順番*/
+
+  /*ヘアサロン順番*/
+  .works_content {
+    display: contents;
+  }
+
+  .works_category02 {
+    order: -1;
+  }
+
+  .works_title02 {
+    order: -1;
+  }
+
+  /*ポートフォリオ・カフェ順番*/
+  .works_content01,
+  .works_content02 {
+    display: contents;
+  }
+
+  .works_category {
+    order: -1;
+  }
+
+  .works_title {
+    order: -1;
+  }
+
+  .works_item {
+    order: 0;
+  }
+
+  .works_discription {
+    order: 1;
+  }
+
+  .works_sub_category,
+  .works_sub_category03 {
+    order: 2;
+  }
+  .works_btn {
+    order: 3;
+  }
+
+  /*WORKS SPの共通コンテンツ*/
+  .works_item {
+    width: 100%;
+  }
+
+  article:first-of-type .works_item {
+    margin-top: 24px;
+  }
+
+  .works_category,
+  .works_category02 {
+    align-self: flex-start;
+    margin-top: 48px;
+  }
+  .works_title,
+  .works_title02 {
+    font-size: 0.875rem;
+    font-weight: bold;
+    margin-top: 8px;
+    align-self: flex-start;
+  }
+
+  .works_discription,
+  .works_discription02 {
+    font-size: 0.8125rem;
+    line-height: 1.54;
+    margin-top: 24px;
+  }
+
+  /*SPカテゴリーの青い点線*/
+  .works_sub_category::after {
+    content: "";
+    display: block;
+    width: 149px;
+    border-bottom: 1px dotted var(--accent_color01);
+    padding-top: 4px;
+  }
+
+  .works_sub_category02::after,
+  .works_sub_category03::after {
+    content: "";
+    display: block;
+    width: 108px;
+    border-bottom: 1px dotted var(--accent_color01);
+    padding-top: 4px;
+  }
+  /*SP版WORKS_ボタン*/
+  .works_btn,
+  .works_btn02 {
+    width: 152px;
+    font-size: 0.875rem;
+    padding: 16px 10px;
+    margin-left: auto;
+  }
+
+  .view_all_wrapper {
+    max-width: 300px;
+    margin-top: 108px;
   }
 }
 
@@ -786,145 +989,68 @@ footer p {
     display: none;
   }
 
-  /*WORKS SP*/
-  /*配置*/
-  .works_section {
-    margin: 96px auto 0 auto;
-  }
-
-  .works_header {
-    margin-right: 7.5%;
-  }
-
-  .works_section article div {
-    flex-direction: column;
-    width: 83.3%;
-    margin: 0 auto;
-  }
-
-  .works_section article div div {
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  /*文字と画像順番*/
-  /*ポートフォリオ順番*/
-  .sp_order_wrapper_01 .order_item_01,
-  .sp_order_wrapper_01 .order_item_02 {
-    display: contents;
-  }
-
-  .sp_order_wrapper_01 .works_category {
-    order: 1;
-  }
-  .sp_order_wrapper_01 .works_title {
-    order: 2;
-  }
-  .sp_order_wrapper_01 .works_item {
-    order: 3;
-  }
-  .sp_order_wrapper_01 .works_discription {
-    order: 4;
-  }
-  .sp_order_wrapper_01 .works_sub_category {
-    order: 5;
-  }
-  .sp_order_wrapper_01 .works_btn {
-    order: 6;
-  }
-  /*デザインカフェ順番*/
-  /* .sp_order_wrapper_03 .order_item_05,
-  .sp_order_wrapper_03 .order_item_06 {
-    display: contents;
-  }
-
-  .sp_order_wrapper_03 .works_category {
-    order: 1;
-  }
-  .sp_order_wrapper_03 .works_title {
-    order: 2;
-  }
-  .sp_order_wrapper_03 .works_item {
-    order: 3;
-  }
-  .sp_order_wrapper_03 .works_discription {
-    order: 4;
-  }
-  .sp_order_wrapper_03 .works_sub_category {
-    order: 5;
-  }
-  .sp_order_wrapper_03 .works_btn {
-    order: 6;
-  } */
-
-  /*WORKS SPの共通コンテンツ*/
-  .works_category {
-    align-self: flex-start;
-    margin-top: 48px;
-  }
-  .works_title {
-    font-size: 0.875rem;
-    font-weight: bold;
-    margin-top: 8px;
-    align-self: flex-start;
-  }
-
-  .works_discription {
-    font-size: 0.8125rem;
-    line-height: 1.54;
-    margin-top: 24px;
-  }
-
-  /*SPカテゴリーの青い点線*/
-  .works_sub_category::after {
-    content: "";
-    display: block;
-    width: 149px;
-    border-bottom: 1px dotted var(--accent_color01);
-    padding-top: 4px;
-  }
-
-  .works_sub_category02::after {
-    content: "";
-    display: block;
-    width: 108px;
-    border-bottom: 1px dotted var(--accent_color01);
-    padding-top: 4px;
-  }
-  /*WORKS_ボタン*/
-  /* .works_btn {
-  display: inline-block;
-  width: 226px;
-  font-size: 0.875rem;
-  border: 1px dotted #3e3e3e;
-  border-radius: 5px;
-  padding: 16px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 48px;
-} */
-
-  /* .works_btn::after {
-  content: "";
-  display: inline-block;
-  width: 16px;
-  border-bottom: 1px solid var(--base_color_light);
-  margin-left: 16px;
-} */
-
   /*SP版ABOUT*/
   /*flex解除 floatがきかない・・・*/
+
+  .about_header {
+    max-width: 83.3%;
+    padding-top: 64px;
+  }
+
   .about_section {
-    padding: 0 40px;
+    margin-top: 126px;
   }
 
   .about_wrapper {
     display: block;
+    max-width: 83.3%;
+    margin-top: 16px;
+    padding-bottom: 120px;
+  }
+
+  .profile_wrapper {
+    width: 100%;
+  }
+
+  .about_img {
+    width: 186px;
+    max-width: 186px;
+    float: right;
+    margin: 0 0 16px 16px;
   }
 
   .name_wrapper {
     flex-direction: column;
+  }
+
+  .name_wrapper p:first-child {
+    display: block;
+    margin-right: auto;
+    margin-top: 16px;
+    font-size: 0.875rem; /* 1つ目のp */
+  }
+
+  .name_wrapper p:last-child {
+    display: block;
+    margin-right: auto;
+    font-size: 0.625rem; /* 2つ目のp */
+    padding-top: 4px;
+    padding-left: 0;
+  }
+
+  .about_discription {
+    font-size: 0.812rem;
+    line-height: 1.54;
+    padding-top: 32px;
+  }
+
+  .about_discription > br {
+    display: none;
+  }
+
+  .about_btn {
+    width: 280px;
+    margin: 56px auto 0 auto;
   }
 
   /*SP版ページ中間のバー*/
@@ -987,23 +1113,22 @@ footer p {
 
 /*
 〜新しい質問〜
-・.roop_design01の配置に苦戦。1340px以下になると、どんどん.hero_imgに近づいてやがて画面から消えてしまう。
-本当はどの画面幅でも、比率を保って、.hero_imgとの距離を一定に保ちたい。
-positonの使い方がイマイチ理解できていない・・・.
-top-480pxというのは、headerを親としているのか、.main_visualを親としているのか・・・
-.main_visualを親にすれば、画像同士の距離を一定にできると思ったものの、実現できなかった。
+・works_all.htmlについて
+　作品の配置がうまくいかない。
+　①gridでなくflexの使用がよいか？（gridでトライしたものの、１枚目の画像が元々他の画像の高さ２倍だったからか上手く配置できなかった。
+　②flexで画像は３枚配置できたものの、htmlの80行目・89行目を記述すると文字とセットの画像は縦並びにしたいのに横並びになってしまう。
 
-・SP版WORKS部分、文字で画像を挟むデザイン。ポートフォリオの部分は並び替えができたが、
-ヘアサロンやDESIGNCAFEには効かない。
+.コンタクトフォーム正しく実装されているか確認するためには、自分で入力・送信をしてみて、グーグルフォームに回答があるかをみればいいか
+・前回の添削の中での疑問。roop_design01の位置調整について
+なぜもともとroop_design01についていたpositionを.roop_wrapperに移動したのか？
+一般的に、imgをdivで囲っていて、その要素をたちを位置調整したい場合には、divにつけてあげるのが主流なのか？
 
-・About部分、文字が画像に沿うようなデザインをしたいが、うまくできない・・・
-floatで試してみましたが、文章と画像が２段に分かれてしまう。
+〜未対応メモ（自分で挑戦）〜
+・残りのあしらい
+・レスポンシブのFV
 
 〜授業時に確認〜
-・SP版のFVの相談
-・ギットハブ　スマホ確認できるURLについて
-..sp_btn.open .sp_btn. open 　や　.openではなぜだめなのか・・・
-・SP版メニュー開いた時、マージンで配置を整えているけど、いいかな？
+
 
 
 〜回答済み〜
@@ -1018,7 +1143,16 @@ floatで試してみましたが、文章と画像が２段に分かれてしま
 ・works 「view more」ボタンと画像の下のラインはそろえることができたが、「＃Website」なども画像の頭と揃えたい。
 ・aboutの背景画像。次のセクションとの境目がくっきりわかれてしまっている。本当はデザインデータのように境目をなくしたい。
 ・about_headerを常にデザインとおりの位置に配置したい。今は％で記述してしまっていることが原因かと思うが、うまく変更できなかった。
-
+・.roop_design01の配置に苦戦。1340px以下になると、どんどん.hero_imgに近づいてやがて画面から消えてしまう。
+本当はどの画面幅でも、比率を保って、.hero_imgとの距離を一定に保ちたい。
+positonの使い方がイマイチ理解できていない・・・.
+top-480pxというのは、headerを親としているのか、.main_visualを親としているのか・・・
+.main_visualを親にすれば、画像同士の距離を一定にできると思ったものの、実現できなかった。
+・SP版WORKS部分、文字で画像を挟むデザイン。ポートフォリオの部分は並び替えができたが、
+ヘアサロンやDESIGNCAFEには効かない。
+・About部分、文字が画像に沿うようなデザインをしたいが、うまくできない・・・
+floatで試してみましたが、文章と画像が２段に分かれてしまう。
+・ギットハブ　スマホ確認できるURLについて
 
 
 〜自分用メモ〜
@@ -1026,9 +1160,7 @@ floatで試してみましたが、文章と画像が２段に分かれてしま
 ・トップのSP版のボタンリンクしていない
 ・画像を入れ替え
 
-
-
-・コンタクトフォームうまくできているのか？
 ・サンクスページ未対応
 ・コピーライトこれでいいのか？
+・ABOUTSP版文字右端ガタガタなの気になるな・・・
   */
