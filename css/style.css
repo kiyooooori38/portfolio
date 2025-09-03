@@ -35,7 +35,8 @@ header {
 }
 
 /*SPnav非表示*/
-.sp_nav {
+.sp_nav,
+.works_all_sp_nav {
   display: none;
 }
 
@@ -46,7 +47,9 @@ header {
   gap: 40px;
 }
 
-.header_list_item:hover {
+.header_list_item:hover,
+.sp_header_list_item:hover,
+.works_all_sp_header_list_item:hover {
   opacity: 0.5;
   transition: 0.5s;
 }
@@ -154,7 +157,7 @@ h1 div:last-child {
 }
 
 /*あしらい０１*/
-.roop_wrapper {
+.roop_wrapper01 {
   max-width: 1440px;
   margin-left: auto;
   position: absolute;
@@ -341,6 +344,24 @@ article:not(:first-of-type) > div > div {
   border-radius: 5px;
   margin-left: 16px;
 }
+/*あしらい０2*/
+.roop_wrapper02 {
+  max-width: 1440px;
+  /* position: relative; */
+  width: 100%;
+  position: absolute;
+  bottom: -3200px;
+  left: 0;
+  z-index: -1;
+}
+
+/* .roop_design02 {
+  width: 100%;
+  position: absolute;
+  bottom: -3200px;
+  left: 0;
+  z-index: 10;
+} */
 
 /*ABOUT*/
 .about_header {
@@ -360,6 +381,7 @@ article:not(:first-of-type) > div > div {
   box-sizing: border-box;
   position: relative;
   background-repeat: no-repeat;
+  z-index: -2;
 }
 
 .about_wrapper {
@@ -604,10 +626,22 @@ textarea.c-form_input {
 /* フッター */
 footer {
   margin: 672px 0 72px 0;
+  position: relative;
 }
+
 footer p {
   font-size: 0.625rem;
   text-align: center;
+}
+
+/*あしらい０3*/
+.roop_wrapper03 {
+  max-width: 1440px;
+  width: 90%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
 }
 
 /*別ページ：WORKS_ALL*/
@@ -643,16 +677,40 @@ footer p {
 .flex_01 {
   display: flex;
   justify-content: space-between;
+  margin-top: 72px;
+  position: relative; /*あしらい０４用*/
 }
 
-.flex_01_innner {
+.flex_02 {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 72px 0 700px 0;
+  position: relative; /*あしらい０４用*/
+}
+
+.flex_01_innner,
+.flex_02_innner {
   max-width: 43.8%;
+}
+
+.flex_01_innner:nth-of-type(2) {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+}
+
+.flex_02_inner:nth-of-type(3),
+.flex_02_inner:nth-of-type(4) {
+  margin-top: 72px;
 }
 
 .flex_item {
   padding: 4px;
   border: 1px solid var(--accent_color01);
+  background-color: #fff;
   border-radius: 5px;
+  margin-top: 8px;
 }
 
 .flex_item_img {
@@ -665,31 +723,128 @@ footer p {
   transition: 0.5s;
 }
 
+.title_flex {
+  display: flex;
+}
+
+/*別ページ：WORKS_ALL 一覧コンテンツ部分 装飾 */
+.title_flex p {
+  font-size: 0.875rem;
+}
+
+.works_all_title::after {
+  content: ":";
+  padding: 0 4px;
+}
+
+.works_all_title:nth-of-type(3) {
+  margin-top: 45px;
+}
+.works_all_category {
+  text-align: right;
+  color: var(--accent_color01);
+  font-size: 0.75rem;
+  margin-top: 8px;
+}
+
+/*あしらい０4*/
+.roop_wrapper04 {
+  max-width: 1440px;
+  margin-left: auto;
+  position: absolute;
+  top: -600px;
+  right: 0;
+  width: 100%;
+  margin: 0 calc(50% - 50vw);
+  z-index: -1;
+}
+
+.roop_wrapper05 {
+  max-width: 1440px;
+  margin-left: auto;
+  position: absolute;
+  bottom: -500px;
+  left: 0;
+  width: 100%;
+  margin: 0 calc(50% - 50vw);
+  z-index: -1;
+}
+
+.roop_design04,
+.roop_design05 {
+  width: 100%;
+}
+
+/*別ページ　WORKSバナー０１*/
+.works_banner01 {
+  margin-top: 280px;
+}
+
+.banner_wrapper {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.banner_wrapper > section {
+  margin-top: 280px;
+}
+
+/*画像中央寄せ*/
+.banner_img {
+  width: 100%;
+  border: 1px solid #cccc;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 28px;
+}
+
+.banner_img > img {
+  padding: 4px;
+}
+
+/*WORKSBANNER 余白*/
+.banner_wrapper > section p:nth-child(2) {
+  margin-top: 16px;
+}
+
 /*FVコンセプトやスクロールバーの位置がおかしくなるタイミングで切り替え*/
 @media screen and (max-width: 1150px) {
-  /*コンセプト・スクロールバー*/
+  /* コンセプト・スクロールバー*/
+  .main_visual {
+    width: 455px;
+  }
+
   .pf_concept {
     width: 220px;
   }
 
   h1 {
-    left: -35%;
+    top: 200px;
+    left: -43%;
   }
 
   .scroll_down p {
-    left: 36px;
+    left: 62px;
   }
   .scroll_down:after {
-    left: 44px;
+    left: 70px;
   }
 
   .scroll_down:before {
-    left: 38.5px;
+    left: 64.5px;
+  }
+
+  .roop_wrapper01 {
+    bottom: -320px;
+    width: 80%;
   }
 
   /*ナビゲーション*/
   .pc_nav,
-  .sp_nav {
+  .sp_nav,
+  .works_all_sp_nav {
     display: none;
   }
 
@@ -703,8 +858,20 @@ footer p {
     right: 32px;
     z-index: 100; /*positionが設定されていないと効果なし*/
   }
+  /*作品全ページメニュー*/
+  .works_all_sp_btn {
+    display: block; /*表示させてあげますよ*/
+    height: 23px;
+    cursor: pointer;
+    /* 位置の調整 */
+    position: absolute;
+    top: -270px;
+    right: 32px;
+    z-index: 100; /*positionが設定されていないと効果なし*/
+  }
 
-  .sp_btn span:nth-of-type(1) {
+  .sp_btn span:nth-of-type(1),
+  .works_all_sp_btn span:nth-of-type(1) {
     display: block; /*spanタグはinline要素なため、幅高さを設定できないためblock要素にしてあげる*/
     width: 188px;
     height: 1.5px;
@@ -715,7 +882,8 @@ footer p {
     transition: 0.3s;
   }
 
-  .sp_btn span:nth-of-type(2) {
+  .sp_btn span:nth-of-type(2),
+  .works_all_sp_btn span:nth-of-type(2) {
     content: "";
     display: block;
     width: 188px;
@@ -728,12 +896,14 @@ footer p {
   }
 
   /*メニュー動かす*/
-  .sp_btn.open span:nth-of-type(1) {
+  .sp_btn.open span:nth-of-type(1),
+  .works_all_sp_btn.open span:nth-of-type(1) {
     transform: rotate(5deg);
     transform-origin: center;
   }
 
-  .sp_btn.open span:nth-of-type(2) {
+  .sp_btn.open span:nth-of-type(2),
+  .works_all_sp_btn.open span:nth-of-type(2) {
     top: 0;
     transform: rotate(-5deg);
     transform-origin: center;
@@ -749,7 +919,18 @@ footer p {
     background: rgba(203, 211, 221, 0.6);
   }
 
-  .sp_nav ul {
+  .works_all_sp_nav {
+    position: absolute;
+    top: -308px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(203, 211, 221);
+    z-index: 10;
+  }
+
+  .sp_nav ul,
+  .works_all_sp_nav ul {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -759,11 +940,13 @@ footer p {
     z-index: 1000;
   }
 
-  .sp_nav ul li {
+  .sp_nav ul li,
+  .works_all_sp_nav ul li {
     font-size: 1.44rem;
   }
 
-  .sp_nav ul li:last-child {
+  .sp_nav ul li:last-child,
+  .works_all_sp_nav ul li:last-child {
     width: 195px;
   }
 
@@ -799,8 +982,7 @@ footer p {
     width: 40px;
   }
 
-  /*WORKS*/
-  /*WORKS SP*/
+  /* トップWORKS SP*/
   /*配置*/
   .works_section {
     margin: 96px auto 0 auto;
@@ -933,22 +1115,110 @@ footer p {
     max-width: 300px;
     margin-top: 108px;
   }
-}
 
-/*FVの微調整*/
-@media screen and (max-width: 1010px) {
-  /*コンセプト・スクロールバー*/
+  /*works_all SP版*/
+  .works_all_wrapper {
+    max-width: 90%;
+  }
+
+  .flex_01,
+  .flex_02 {
+    max-width: 100%;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .flex_01_innner,
+  .flex_02_innner {
+    max-width: 100%;
+  }
+
+  .flex_02 {
+    flex-wrap: nowrap;
+  }
+
+  .flex_02_inner:nth-of-type(3),
+  .flex_02_inner:nth-of-type(4) {
+    margin-top: 0;
+  }
+
+  .title_flex {
+    flex-direction: column;
+  }
+  .title_flex p:nth-child(2) {
+    font-size: 1rem;
+    margin-top: 8px;
+  }
+  .works_all_discription {
+    display: block;
+    width: 100%;
+    line-height: 1.86;
+  }
+
+  .works_all_title {
+    margin-top: 108px;
+  }
+
+  .works_all_title::after {
+    content: "";
+  }
+
+  .works_all_category {
+    text-align: left;
+  }
+
+  /*スクロールバー削除*/
+  .no_scroll {
+    display: none;
+  }
+}
+/*957px版*/
+@media screen and (max-width: 957px) {
+  .main_visual {
+    width: 400px;
+  }
+
   .pf_concept {
-    width: 200px;
+    width: 190px;
   }
 
   h1 {
-    left: -32%;
+    top: 150px;
+    left: -42%;
+  }
+
+  .scroll_down p {
+    left: 55px;
+    font-size: 0.875rem;
+  }
+  .scroll_down:after {
+    left: 62px;
+    height: 180px;
+  }
+
+  .scroll_down:before {
+    left: 57.5px;
+    width: 10px;
+    height: 10px;
+  }
+  /* 
+  .roop_wrapper01 {
+    bottom: 0;
+    right: 0;
+  } */
+
+  @keyframes circlemove {
+    0% {
+      top: 730px;
+    }
+    100% {
+      top: 890px;
+    }
   }
 }
 
-/*767pxスマフォ版*/
-@media screen and (max-width: 767px) {
+/*830pxスマフォ版*/
+@media screen and (max-width: 830px) {
   /*画像*/
   .main_visual {
     width: 100%;
@@ -961,18 +1231,12 @@ footer p {
   }
 
   h1 {
-    left: 3%;
+    top: 200px;
+    left: 10%;
   }
 
-  .scroll_down p {
-    left: 36px;
-  }
-  .scroll_down:after {
-    left: 44px;
-  }
-
-  .scroll_down:before {
-    left: 38.5px;
+  .roop_wrapper01 {
+    transform: scaleX(-1);
   }
 
   /*メールアイコン*/
@@ -1113,21 +1377,29 @@ footer p {
 
 /*
 〜新しい質問〜
-・works_all.htmlについて
-　作品の配置がうまくいかない。
-　①gridでなくflexの使用がよいか？（gridでトライしたものの、１枚目の画像が元々他の画像の高さ２倍だったからか上手く配置できなかった。
-　②flexで画像は３枚配置できたものの、htmlの80行目・89行目を記述すると文字とセットの画像は縦並びにしたいのに横並びになってしまう。
-
-.コンタクトフォーム正しく実装されているか確認するためには、自分で入力・送信をしてみて、グーグルフォームに回答があるかをみればいいか
-・前回の添削の中での疑問。roop_design01の位置調整について
-なぜもともとroop_design01についていたpositionを.roop_wrapperに移動したのか？
-一般的に、imgをdivで囲っていて、その要素をたちを位置調整したい場合には、divにつけてあげるのが主流なのか？
 
 〜未対応メモ（自分で挑戦）〜
-・残りのあしらい
-・レスポンシブのFV
+・残りのあしらい（レスポンシブの０２・０３は完全未対応。０１は、一番小さい画面時が残っている。）
 
 〜授業時に確認〜
+・FVのSP版830以下のとき、写真が全画面に切り替わるのだけれど、画像・・・なんか大きい　もうすこし全体までうつしたい。７００PXくらいがちょうどいい。
+
+
+・作品全ページのあしらいがうまくいかない。flex_01を基準にしようと思った。だけど、親要素1000pに指定している中に記述したため、親の幅を超えられない。
+親を超える方法として「100vw と　」を記述する方法があるということで試す。しかし、100vwであるため横スクロールが発生する・・・。ため１００％になおしたけど、
+そうすると画像がイメージより小さくなってしまう・・・
+→flex_01に基準を設けようとするのは一般的か？
+→width150%とかにして調整することはあるのか？
+→position:relativeって親要素以外につけても機能するのか？
+いまあしらい４はworksall_sectionに入れているけど、外に出して、works_all_sectionにrelative設定しても意味あるのか？
+→あしらい２　−３０００pxに設定しているけど・・・一般的にはもっと近いものを基準とする・・・？
+
+・WORKS「ポートフォリオ」などはpではなくh３がよかった？
+・TOP画面以外のページも同じCSSファイルに記述していくの？
+・Github URLの作り方。saveが押せない。
+・サンクスページのURLってなに？？？
+・WORKSALL SP版　ポートフォリオ　配置調整 いまのHTMLで配置できるのか？
+・
 
 
 
@@ -1153,14 +1425,25 @@ top-480pxというのは、headerを親としているのか、.main_visualを�
 ・About部分、文字が画像に沿うようなデザインをしたいが、うまくできない・・・
 floatで試してみましたが、文章と画像が２段に分かれてしまう。
 ・ギットハブ　スマホ確認できるURLについて
+・works_all.htmlについて
+　作品の配置がうまくいかない。
+　①gridでなくflexの使用がよいか？（gridでトライしたものの、１枚目の画像が元々他の画像の高さ２倍だったからか上手く配置できなかった。
+　②flexで画像は３枚配置できたものの、htmlの80行目・89行目を記述すると文字とセットの画像は縦並びにしたいのに横並びになってしまう。
+
+.コンタクトフォーム正しく実装されているか確認するためには、自分で入力・送信をしてみて、グーグルフォームに回答があるかをみればいいか
+・前回の添削の中での疑問。roop_design01の位置調整について
+なぜもともとroop_design01についていたpositionを.roop_wrapperに移動したのか？
+一般的に、imgをdivで囲っていて、その要素をたちを位置調整したい場合には、divにつけてあげるのが主流なのか？
 
 
 〜自分用メモ〜
 ・ヘッダーの視認性UPどうするか
-・トップのSP版のボタンリンクしていない
 ・画像を入れ替え
 
 ・サンクスページ未対応
 ・コピーライトこれでいいのか？
 ・ABOUTSP版文字右端ガタガタなの気になるな・・・
+・WORKS全紹介ページ　カテゴリ下線をつける
+・WORKSALL SP版　ポートフォリオ　配置調整
+・.works_all_sp_nav メニュー開いた時どういうデザインにするか考える・・・
   */

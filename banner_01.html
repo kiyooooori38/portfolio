@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>portfolio - 作品紹介</title>
+    <link rel="icon" href="./images/1x/favicon.png" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body class="works_banner01">
+    <header>
+      <!-- 共通：PCナビゲーション -->
+      <nav class="pc_nav">
+        <ul class="header_list">
+          <li class="header_list_item">
+            <a href="index.html">/ Home</a>
+          </li>
+          <li class="header_list_item">
+            <a href="works_all.html">/ Works</a>
+          </li>
+          <li class="header_list_item">
+            <a href="about.html">/ About</a>
+          </li>
+          <li class="header_list_item">
+            <a href="index.html#c-form"
+              ><img
+                class="header_nav_btn"
+                src="./images/1x/header_nav.svg"
+                alt="contact button"
+            /></a>
+          </li>
+        </ul>
+      </nav>
+
+      <!--共通：SPナビゲーション -->
+      <div class="works_all_sp_btn"><span></span><span></span></div>
+      <nav class="works_all_sp_nav">
+        <ul class="works_all_sp_header_list">
+          <li class="works_all_sp_header_list_item">
+            <a href="index.html#top">/ Home</a>
+          </li>
+          <li class="works_all_sp_header_list_item">
+            <a href="#works_all_top">/ Works</a>
+          </li>
+          <li class="works_all_sp_header_list_item">
+            <a href="about.html#about_me">/ About</a>
+          </li>
+          <li class="works_all_sp_header_list_item">
+            <a href="index.html#c-form"
+              ><img
+                class="works_all_sp_header_list_item"
+                src="./images/1x/header_nav.svg"
+                alt="contact button"
+            /></a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- 共通：SP固定メールあいこん -->
+      <div class="mail_icon">
+        <img src="./images/1x/SP_mail_icon.svg" alt="メールのアイコン" />
+      </div>
+    </header>
+
+    <!-- 共通：FVスクロールバー -->
+    <div class="scroll_down no_scroll">
+      <p>SCROLL</p>
+    </div>
+
+    <!-- WORKS BANNER01 紹介ページ内容 -->
+    <main class="banner_wrapper">
+      <section>
+        <p>#Webbanner</p>
+        <p>夏限定アイスクリーム</p>
+
+        <div class="banner_img">
+          <img src="./images/1x/works_banner01-80.jpg" alt="バナー作品の画像" />
+        </div>
+
+        <p class="banner_sub_category">[ Category : design ]</p>
+
+        <p class="banner_discription">
+          夏の青空と白い雲を背景に、期間限定アイスクリームの魅力を伝える販促バナーです。サンライズオレンジとプレミアムピスタチオ、2種類のフレーバーを鮮やかな色合いで際立たせ、季節感と特別感を表現しました。キャッチコピーには視認性の高い英字フォントを用い、販売期間（7〜9月）を明確に記載することで、期間限定の魅力を強調しています。
+        </p>
+
+        <div class="banner_flex">
+          <p>Point</p>
+          <div class="banner_inner">
+            <p>
+              夏らしい爽やかな雰囲気を背景に取り入れ、フレーバーの色味を最大限引き立てる構図にしました。英字キャッチと手書き風の日本語コピーを組み合わせ、特別感と親しみやすさの両立を意識しています。
+            </p>
+            <p>
+              休日にスイーツやカフェ巡りを楽しむ20〜40代女性を想定。SNS映えを意識し、写真としても楽しめるビジュアル構成としました。
+            </p>
+          </div>
+        </div>
+        <p class="tool">【 Tool : Adobe Illustrator,Photoshop 】</p>
+      </section>
+    </main>
+
+    <footer class="works_pages_footer">
+      <p>Works all</p>
+      <div class="works_pages_bar">
+        <div></div>
+      </div>
+    </footer>
+
+    <!-- 共通：jquery -->
+    <script>
+      $(function () {
+        $(".works_all_sp_btn").on("click", function () {
+          // メニュー閉じたり開いたり
+          $(".works_all_sp_btn").toggleClass("open");
+          $(".works_all_sp_nav").fadeToggle();
+          $("body").toggleClass("menu_fix");
+
+          //コンセプトやメールアイコンを非表示
+
+          $(".mail_icon").toggleClass("invisible");
+          $(".scroll_down").toggleClass("invisible");
+        });
+        //リンク飛んだ後元通りにする
+        $(".works_all_sp_header_list_item a").on("click", function () {
+          $("body").removeClass("menu_fix");
+          $(".works_all_sp_nav").fadeToggle();
+          $(".works_all_sp_btn").removeClass("open");
+
+          $(".mail_icon").removeClass("invisible");
+          $(".scroll_down").removeClass("invisible");
+        });
+      });
+    </script>
+  </body>
+</html>

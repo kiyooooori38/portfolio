@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1227.04 970.79">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: url(#_名称未設定グラデーション_126);
+        stroke-miterlimit: 10;
+        stroke-width: 1.01px;
+      }
+
+      .cls-3 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-1" x="0" width="1227.04" height="970.79"/>
+    </clipPath>
+    <linearGradient id="_名称未設定グラデーション_126" data-name="名称未設定グラデーション 126" x1="548.72" y1="524.75" x2="1807.24" y2="524.75" gradientTransform="translate(-544.98 111.1) rotate(-4.91)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#181e4d"/>
+      <stop offset=".57" stop-color="#5a95b4"/>
+      <stop offset="1" stop-color="#8aecff"/>
+    </linearGradient>
+  </defs>
+  <g id="_編集_ワイヤーフレーム" data-name="編集_ワイヤーフレーム">
+    <g class="cls-3">
+      <path class="cls-2" d="M1254.64,124.08c-125.66,112.66-220.35,256.73-329.73,386.23-91.16,107.92-193.75,206.75-311.54,282.37-117.79,75.61-251.46,127.49-389.78,137.94-40.04,3.03-83.74,4.49-116.72-23.04-22.73-18.97-37.19-48.13-38.82-78.26-2.2-40.76,18.5-80.24,47.71-107.75,85.41-80.44,227.16-89.77,336.38-103.95,127.85-16.6,254.79-30.44,380.75-58.88,125.42-28.33,249.22-64.29,370.54-107.67,30.63-10.95,61.32-22.08,91.66-33.79"/>
+    </g>
+  </g>
+</svg>
