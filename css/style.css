@@ -2,7 +2,8 @@
 
 /* ヘッダー */
 
-header {
+header,
+footer {
   position: relative;
 }
 
@@ -36,7 +37,9 @@ header {
 
 /*SPnav非表示*/
 .sp_nav,
-.works_all_sp_nav {
+.works_all_sp_nav,
+.works_banner_sp_nav,
+.works_banner_sp_header_list {
   display: none;
 }
 
@@ -49,7 +52,8 @@ header {
 
 .header_list_item:hover,
 .sp_header_list_item:hover,
-.works_all_sp_header_list_item:hover {
+.works_all_sp_header_list_item:hover,
+.works_banner_sp_header_list_item:hover {
   opacity: 0.5;
   transition: 0.5s;
 }
@@ -311,7 +315,7 @@ article:not(:first-of-type) > div > div {
   margin-left: 16px;
 }
 
-/*WORKS_ViewAllボタン のちほどボタン背景だけ画像で準備する*/
+/*WORKS_ViewAllボタン*/
 
 .view_all_wrapper {
   max-width: 312px;
@@ -364,7 +368,8 @@ article:not(:first-of-type) > div > div {
 } */
 
 /*ABOUT*/
-.about_header {
+.about_header,
+.about_me_header {
   max-width: 1000px;
   margin: 0 auto;
   padding: 88px 20px 0 20px;
@@ -402,7 +407,8 @@ article:not(:first-of-type) > div > div {
   max-width: 312px;
 }
 
-.name_wrapper {
+.name_wrapper,
+.about_name_wrapper {
   display: flex;
   align-items: flex-end;
 }
@@ -678,7 +684,6 @@ footer p {
   display: flex;
   justify-content: space-between;
   margin-top: 72px;
-  position: relative; /*あしらい０４用*/
 }
 
 .flex_02 {
@@ -686,7 +691,6 @@ footer p {
   justify-content: space-between;
   flex-wrap: wrap;
   margin: 72px 0 700px 0;
-  position: relative; /*あしらい０４用*/
 }
 
 .flex_01_innner,
@@ -706,6 +710,7 @@ footer p {
 }
 
 .flex_item {
+  width: 100%;
   padding: 4px;
   border: 1px solid var(--accent_color01);
   background-color: #fff;
@@ -727,7 +732,14 @@ footer p {
   display: flex;
 }
 
+.title_flex:nth-of-type(3) {
+  margin-top: 45px;
+}
+
 /*別ページ：WORKS_ALL 一覧コンテンツ部分 装飾 */
+.works_all_SPtitle {
+  display: none;
+}
 .title_flex p {
   font-size: 0.875rem;
 }
@@ -752,10 +764,10 @@ footer p {
   max-width: 1440px;
   margin-left: auto;
   position: absolute;
-  top: -600px;
+  top: 100px;
   right: 0;
-  width: 100%;
-  margin: 0 calc(50% - 50vw);
+  width: 90%;
+  /* margin: 0 calc(50% - 50vw); */
   z-index: -1;
 }
 
@@ -763,10 +775,10 @@ footer p {
   max-width: 1440px;
   margin-left: auto;
   position: absolute;
-  bottom: -500px;
+  bottom: 100px;
   left: 0;
   width: 100%;
-  margin: 0 calc(50% - 50vw);
+  /* margin: 0 calc(50% - 50vw); */
   z-index: -1;
 }
 
@@ -780,7 +792,8 @@ footer p {
   margin-top: 280px;
 }
 
-.banner_wrapper {
+.banner_wrapper,
+.works_banner_bar {
   max-width: 650px;
   margin: 0 auto;
 }
@@ -789,7 +802,7 @@ footer p {
   margin-top: 280px;
 }
 
-/*画像中央寄せ*/
+/*WORKSBANNER 配置*/
 .banner_img {
   width: 100%;
   border: 1px solid #cccc;
@@ -800,13 +813,487 @@ footer p {
   margin-top: 28px;
 }
 
+.banner_flex {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: 88px;
+}
+
 .banner_img > img {
   padding: 4px;
 }
 
 /*WORKSBANNER 余白*/
-.banner_wrapper > section p:nth-child(2) {
+.banner_wrapper h3 {
   margin-top: 16px;
+}
+
+/*WORKSBANNER 説明・ポイント*/
+.banner_sub_category {
+  font-size: 0.75rem;
+  margin-top: 16px;
+}
+
+.banner_discription,
+.banner_inner p,
+.tool {
+  font-size: 0.9375rem;
+  line-height: 1.86;
+}
+
+.banner_inner p:last-child {
+  margin-top: 24px;
+}
+
+.banner_discription {
+  margin-top: 72px;
+}
+
+.banner_sub_category,
+.tool {
+  text-align: right;
+  color: var(--base_color_light);
+}
+
+.tool {
+  margin-top: 32px;
+}
+
+/*.toolの青い点線*/
+.tool::after {
+  content: "";
+  display: block;
+  width: 254px;
+  border-bottom: 1px dotted var(--accent_color01);
+  margin-left: auto;
+}
+
+/*WORKSBANNER フッター*/
+.works_banner_footer {
+  position: relative;
+}
+/*WOORKSBANNERあしらい*/
+.roop_wrapper06 {
+  max-width: 1440px;
+  position: absolute;
+  bottom: 640px;
+  left: 0;
+  width: 100%;
+}
+
+.roop_design06 {
+  width: 100%;
+}
+
+/*WORKSBANNER 中間bar*/
+.works_banner_bar {
+  margin-top: 288px;
+}
+.works_banner_bar > p {
+  text-align: center;
+}
+
+.works_banner_bar div {
+  height: 320px;
+  position: relative;
+}
+
+.works_banner_bar div::after {
+  content: "";
+  position: absolute;
+  top: 50%; /* 親要素の縦の真ん中 */
+  left: 50%; /* 親要素の横の真ん中 */
+  transform: translate(-50%, -50%); /* 要素自身の大きさ分ずらして中央揃え */
+  width: 1px;
+  height: 196px;
+  background: var(--accent_color_gd);
+  z-index: 1;
+}
+
+.works_banner_bar div::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent_color_gd);
+  animation: circlemove_banner 1.8s ease-in-out infinite,
+    cirlemovehide 1.8s ease-out infinite;
+  z-index: 10;
+}
+
+@keyframes circlemove_banner {
+  0% {
+    transform: translate(-50%, -50%) translateY(-72px);
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(88px);
+  }
+}
+
+@keyframes cirlemovehide {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/*別ページ　WORKS SITE*/
+.site_wrapper01,
+.site_banner_bar {
+  max-width: 830px;
+  margin: 0 auto;
+}
+
+.site_wrapper01 {
+  margin-top: 280px;
+}
+
+/*WORK SITE 余白*/
+.site_wrapper01 h3 {
+  margin-top: 16px;
+}
+
+/*WORKS SITE メイン画像*/
+.site_img {
+  width: 100%;
+  border: 1px solid #cccc;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 28px;
+}
+
+.site_img > video {
+  width: 100%;
+  padding: 4px;
+}
+/*WORKS SITE配置*/
+.site_flex {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: 88px;
+}
+
+/*WORKS SITE説明文など*/
+.site_sub_category {
+  font-size: 0.75rem;
+  margin-top: 16px;
+}
+
+.site_sub_category {
+  text-align: right;
+  color: var(--base_color_light);
+}
+
+.site_discription,
+.site_inner p {
+  font-size: 0.9375rem;
+  line-height: 1.86;
+}
+
+.site_inner p:last-child {
+  margin-top: 24px;
+}
+
+.site_discription {
+  margin-top: 72px;
+}
+
+/*WORKS SITE スクロールバー*/
+.site_banner_bar {
+  margin-top: 288px;
+}
+.site_banner_bar > p {
+  text-align: center;
+}
+
+.site_banner_bar div {
+  height: 320px;
+  position: relative;
+}
+
+.site_banner_bar div::after {
+  content: "";
+  position: absolute;
+  top: 50%; /* 親要素の縦の真ん中 */
+  left: 50%; /* 親要素の横の真ん中 */
+  transform: translate(-50%, -50%); /* 要素自身の大きさ分ずらして中央揃え */
+  width: 1px;
+  height: 196px;
+  background: var(--accent_color_gd);
+  z-index: 1;
+}
+
+.site_banner_bar div::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent_color_gd);
+  animation: circlemove_banner 1.8s ease-in-out infinite,
+    cirlemovehide 1.8s ease-out infinite;
+  z-index: 10;
+}
+
+/*Launchボタン*/
+.site_launch_btn {
+  max-width: 312px;
+  margin-left: auto;
+  margin-top: 190px;
+  position: relative;
+}
+
+.site_launch_btn img {
+  width: 100%;
+}
+
+.site_launch_btn p {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 1.125rem;
+}
+
+.site_launch_btn p::after {
+  content: "";
+  display: inline-block;
+  width: 32px;
+  border-bottom: 1px solid #fff;
+  border-radius: 5px;
+  margin-left: 16px;
+}
+
+/*WORKS SITE ページ毎の画像　PC*/
+
+.site_page_img00 {
+  margin-top: 218px;
+}
+
+.site_page_img {
+  margin-top: 64px;
+}
+
+.site_page_img00,
+.site_page_img {
+  padding: 4px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+/*WORKS SITE ページ毎の画像　SP*/
+.site_wrapper02 {
+  max-width: 1000px;
+  margin: 64px auto 0 auto;
+}
+
+.site_page_flex {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 20px;
+}
+
+.site_pageSP_img {
+  width: 30%;
+  padding: 4px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.site_pageSP_img > img {
+  width: 100%;
+}
+
+/*あしらい０７*/
+.roop_wrapper07 {
+  max-width: 1440px;
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+  width: 100%;
+}
+
+/*あしらい０8*/
+
+/* .roop_wrapper08 {
+  max-width: 1440px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+} */
+
+/*ABOUT_ME PC版 */
+.about_me_section {
+  background-image: url(../images/1x/about_back.png);
+  background-size: 100% 100%;
+  background-position: center;
+  margin-top: 224px;
+  padding-bottom: 168px;
+  box-sizing: border-box;
+  position: relative;
+  background-repeat: no-repeat;
+  z-index: -2;
+}
+
+.about_me_wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  gap: 10px;
+  max-width: 830px;
+  margin: 118px auto 0 auto;
+}
+
+.about_profile_wrapper {
+  width: 58%;
+}
+
+.about_me_img_wrapper {
+  width: 32%;
+}
+
+.about_me_img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+/*ABOUT ME 自己紹介部分*/
+.about_name_wrapper p {
+  color: #fff; /* 共通の文字色 */
+}
+
+.about_name_wrapper p:first-child {
+  font-size: 1.125rem; /* 1つ目のp */
+}
+
+.about_name_wrapper p:last-child {
+  font-size: 0.875rem; /* 2つ目のp */
+  padding-left: 8px;
+}
+
+.about_me_discription01,
+.about_me_discription02,
+.about_me_discription03,
+.about_me_discription04 {
+  font-size: 0.875rem;
+  color: #fff;
+  line-height: 1.86;
+  padding-top: 24px;
+}
+
+/*PC版サービスセクション */
+.service_header {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 243px 20px 0 20px;
+  text-align: left;
+  font-size: 1.5rem;
+}
+
+.service_header > span {
+  /* グラデーション 動きをつける*/
+  background: linear-gradient(90deg, #181e4d, 80%, #8aecff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.service_flex {
+  max-width: 830px;
+  margin: 104px auto 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.service_wrapper {
+  width: 38%;
+}
+
+.service_img {
+  width: 15%;
+  margin: 64px auto 0 auto;
+}
+
+.service_img > img {
+  width: 100%;
+}
+
+.service_title {
+  display: flex;
+  align-items: flex-end;
+}
+
+.coding_flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.from_author {
+  max-width: 1000px;
+  margin: 248px auto 0 auto;
+  font-size: 0.875rem;
+  line-height: 1.86;
+}
+
+/**PC版サービス　文字や余白調整*/
+.service_title p:first-child {
+  font-size: 1.125rem;
+}
+
+.service_title p:last-child {
+  font-size: 0.75rem;
+  padding-left: 4px;
+}
+
+.service_discription {
+  font-size: 0.875rem;
+  line-height: 1.86;
+  margin-top: 48px;
+}
+
+.servic_skill {
+  font-size: 0.75rem;
+  color: var(--accent_color01);
+  margin-top: 48px;
+}
+
+.about_contact_section {
+  margin-top: 400px;
+}
+
+/*PC 制作の流れ*/
+.production_flow_flex {
+  display: flex;
+  justify-content: space-around;
+  max-width: 830px;
+  margin: 224px auto 0 auto;
 }
 
 /*FVコンセプトやスクロールバーの位置がおかしくなるタイミングで切り替え*/
@@ -844,7 +1331,8 @@ footer p {
   /*ナビゲーション*/
   .pc_nav,
   .sp_nav,
-  .works_all_sp_nav {
+  .works_all_sp_nav,
+  .works_banner_sp_nav {
     display: none;
   }
 
@@ -858,7 +1346,7 @@ footer p {
     right: 32px;
     z-index: 100; /*positionが設定されていないと効果なし*/
   }
-  /*作品全ページメニュー*/
+  /*作品全ページ・バナー　メニュー*/
   .works_all_sp_btn {
     display: block; /*表示させてあげますよ*/
     height: 23px;
@@ -869,9 +1357,20 @@ footer p {
     right: 32px;
     z-index: 100; /*positionが設定されていないと効果なし*/
   }
+  .works_banner_sp_btn {
+    display: block; /*表示させてあげますよ*/
+    height: 23px;
+    cursor: pointer;
+    /* 位置の調整 */
+    position: absolute;
+    top: -250px;
+    right: 32px;
+    z-index: 100;
+  }
 
   .sp_btn span:nth-of-type(1),
-  .works_all_sp_btn span:nth-of-type(1) {
+  .works_all_sp_btn span:nth-of-type(1),
+  .works_banner_sp_btn span:nth-of-type(1) {
     display: block; /*spanタグはinline要素なため、幅高さを設定できないためblock要素にしてあげる*/
     width: 188px;
     height: 1.5px;
@@ -883,7 +1382,8 @@ footer p {
   }
 
   .sp_btn span:nth-of-type(2),
-  .works_all_sp_btn span:nth-of-type(2) {
+  .works_all_sp_btn span:nth-of-type(2),
+  .works_banner_sp_btn span:nth-of-type(2) {
     content: "";
     display: block;
     width: 188px;
@@ -897,13 +1397,15 @@ footer p {
 
   /*メニュー動かす*/
   .sp_btn.open span:nth-of-type(1),
-  .works_all_sp_btn.open span:nth-of-type(1) {
+  .works_all_sp_btn.open span:nth-of-type(1),
+  .works_banner_sp_btn.open span:nth-of-type(1) {
     transform: rotate(5deg);
     transform-origin: center;
   }
 
   .sp_btn.open span:nth-of-type(2),
-  .works_all_sp_btn.open span:nth-of-type(2) {
+  .works_all_sp_btn.open span:nth-of-type(2),
+  .works_banner_sp_btn.open span:nth-of-type(2) {
     top: 0;
     transform: rotate(-5deg);
     transform-origin: center;
@@ -929,8 +1431,19 @@ footer p {
     z-index: 10;
   }
 
+  .works_banner_sp_nav {
+    position: absolute;
+    top: 0; /*どのように調整する？*/
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(203, 211, 221);
+    z-index: 10;
+  }
+
   .sp_nav ul,
-  .works_all_sp_nav ul {
+  .works_all_sp_nav ul,
+  .works_banner_sp_nav ul {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -941,13 +1454,19 @@ footer p {
   }
 
   .sp_nav ul li,
-  .works_all_sp_nav ul li {
+  .works_all_sp_nav ul li,
+  .works_banner_sp_nav ul li {
     font-size: 1.44rem;
   }
 
   .sp_nav ul li:last-child,
-  .works_all_sp_nav ul li:last-child {
+  .works_all_sp_nav ul li:last-child,
+  .works_banner_sp_nav ul li:last-child {
     width: 195px;
+  }
+
+  .works_all_SPtitle {
+    padding: 8px 0 0 16px;
   }
 
   /*画面を固定・コンセプトやスクロールバーを非表示*/
@@ -1121,6 +1640,20 @@ footer p {
     max-width: 90%;
   }
 
+  /*ポートフォリオタイトル配置SP版切り替えのための*/
+  .sp_flex_01 {
+    display: flex;
+    width: 100%;
+  }
+
+  .pc_portfolio {
+    display: none;
+  }
+
+  .works_all_SPtitle {
+    writing-mode: vertical-rl;
+  }
+  /*WORKS_ALL sp配置*/
   .flex_01,
   .flex_02 {
     max-width: 100%;
@@ -1145,6 +1678,8 @@ footer p {
   .title_flex {
     flex-direction: column;
   }
+
+  /*WORKS_ALL sp文字調整など*/
   .title_flex p:nth-child(2) {
     font-size: 1rem;
     margin-top: 8px;
@@ -1167,9 +1702,166 @@ footer p {
     text-align: left;
   }
 
-  /*スクロールバー削除*/
+  /*WORKS_ALL spスクロールバー削除*/
   .no_scroll {
     display: none;
+  }
+  /*WORKS_ALL あしらいsp*/
+  .roop_wrapper04 {
+    width: 100%;
+  }
+
+  /*WORKSBANNER SP*/
+  .banner_wrapper,
+  .works_banner_bar {
+    max-width: 72%;
+  }
+
+  .banner_wrapper > section > p:first-child {
+    font-size: 0.75rem;
+  }
+
+  .banner_wrapper h3 {
+    margin-top: 6px;
+  }
+
+  .banner_img {
+    margin-top: 8px;
+  }
+
+  .banner_sub_category {
+    margin-top: 8px;
+    font-size: 0.75rem;
+  }
+
+  .banner_discription {
+    margin-top: 40px;
+    font-size: 0.875rem;
+  }
+
+  .banner_flex {
+    gap: 28px;
+    margin-top: 56px;
+  }
+
+  .banner_inner > p {
+    font-size: 0.875rem;
+  }
+
+  .tool {
+    font-size: 0.65rem;
+  }
+
+  .tool::after {
+    width: 178px;
+  }
+
+  .works_banner_bar,
+  .site_banner_bar {
+    margin-top: 142px;
+  }
+
+  .works_banner_bar > p,
+  .site_banner_bar > p {
+    font-size: 0.8125rem;
+  }
+
+  .works_banner_bar div::after,
+  .site_banner_bar div::after {
+    height: 168px;
+  }
+
+  .works_banner_bar div::before,
+  .site_banner_bar div::before {
+    width: 10px;
+    height: 10px;
+  }
+
+  @keyframes circlemove_banner {
+    0% {
+      transform: translate(-50%, -50%) translateY(-78px);
+    }
+    100% {
+      transform: translate(-50%, -50%) translateY(78px);
+    }
+  }
+
+  .roop_wrapper06 {
+    bottom: 550px;
+  }
+
+  /*WORKS SITE 1150px*/
+  .site_wrapper01 {
+    padding: 0 20px;
+  }
+
+  .site_wrapper02 {
+    max-width: 830px;
+  }
+
+  .site_page_flex {
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .site_pageSP_img {
+    width: 45%;
+  }
+
+  .site_pageSP_img01 {
+    margin-top: 48px;
+  }
+
+  .site_launch_btn {
+    margin: 88px auto 0 auto;
+    max-width: 211px;
+  }
+
+  .site_launch_btn p {
+    font-size: 0.8125rem;
+  }
+
+  .site_page_img00 {
+    margin-top: 88px;
+  }
+
+  /*WORKS SITE 1150文字・余白の調整*/
+  .site_wrapper01 > p:first-child {
+    font-size: 0.65rem;
+  }
+
+  .site_wrapper01 h3 {
+    margin-top: 6px;
+  }
+
+  .site_img {
+    margin-top: 8px;
+  }
+
+  .site_sub_category {
+    margin-top: 8px;
+    font-size: 0.75rem;
+  }
+
+  .site_discription {
+    margin-top: 40px;
+    font-size: 0.875rem;
+    line-height: 1.86;
+  }
+
+  .site_discription,
+  .site_inner p {
+    font-size: 0.875rem;
+    line-height: 1.86;
+  }
+
+  .site_flex {
+    gap: 28px;
+    margin-top: 56px;
+  }
+  /*WORKS SITE 1150 あしらい０７*/
+  .roop_wrapper07 {
+    bottom: 250px;
   }
 }
 /*957px版*/
@@ -1201,11 +1893,6 @@ footer p {
     width: 10px;
     height: 10px;
   }
-  /* 
-  .roop_wrapper01 {
-    bottom: 0;
-    right: 0;
-  } */
 
   @keyframes circlemove {
     0% {
@@ -1256,7 +1943,8 @@ footer p {
   /*SP版ABOUT*/
   /*flex解除 floatがきかない・・・*/
 
-  .about_header {
+  .about_header,
+  .about_me_header {
     max-width: 83.3%;
     padding-top: 64px;
   }
@@ -1265,14 +1953,16 @@ footer p {
     margin-top: 126px;
   }
 
-  .about_wrapper {
+  .about_wrapper,
+  .about_me_wrapper {
     display: block;
     max-width: 83.3%;
     margin-top: 16px;
     padding-bottom: 120px;
   }
 
-  .profile_wrapper {
+  .profile_wrapper,
+  .about_profile_wrapper {
     width: 100%;
   }
 
@@ -1283,18 +1973,21 @@ footer p {
     margin: 0 0 16px 16px;
   }
 
-  .name_wrapper {
+  .name_wrapper,
+  .about_name_wrapper {
     flex-direction: column;
   }
 
-  .name_wrapper p:first-child {
+  .name_wrapper p:first-child,
+  .about_name_wrapper p:first-child {
     display: block;
     margin-right: auto;
     margin-top: 16px;
     font-size: 0.875rem; /* 1つ目のp */
   }
 
-  .name_wrapper p:last-child {
+  .name_wrapper p:last-child,
+  .about_name_wrapper p:last-child {
     display: block;
     margin-right: auto;
     font-size: 0.625rem; /* 2つ目のp */
@@ -1302,7 +1995,11 @@ footer p {
     padding-left: 0;
   }
 
-  .about_discription {
+  .about_discription,
+  .about_me_discription01,
+  .about_me_discription02,
+  .about_me_discription03,
+  .about_me_discription04 {
     font-size: 0.812rem;
     line-height: 1.54;
     padding-top: 32px;
@@ -1373,32 +2070,43 @@ footer p {
   footer {
     margin: 268px 0 48px 0;
   }
+
+  /*830px あしらい*/
+  /*WORKS_ALL*/
+  .roop_design04 {
+    display: none;
+  }
+  .roop_wrapper05 {
+    top: -280px;
+  }
+
+  .roop_wrapper06 {
+    bottom: 400px;
+  }
+
+  .roop_wrapper07 {
+    bottom: 130px;
+  }
 }
 
 /*
 〜新しい質問〜
+・WORKSBANNERのバーガーメニュー。背景、ずれる。
+・WORKSBANNERのSP版上部マージントップ縮めたいのに縮まらない     
+・動画再生されない・・・
+・動画進捗に合わせてバーがすすむのはどうやるのか？
+・諸々の動きの確認
+・ABOUTME元の写真荒くないけど・・・差し込むと荒い？
+・divにしたけどul liタグの方がよいのか？
 
 〜未対応メモ（自分で挑戦）〜
-・残りのあしらい（レスポンシブの０２・０３は完全未対応。０１は、一番小さい画面時が残っている。）
-
+・残りのあしらい（レスポンシブの０２・０３は完全未対応。０１は、一番小さい画面時が残っている。WORKS SITEの上部のあしらい）
+・FVレスポンシブ　切り替える幅をもっと小さく。コンセプト画像大きさ調整
+・各種リンク先動線確認・・・メールアイコンはつながっていない。
+・ウェブサイトの作品紹介ページ　SPメニュー実装未
 〜授業時に確認〜
-・FVのSP版830以下のとき、写真が全画面に切り替わるのだけれど、画像・・・なんか大きい　もうすこし全体までうつしたい。７００PXくらいがちょうどいい。
 
 
-・作品全ページのあしらいがうまくいかない。flex_01を基準にしようと思った。だけど、親要素1000pに指定している中に記述したため、親の幅を超えられない。
-親を超える方法として「100vw と　」を記述する方法があるということで試す。しかし、100vwであるため横スクロールが発生する・・・。ため１００％になおしたけど、
-そうすると画像がイメージより小さくなってしまう・・・
-→flex_01に基準を設けようとするのは一般的か？
-→width150%とかにして調整することはあるのか？
-→position:relativeって親要素以外につけても機能するのか？
-いまあしらい４はworksall_sectionに入れているけど、外に出して、works_all_sectionにrelative設定しても意味あるのか？
-→あしらい２　−３０００pxに設定しているけど・・・一般的にはもっと近いものを基準とする・・・？
-
-・WORKS「ポートフォリオ」などはpではなくh３がよかった？
-・TOP画面以外のページも同じCSSファイルに記述していくの？
-・Github URLの作り方。saveが押せない。
-・サンクスページのURLってなに？？？
-・WORKSALL SP版　ポートフォリオ　配置調整 いまのHTMLで配置できるのか？
 ・
 
 
@@ -1434,16 +2142,38 @@ floatで試してみましたが、文章と画像が２段に分かれてしま
 ・前回の添削の中での疑問。roop_design01の位置調整について
 なぜもともとroop_design01についていたpositionを.roop_wrapperに移動したのか？
 一般的に、imgをdivで囲っていて、その要素をたちを位置調整したい場合には、divにつけてあげるのが主流なのか？
+・TOP画面以外のページも同じCSSファイルに記述していくの？
+・Github URLの作り方。saveが押せない。
+・サンクスページのURLってなに？？？
+・WORKSALL SP版　ポートフォリオ　配置調整 いまのHTMLで配置できるのか？
+・FVのSP版830以下のとき、写真が全画面に切り替わるのだけれど、画像・・・なんか大きい　もうすこし全体までうつしたい。７００PXくらいがちょうどいい。
+→きりかえる幅をもっと後からにするか、画像いれかえるときに横幅を増やすか。いまの画像だと、幅が足りない。
 
+・作品全ページのあしらいがうまくいかない。flex_01を基準にしようと思った。だけど、親要素1000pに指定している中に記述したため、親の幅を超えられない。
+親を超える方法として「100vw と　」を記述する方法があるということで試す。しかし、100vwであるため横スクロールが発生する・・・。ため１００％になおしたけど、
+そうすると画像がイメージより小さくなってしまう・・・→サイト自体を親とする
+→flex_01に基準を設けようとするのは一般的か？→ページの上部・下部に近いので、そちらに合わせた方が簡単
+→width150%とかにして調整することはあるのか？→あるけど、画像がページを飛でちゃう。bodyなどにoverflow hiddenを設定して・・・などあるがやらない方がベター
+→position:relativeって親要素以外につけても機能するのか？→親要素でないとだめ！
+いまあしらい４はworksall_sectionに入れているけど、外に出して、works_all_sectionにrelative設定しても意味あるのか？→ない
+→あしらい２　−３０００pxに設定しているけど・・・一般的にはもっと近いものを基準とする・・・？→works_sectionにあしらい②をいれて、そこを基準にする。遠く離れば離れるほど画面縮小などしたときに乖離する
 
+・WORKS「ポートフォリオ」などはpではなくh３がよかった？→個別のページはh3に変える
 〜自分用メモ〜
 ・ヘッダーの視認性UPどうするか
 ・画像を入れ替え
 
 ・サンクスページ未対応
 ・コピーライトこれでいいのか？
-・ABOUTSP版文字右端ガタガタなの気になるな・・・
+・ABOUTSP版文字右端ガタガタなの気になるな・・・ポートフォリオの縦文字ガタガタも気になる
 ・WORKS全紹介ページ　カテゴリ下線をつける
-・WORKSALL SP版　ポートフォリオ　配置調整
+・トップのあしらい、親変える
 ・.works_all_sp_nav メニュー開いた時どういうデザインにするか考える・・・
+
+★個別ページ２枚
+★アバウトを金曜日におおよそ完成させる
+★各ページあしらい（PC・SP)
+★ローディング画面
+★サンクスページ
+
   */

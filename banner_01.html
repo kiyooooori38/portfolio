@@ -35,22 +35,22 @@
       </nav>
 
       <!--共通：SPナビゲーション -->
-      <div class="works_all_sp_btn"><span></span><span></span></div>
-      <nav class="works_all_sp_nav">
-        <ul class="works_all_sp_header_list">
-          <li class="works_all_sp_header_list_item">
+      <div class="works_banner_sp_btn"><span></span><span></span></div>
+      <nav class="works_banner_sp_nav">
+        <ul class="works_banner_sp_header_list">
+          <li class="works_banner_sp_header_list_item">
             <a href="index.html#top">/ Home</a>
           </li>
-          <li class="works_all_sp_header_list_item">
+          <li class="works_banner_sp_header_list_item">
             <a href="#works_all_top">/ Works</a>
           </li>
-          <li class="works_all_sp_header_list_item">
+          <li class="works_banner_sp_header_list_item">
             <a href="about.html#about_me">/ About</a>
           </li>
-          <li class="works_all_sp_header_list_item">
+          <li class="works_banner_sp_header_list_item">
             <a href="index.html#c-form"
               ><img
-                class="works_all_sp_header_list_item"
+                class="works_banner_sp_header_list_item"
                 src="./images/1x/header_nav.svg"
                 alt="contact button"
             /></a>
@@ -73,7 +73,7 @@
     <main class="banner_wrapper">
       <section>
         <p>#Webbanner</p>
-        <p>夏限定アイスクリーム</p>
+        <h3>夏限定アイスクリーム</h3>
 
         <div class="banner_img">
           <img src="./images/1x/works_banner01-80.jpg" alt="バナー作品の画像" />
@@ -98,22 +98,32 @@
         </div>
         <p class="tool">【 Tool : Adobe Illustrator,Photoshop 】</p>
       </section>
+
+      <div class="works_banner_bar">
+        <p>Works all</p>
+        <div></div>
+      </div>
     </main>
 
-    <footer class="works_pages_footer">
-      <p>Works all</p>
-      <div class="works_pages_bar">
-        <div></div>
+    <!-- <フッター> -->
+    <footer class="works_banner_footer">
+      <!-- あしらい6 -->
+      <div class="roop_wrapper06">
+        <img
+          class="roop_design06"
+          src="./images/1x/roop_design06.svg"
+          alt="∞マークの装飾"
+        />
       </div>
     </footer>
 
     <!-- 共通：jquery -->
     <script>
       $(function () {
-        $(".works_all_sp_btn").on("click", function () {
+        $(".works_banner_sp_btn").on("click", function () {
           // メニュー閉じたり開いたり
-          $(".works_all_sp_btn").toggleClass("open");
-          $(".works_all_sp_nav").fadeToggle();
+          $(".works_banner_sp_btn").toggleClass("open");
+          $(".works_banner_sp_nav").fadeToggle();
           $("body").toggleClass("menu_fix");
 
           //コンセプトやメールアイコンを非表示
@@ -122,10 +132,10 @@
           $(".scroll_down").toggleClass("invisible");
         });
         //リンク飛んだ後元通りにする
-        $(".works_all_sp_header_list_item a").on("click", function () {
+        $(".works_banner_sp_header_list_item a").on("click", function () {
           $("body").removeClass("menu_fix");
-          $(".works_all_sp_nav").fadeToggle();
-          $(".works_all_sp_btn").removeClass("open");
+          $(".works_banner_sp_nav").fadeToggle();
+          $(".works_banner_sp_btn").removeClass("open");
 
           $(".mail_icon").removeClass("invisible");
           $(".scroll_down").removeClass("invisible");
