@@ -10,6 +10,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   </head>
   <body id="works_all_top">
+    <!-- カーソルの見た目を変更 -->
+    <div id="cursor"></div>
+    <div id="stalker"></div>
+
     <header>
       <!-- 共通：PCナビゲーション -->
       <nav class="pc_nav">
@@ -21,7 +25,7 @@
             <a href="works_all.html">/ Works</a>
           </li>
           <li class="header_list_item">
-            <a href="about.html">/ About</a>
+            <a href="about_me.html">/ About</a>
           </li>
           <li class="header_list_item">
             <a href="index.html#c-form"
@@ -58,10 +62,12 @@
         </ul>
       </nav>
 
-      <!-- 共通：SP固定メールあいこん -->
-      <div class="mail_icon">
-        <img src="./images/1x/SP_mail_icon.svg" alt="メールのアイコン" />
-      </div>
+      <!-- SP固定メールあいこん -->
+      <a href="index.html#c-form"
+        ><div class="mail_icon">
+          <img src="./images/1x/SP_mail_icon.svg" alt="メールのアイコン" />
+        </div>
+      </a>
     </header>
 
     <!-- 共通：FVスクロールバー -->
@@ -219,6 +225,47 @@
 
     <!-- 共通：jquery -->
     <script>
+      //カーソルの見た目を変更
+      var cursor = $("#cursor");
+      //ちょっと遅れてついてくるストーカー要素の指定
+      var stalker = $("#stalker");
+
+      //mousemoveイベントでカーソル要素を移動させる
+      $(document).on("mousemove", function (e) {
+        //カーソルの座標位置を取得
+        var x = e.clientX;
+        var y = e.clientY;
+        //カーソル要素のcssを書き換える用
+        cursor.css({
+          opacity: "1",
+          top: y + "px",
+          left: x + "px",
+        });
+
+        //ストーカー要素のcssを書き換える用
+        setTimeout(function () {
+          stalker.css({
+            opacity: "0.4",
+            top: y + "px",
+            left: x + "px",
+          });
+        }, 140); //カーソルより遅れる時間を指定
+      });
+
+      //aタグホバー
+      $("a").on({
+        mouseenter: function () {
+          //activeクラス付与
+          cursor.addClass("active");
+          stalker.addClass("active");
+        },
+        mouseleave: function () {
+          cursor.removeClass("active");
+          stalker.removeClass("active");
+        },
+      });
+
+      //バーガーメニュー
       $(function () {
         $(".works_all_sp_btn").on("click", function () {
           // メニュー閉じたり開いたり

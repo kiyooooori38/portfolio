@@ -11,8 +11,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   </head>
   <body>
+    <!-- カーソルの見た目を変更 -->
+    <div id="cursor"></div>
+    <div id="stalker"></div>
+
     <!-- FV -->
     <header id="top">
+      <!-- ローディング画面 -->
+      <div class="loading"></div>
+
+      <!-- メインビジュアル -->
       <div class="main_visual">
         <h1>
           <div class="pf_title">
@@ -26,7 +34,7 @@
           </div>
           <div>
             <img
-              class="pf_concept"
+              class="pf_concept loding_logo"
               src="./images/1x/concept.svg"
               alt="コンセプト「8:∞」の画像"
             />
@@ -44,33 +52,36 @@
 
       <!-- あしらい１ -->
       <div class="roop_wrapper01">
-        <img
-          class="roop_design01"
-          src="./images/1x/roop_design01.svg"
-          alt="∞マークの装飾"
-        />
+        <picture>
+          <source
+            srcset="./images/1x/roop_design01_sp.svg"
+            media="(max-width:830px)"
+          />
+          <img
+            class="roop_design01"
+            src="./images/1x/roop_design01.svg"
+            alt="∞マークの装飾"
+          />
+        </picture>
       </div>
 
       <!-- PCナビゲーション -->
       <nav class="pc_nav">
         <ul class="header_list">
-          <li class="header_list_item">
-            <a href="#top">/ Home</a>
-          </li>
-          <li class="header_list_item">
-            <a href="works_all.html">/ Works</a>
-          </li>
-          <li class="header_list_item">
-            <a href="about_me.html">/ About</a>
-          </li>
-          <li class="header_list_item">
-            <a href="#c-form"
-              ><img
+          <a href="#top"><li class="header_list_item">/ Home</li></a>
+
+          <a href="works_all.html"><li class="header_list_item">/ Works</li></a>
+
+          <a href="about_me.html"><li class="header_list_item">/ About</li></a>
+
+          <a href="#c-form"
+            ><li class="header_list_item">
+              <img
                 class="header_nav_btn"
                 src="./images/1x/header_nav.svg"
                 alt="contact button"
-            /></a>
-          </li>
+              /></li
+          ></a>
         </ul>
       </nav>
 
@@ -78,30 +89,30 @@
       <div class="sp_btn"><span></span><span></span></div>
       <nav class="sp_nav">
         <ul class="sp_header_list">
-          <li class="sp_header_list_item">
-            <a href="#top">/ Home</a>
-          </li>
-          <li class="sp_header_list_item">
-            <a href="works_all.html">/ Works</a>
-          </li>
-          <li class="sp_header_list_item">
-            <a href="about_me.html">/ About</a>
-          </li>
-          <li class="sp_header_list_item">
-            <a href="#c-form"
-              ><img
+          <a href="#top"><li class="sp_header_list_item">/ Home</li></a>
+          <a href="works_all.html"
+            ><li class="sp_header_list_item">/ Works</li></a
+          >
+          <a href="about_me.html"
+            ><li class="sp_header_list_item">/ About</li></a
+          >
+          <a href="#c-form">
+            <li class="sp_header_list_item">
+              <img
                 class="sp_header_nav_btn"
                 src="./images/1x/header_nav.svg"
                 alt="contact button"
-            /></a>
-          </li>
+              /></li
+          ></a>
         </ul>
       </nav>
 
       <!-- SP固定メールあいこん -->
-      <div class="mail_icon">
-        <img src="./images/1x/SP_mail_icon.svg" alt="メールのアイコン" />
-      </div>
+      <a href="#c-form"
+        ><div class="mail_icon">
+          <img src="./images/1x/SP_mail_icon.svg" alt="メールのアイコン" />
+        </div>
+      </a>
 
       <!-- FVスクロールバー -->
       <div class="scroll_down">
@@ -195,15 +206,16 @@
             <p>View all Works</p>
           </a>
         </div>
+
+        <!-- あしらい２ -->
+        <div class="roop_wrapper02">
+          <img
+            class="roop_design02"
+            src="./images/1x/roop_design02.svg"
+            alt="∞マークの装飾"
+          />
+        </div>
       </section>
-      <!-- あしらい２ -->
-      <div class="roop_wrapper02">
-        <img
-          class="roop_design02"
-          src="./images/1x/roop_design02.svg"
-          alt="∞マークの装飾"
-        />
-      </div>
 
       <!-- About -->
       <section class="about_section" id="about_me">
@@ -337,12 +349,72 @@
           alt="∞マークの装飾"
         />
       </div>
-
       <p>&copy;2025 Kiyori Iwasawa</p>
     </footer>
 
     <!-- jquery -->
     <script>
+      //カーソルの見た目を変更
+      var cursor = $("#cursor");
+      //ちょっと遅れてついてくるストーカー要素の指定
+      var stalker = $("#stalker");
+
+      //mousemoveイベントでカーソル要素を移動させる
+      $(document).on("mousemove", function (e) {
+        //カーソルの座標位置を取得
+        var x = e.clientX;
+        var y = e.clientY;
+        //カーソル要素のcssを書き換える用
+        cursor.css({
+          opacity: "1",
+          top: y + "px",
+          left: x + "px",
+        });
+
+        //ストーカー要素のcssを書き換える用
+        setTimeout(function () {
+          stalker.css({
+            opacity: "0.4",
+            top: y + "px",
+            left: x + "px",
+          });
+        }, 140); //カーソルより遅れる時間を指定
+      });
+
+      //aタグホバー
+      $("a").on({
+        mouseenter: function () {
+          //activeクラス付与
+          cursor.addClass("active");
+          stalker.addClass("active");
+        },
+        mouseleave: function () {
+          cursor.removeClass("active");
+          stalker.removeClass("active");
+        },
+      });
+
+      //ローディング
+      document.addEventListener("DOMContentLoaded", function () {
+        const loading = document.querySelector(".loading");
+        const concept = document.querySelector(".pf_concept");
+
+        if (!sessionStorage.getItem("loaded")) {
+          // 初回：ローディング表示 & アニメーション実行
+          concept.classList.add("loding_logo"); // アニメーション有効
+          sessionStorage.setItem("loaded", "true");
+
+          loading.addEventListener("animationend", () => {
+            loading.style.display = "none";
+          });
+        } else {
+          // 2回目以降：ローディング非表示 & アニメーション削除
+          loading.style.display = "none";
+          concept.classList.remove("loding_logo"); // アニメーション無効化
+        }
+      });
+
+      //バーガーメニュー
       $(function () {
         $(".sp_btn").on("click", function () {
           // メニュー閉じたり開いたり

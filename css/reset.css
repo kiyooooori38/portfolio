@@ -34,6 +34,7 @@ a {
   text-decoration: none;
   /*色を消す*/
   color: inherit;
+  cursor: none;
 }
 
 ul,

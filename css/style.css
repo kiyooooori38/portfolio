@@ -1,6 +1,90 @@
 @charset "utf-8";
+/*カーソルの見た目を変更*/
+body {
+  position: relative;
+  cursor: none; /*もともとあるカーソルは見えなくなるようにする*/
+}
 
-/* ヘッダー */
+#cursor {
+  position: fixed;
+  /*丸の大きさと色の指定*/
+  background: var(--base_color_light);
+  border-radius: 20px;
+  width: 10px;
+  height: 10px;
+  margin: -20px 0 0 -20px; /*真ん中にくるようにマイナスマージンで調整*/
+  z-index: 1100; /*一番手前に来るように*/
+  pointer-events: none; /*クリックできなくなるのを防ぐため。noneで対応*/
+  opacity: 0;
+  transition: transform 0.1s; /*アニメーションの秒数指定*/
+}
+
+/*ちょっと遅れてついてくるストーカー要素*/
+#stalker {
+  position: fixed;
+  /*丸の大きさと色の指定*/
+  background: var(--accent_color01);
+  width: 20px;
+  height: 20px;
+  border-radius: 30px;
+  margin: -30px 0 0 -30px; /*真ん中にくるようにマイナスマージンで調整*/
+  z-index: 1099; /*カーソルの後ろに来るように*/
+  pointer-events: none; /*クリックできなくなるのを防ぐため。noneで対応*/
+  opacity: 0;
+  transition: transform 0.5s; /*アニメーションの秒数指定*/
+}
+#cursor.active,
+#stalker.active {
+  transform: scale(1.4);
+}
+
+/*ローディング画面*/
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  background-color: #fff;
+  animation: fadeOut 3.5s 2.5s forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.loding_logo {
+  position: relative;
+  z-index: 1001;
+  opacity: 0;
+  animation: logo_fade 3.5s 0.5s forwards;
+}
+
+@keyframes logo_fade {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* トップページ ヘッダー */
 
 header,
 footer {
@@ -20,13 +104,13 @@ footer {
 }
 
 .pc_nav {
-  position: fixed;
+  position: absolute;
   top: 48px;
-  z-index: 1000;
+  z-index: 100;
   right: 48px;
 }
 
-.pc_nav a {
+.header_list_item {
   font-size: 1.5rem;
 }
 
@@ -80,7 +164,18 @@ h1 {
   position: absolute;
   top: 250px;
   left: -42%;
-  z-index: 10;
+}
+
+.pf_title {
+  position: relative;
+  z-index: 999;
+}
+
+.pf_concept {
+  position: relative;
+  z-index: 1001;
+  /* opacity: 0;
+  animation: logo_fade 3.5s 0.5s forwards; */
 }
 
 h1 div:last-child {
@@ -168,6 +263,7 @@ h1 div:last-child {
   bottom: -560px;
   right: 0;
   width: 100%;
+  z-index: 1;
 }
 
 .roop_design01 {
@@ -179,6 +275,7 @@ h1 div:last-child {
   max-width: 1000px;
   margin: 550px auto 0 auto;
   padding: 0 20px;
+  position: relative;
 }
 
 .works_header {
@@ -354,8 +451,8 @@ article:not(:first-of-type) > div > div {
   /* position: relative; */
   width: 100%;
   position: absolute;
-  bottom: -3200px;
-  left: 0;
+  bottom: -450px;
+  left: -150px;
   z-index: -1;
 }
 
@@ -1407,7 +1504,7 @@ footer p {
   .scroll_down:before {
     left: 64.5px;
   }
-
+  /*あしらい　1150*/
   .roop_wrapper01 {
     bottom: -320px;
     width: 80%;
@@ -1424,7 +1521,7 @@ footer p {
   .sp_btn {
     display: block; /*表示させてあげますよ*/
     height: 23px;
-    cursor: pointer;
+    /* cursor: pointer; */
     /* 位置の調整 */
     position: absolute;
     top: 32px;
@@ -1435,7 +1532,7 @@ footer p {
   .works_all_sp_btn {
     display: block; /*表示させてあげますよ*/
     height: 23px;
-    cursor: pointer;
+    /* cursor: pointer; */
     /* 位置の調整 */
     position: absolute;
     top: 32px;
@@ -1445,7 +1542,7 @@ footer p {
   .works_banner_sp_btn {
     display: block; /*表示させてあげますよ*/
     height: 23px;
-    cursor: pointer;
+    /* cursor: pointer; */
     /* 位置の調整 */
     position: absolute;
     top: 32px;
@@ -1542,6 +1639,7 @@ footer p {
   .works_all_sp_nav ul li,
   .works_banner_sp_nav ul li {
     font-size: 1.44rem;
+    text-align: center;
   }
 
   .sp_nav ul li:last-child,
@@ -2024,10 +2122,6 @@ footer p {
     margin-top: 16px;
   }
 
-  .roop_wrapper01 {
-    transform: scaleX(-1);
-  }
-
   /*メールアイコン*/
   .mail_icon {
     width: 56px;
@@ -2319,9 +2413,19 @@ footer p {
 
   /*830px あしらい*/
   /*WORKS_ALL*/
-  .roop_design04 {
-    display: none;
+  .roop_wrapper01 {
+    width: 100%;
+    right: auto;
+    left: -140px;
   }
+
+  .roop_wrapper03 {
+    width: 100%;
+    transform: scaleX(-1);
+    bottom: -200px;
+    right: auto;
+  }
+
   .roop_wrapper05 {
     top: -280px;
   }
@@ -2335,7 +2439,7 @@ footer p {
   }
 }
 
-/*FV調整　580*/
+/*FV調整　750*/
 @media screen and (max-width: 750px) {
   /*画像*/
   .main_visual {
@@ -2352,24 +2456,48 @@ footer p {
     top: 150px;
     left: 10%;
   }
+
+  /*750 あしらい*/
+  .roop_wrapper01 {
+    bottom: -150px;
+    left: -130px;
+  }
+
+  .roop_wrapper04 {
+    display: none;
+  }
+}
+
+/*520 あしらい*/
+@media screen and (max-width: 520px) {
+  .roop_wrapper01 {
+    bottom: -150px;
+    left: -95px;
+  }
+
+  .roop_wrapper03 {
+    bottom: -100px;
+  }
 }
 
 /*
 〜新しい質問〜
-・.sp_line　画面縮小時、線がはみでてしまう。位置調整方法も現場がベストか？
+・ABOUTページの　.sp_line　画面縮小時、線がはみでてしまう。どのように記述するべきか・・・
 ・about sp画面　serviceというタイトル　デザインのように上の背景にかぶせたい。service_section毎、positionを使って上にずらしてあげるのがよいか？
+・ローディング画面、見様見真似で実装してみましたが、問題なさそうな記述か？
+・トップページ　カーソルの見た目を変えたが、リンク先が丸と微妙にずれてしまう。（文字の上をクリックしても遷移しない）
+・トップページの中間のあしらい（roop_design02）、works_sectionの中において位置調整するのがよさそうとのことでしたが、左端から離れてしまう画面幅がでてきてしまう・・・
 
 〜未対応メモ（自分で挑戦）〜
 ・残りのあしらい（レスポンシブの０２・０３は完全未対応。０１は、一番小さい画面時が残っている。WORKS SITEの上部のあしらい）
 ・FVレスポンシブ　切り替える幅をもっと小さく。コンセプト画像大きさ調整
-・各種リンク先動線確認・・・メールアイコンはつながっていない。
-・ウェブサイトの作品紹介ページ　SPメニュー実装未
+・ページ上部に戻るボタンの実装
+・footer copyright 位置が上すぎるよね？
+・ナビゲーション、カーソルの部分再調整
 〜授業時に確認〜
 
 
 ・
-
-
 
 〜回答済み〜
 .(回答いただき済み：授業）コンセプトの配置に苦戦。
@@ -2433,10 +2561,12 @@ WORKSBANNERのバーガーメニュー。背景、ずれる。→marginは親要
 ・トップのあしらい、親変える
 ・.works_all_sp_nav メニュー開いた時どういうデザインにするか考える・・・
 
-★個別ページ２枚
-★アバウトを金曜日におおよそ完成させる
+
 ★各ページあしらい（PC・SP)
 ★ローディング画面
 ★サンクスページ
+★チェック項目
+①各ページレスポンシブOKか：未確認
+②各ページナビゲーション　リンク先・レスポンシブ表示：確認済み
 
   */
