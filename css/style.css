@@ -1478,6 +1478,29 @@ footer p {
   font-size: 0.625rem;
   padding-top: 300px;
 }
+
+/*あしらいroop_designのアニメーション kokoチェック*/
+path {
+  fill: none;
+  fill-opacity: 0;
+  transition: fill-opacity 0.5s;
+}
+/* .done .cls-1 {
+  fill: #8b6039;
+  fill-opacity: 1;
+}
+.done .cls-2 {
+  fill: #ec5247;
+  fill-opacity: 1;
+}
+.done .cls-3 {
+  fill: #c39868;
+  fill-opacity: 1;
+} */
+.done path {
+  stroke: none;
+}
+
 /*FVコンセプトやスクロールバーの位置がおかしくなるタイミングで切り替え*/
 @media screen and (max-width: 1150px) {
   /* コンセプト・スクロールバー*/
@@ -2487,6 +2510,14 @@ footer p {
 ・ローディング画面、見様見真似で実装してみましたが、問題なさそうな記述か？
 ・トップページ　カーソルの見た目を変えたが、リンク先が丸と微妙にずれてしまう。（文字の上をクリックしても遷移しない）
 ・トップページの中間のあしらい（roop_design02）、works_sectionの中において位置調整するのがよさそうとのことでしたが、左端から離れてしまう画面幅がでてきてしまう・・・
+・トップぺーじ一番最初のroop_design01を以下参考に、線が徐々に絵ががれるような動きをつけようと思ったが、できない・・・
+https://oku-log.com/blog/vivus/
+〜やったこと〜
+index.htmlでは、13行目にvivusを読み込み、63行目にidとタグをsvgに変更。449行目に動きを記述。
+style.cssでは、1482行目に記述を追加
+
+
+
 
 〜未対応メモ（自分で挑戦）〜
 ・残りのあしらい（レスポンシブの０２・０３は完全未対応。０１は、一番小さい画面時が残っている。WORKS SITEの上部のあしらい）

@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- あしらいにアニメーションをつけるために以下を読み込む -->
+    <script src="js/vivus.min.js"></script>
   </head>
   <body>
     <!-- カーソルの見た目を変更 -->
@@ -51,17 +53,19 @@
       </div>
 
       <!-- あしらい１ -->
+
       <div class="roop_wrapper01">
         <picture>
           <source
             srcset="./images/1x/roop_design01_sp.svg"
             media="(max-width:830px)"
           />
-          <img
+          <!--アニメーション用にidを追加・svgタグに変更　チェック-->
+          <svg
+            id="layer"
             class="roop_design01"
             src="./images/1x/roop_design01.svg"
-            alt="∞マークの装飾"
-          />
+          ></svg>
         </picture>
       </div>
 
@@ -439,6 +443,22 @@
           $(".mail_icon").removeClass("invisible");
           $(".scroll_down").removeClass("invisible");
         });
+      });
+
+      /*あしらいアニメーション　チェック*/
+      $(function () {
+        new Vivus(
+          "layer",
+          {
+            duration: 120,
+            start: "autostart",
+            type: "scenario",
+            pathTimingFunction: Vivus.EASE_OUT,
+          },
+          function (obj) {
+            $("#layer").addClass("done");
+          }
+        );
       });
     </script>
   </body>
