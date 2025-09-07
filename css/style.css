@@ -12,7 +12,7 @@ body {
   border-radius: 20px;
   width: 10px;
   height: 10px;
-  margin: -20px 0 0 -20px; /*真ん中にくるようにマイナスマージンで調整*/
+  margin: -5px 0 0 -5px; /*真ん中にくるようにマイナスマージンで調整 カーソルの半分で指定する　今回１０pxなので５px*/
   z-index: 1100; /*一番手前に来るように*/
   pointer-events: none; /*クリックできなくなるのを防ぐため。noneで対応*/
   opacity: 0;
@@ -270,11 +270,13 @@ h1 div:last-child {
   width: 100%;
 }
 
-/* WORKS parallaxまで手をつけれたらいいな*/
-.works_section {
+/* WORKS */
+.top_works_wrapper {
   max-width: 1000px;
   margin: 550px auto 0 auto;
   padding: 0 20px;
+}
+.works_section {
   position: relative;
 }
 
@@ -287,8 +289,23 @@ h1 div:last-child {
 .works_header span {
   /* グラデーション 動きをつける*/
   background: linear-gradient(90deg, #181e4d, 80%, #8aecff);
+  background-size: 200% 100%; /* 動かす分だけ広げる */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: gradientMove 6s linear infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 100% 0%;
+  } /* 右端スタート */
+  50% {
+    background-position: 0% 0%;
+  } /* 右端まで移動 */
+
+  100% {
+    background-position: 100% 0%;
+  }
 }
 
 article:not(:first-child) {
@@ -407,9 +424,21 @@ article:not(:first-of-type) > div > div {
 .works_btn02::after {
   content: "";
   display: inline-block;
-  width: 16px;
+  width: 0; /*元々16px*/
   border-bottom: 1px solid var(--base_color_light);
   margin-left: 16px;
+
+  animation: lineDraw 1.5s infinite;
+  animation-delay: 1s;
+}
+
+@keyframes lineDraw {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 20px; /* 最終的に伸ばす長さ */
+  }
 }
 
 /*WORKS_ViewAllボタン*/
@@ -451,8 +480,8 @@ article:not(:first-of-type) > div > div {
   /* position: relative; */
   width: 100%;
   position: absolute;
-  bottom: -450px;
-  left: -150px;
+  bottom: -700px;
+  left: 0px;
   z-index: -1;
 }
 
@@ -744,7 +773,7 @@ footer p {
   position: absolute;
   bottom: 0;
   right: 0;
-  z-index: 10;
+  z-index: -1;
 }
 
 /*別ページ：WORKS_ALL*/
@@ -2082,6 +2111,14 @@ path {
   .production_flow_flex {
     padding: 0 20px;
   }
+  .service_section {
+    margin-top: -200px;
+  }
+
+  /*1150 あしらい*/
+  .roop_wrapper02 {
+    bottom: -600px;
+  }
 }
 /*957px版*/
 @media screen and (max-width: 957px) {
@@ -2420,18 +2457,20 @@ path {
   }
 
   /*830 制作の流れ 点線 koko*/
+  .sp_flow_flex {
+    display: flex;
+  }
+
   .sp_line_flex {
-    /* display: flex;
-    flex-direction: column; */
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .sp_line {
-    border-bottom: 1px dotted var(--accent_color01);
-    width: 410px;
-    rotate: 90deg;
-    position: absolute;
-    top: 232px;
-    left: -195px;
+    border-right: 1px dotted var(--accent_color01);
+    width: 1px;
+    height: 90%;
+    margin-top: 16px;
   }
 
   /*830px あしらい*/
@@ -2440,6 +2479,14 @@ path {
     width: 100%;
     right: auto;
     left: -140px;
+  }
+
+  .roop_wrapper02 {
+    width: 80%;
+    transform: scaleX(-1);
+    bottom: -300px;
+    left: auto;
+    right: 0;
   }
 
   .roop_wrapper03 {
@@ -2498,6 +2545,10 @@ path {
     left: -95px;
   }
 
+  .roop_wrapper02 {
+    bottom: -250px;
+  }
+
   .roop_wrapper03 {
     bottom: -100px;
   }
@@ -2505,30 +2556,27 @@ path {
 
 /*
 〜新しい質問〜
-・ABOUTページの　.sp_line　画面縮小時、線がはみでてしまう。どのように記述するべきか・・・
-・about sp画面　serviceというタイトル　デザインのように上の背景にかぶせたい。service_section毎、positionを使って上にずらしてあげるのがよいか？
-・ローディング画面、見様見真似で実装してみましたが、問題なさそうな記述か？
-・トップページ　カーソルの見た目を変えたが、リンク先が丸と微妙にずれてしまう。（文字の上をクリックしても遷移しない）
-・トップページの中間のあしらい（roop_design02）、works_sectionの中において位置調整するのがよさそうとのことでしたが、左端から離れてしまう画面幅がでてきてしまう・・・
 ・トップぺーじ一番最初のroop_design01を以下参考に、線が徐々に絵ががれるような動きをつけようと思ったが、できない・・・
 https://oku-log.com/blog/vivus/
-〜やったこと〜
-index.htmlでは、13行目にvivusを読み込み、63行目にidとタグをsvgに変更。449行目に動きを記述。
-style.cssでは、1482行目に記述を追加
 
+・トップ画面worksのボタンにある直線にアニメーションをかけたものの、文字の場所は固定したい・線だけ動かしたいのに、線が伸びるにつれて文字まで位置が変わってし合う
 
 
 
 〜未対応メモ（自分で挑戦）〜
 ・残りのあしらい（レスポンシブの０２・０３は完全未対応。０１は、一番小さい画面時が残っている。WORKS SITEの上部のあしらい）
-・FVレスポンシブ　切り替える幅をもっと小さく。コンセプト画像大きさ調整
+・画像入れ替え
 ・ページ上部に戻るボタンの実装
 ・footer copyright 位置が上すぎるよね？
-・ナビゲーション、カーソルの部分再調整
+・全ページナビゲーション、カーソルの部分再調整
+・ローディング画面のときスクロールさせない
+・スマフォの確認　画像非表示・・・
+・about　制作の流れ　PC版がおかしくなってしまった
+
 〜授業時に確認〜
+・文字のグラデーション・・・なんかイメージと違うな・・・
+・コンタクトフォーム　飛ぶところおかしいよね？
 
-
-・
 
 〜回答済み〜
 .(回答いただき済み：授業）コンセプトの配置に苦戦。
@@ -2589,8 +2637,6 @@ WORKSBANNERのバーガーメニュー。背景、ずれる。→marginは親要
 ・コピーライトこれでいいのか？
 ・ABOUTSP版文字右端ガタガタなの気になるな・・・ポートフォリオの縦文字ガタガタも気になる
 ・WORKS全紹介ページ　カテゴリ下線をつける
-・トップのあしらい、親変える
-・.works_all_sp_nav メニュー開いた時どういうデザインにするか考える・・・
 
 
 ★各ページあしらい（PC・SP)
