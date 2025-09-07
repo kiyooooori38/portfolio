@@ -21,7 +21,7 @@
             <a href="works_all.html">/ Works</a>
           </li>
           <li class="header_list_item">
-            <a href="about.html">/ About</a>
+            <a href="about_me.html">/ About</a>
           </li>
           <li class="header_list_item">
             <a href="index.html#c-form"
@@ -34,7 +34,29 @@
         </ul>
       </nav>
 
-      <!--共通：SPナビゲーション banner_01.html 整えてコピーする-->
+      <!--共通：SPナビゲーション -->
+      <div class="works_banner_sp_btn"><span></span><span></span></div>
+      <nav class="works_banner_sp_nav">
+        <ul class="works_banner_sp_header_list">
+          <li class="works_banner_sp_header_list_item">
+            <a href="index.html#top">/ Home</a>
+          </li>
+          <li class="works_banner_sp_header_list_item">
+            <a href="works_all.html">/ Works</a>
+          </li>
+          <li class="works_banner_sp_header_list_item">
+            <a href="about_me.html">/ About</a>
+          </li>
+          <li class="works_banner_sp_header_list_item">
+            <a href="index.html#c-form"
+              ><img
+                class="works_banner_sp_header_list_item"
+                src="./images/1x/header_nav.svg"
+                alt="contact button"
+            /></a>
+          </li>
+        </ul>
+      </nav>
 
       <!-- 共通：SP固定メールあいこん -->
       <div class="mail_icon">
@@ -48,7 +70,7 @@
     </div>
 
     <!-- ABOUT内容 -->
-    <main>
+    <main class="about_me_main">
       <section class="about_me_section">
         <div>
           <h2 class="about_me_header">About</h2>
@@ -139,53 +161,67 @@
       </section>
 
       <!-- 制作の流れ -->
-       <section class="production_flow_flex">
-        <div class="step_wrapper">
-            <div class="step_title">
-                <p>Step.01</p>
-                <p>お問い合わせ</p>
+       <section>
+        <h2 class="sp_product_flow_title">制作の流れ</h2>
+        <p class="sp_product_flow_subtitle">flow</p>
+        <div class="production_flow_flex">
+                <div class="sp_line_flex">
+                <p class="sp_step_title">Step.01</p>
+                <div class="sp_line"></div>
             </div>
+        <ol class="step_wrapper">
+        
+            <li class="step_title">
+                <p class="pc_step_title">Step.01</p>
+                <p>お問い合わせ</p>
+            </li>
             <div class="step_img">
                 <img src="./images/1x/about_icon03.svg" alt="メールのアイコン">
             </div>
-            <p class="step_discription">
+            <p class="step_discription01">
                 ご相談いただいた後に、ご依頼を見送っていただいても問題ございません。ご質問やご不安な点があれば、どうぞお気軽にコンタクトフォームからご連絡ください。お客さまからのご連絡を、心よりお待ちしております。
             </p>
-        </div>
-
-         <div class="step_wrapper">
-            <div class="step_title">
-                <p>Step.02</p>
+        </ol>
+       <p class="sp_step_title">Step.02</p> 
+         <ol class="step_wrapper">
+            <li class="step_title">
+                <p class="pc_step_title">Step.02</p>
                 <p>Web相談</p>
-            </div>
+            </li>
             <div class="step_img">
-                <img src="./images/1x/about_icon04.svg" alt="メールのアイコン">
+                <img src="./images/1x/about_icon04.svg" alt="パソコンのアイコン">
             </div>
-            <p class="step_discription">
+            <p class="step_discription02">
                 正式なご依頼前に、Webでのお打ち合わせ(Microsoft Teams,Zoom使用)のお時間をいただいております。サービスの流れや制作の進め方、ご不安な点についても丁寧にご説明させていただきます。まずは、お客さまの「こうしたい」「ここが不安」といったお気持ちをざっくばらんにお聞かせください。
             </p>
             <p class="business_hours">【営業時間】</p>
-            <p class="workday">・・・・・22時以降
-                <p class="holiday">・・・10時〜23時</p>
+           <p class="worksday"> 平日・・・・・22時以降</p>
+          <p class="holiday">土日祝日・・・10時〜23時</p>
             </p>
         
-        </div>
-
-         <div class="step_wrapper">
-            <div class="step_title">
-                <p>Step.03</p>
+        </ol>
+<p class="sp_step_title">Step.03</p>
+         <ol class="step_wrapper">
+            <li class="step_title">
+                <p class="pc_step_title">Step.03</p>
                 <p>お見積もり</p>
+            </li>
+            <div class="step_price_img">
+                <img src="./images/1x/about_icon05.svg" alt="お見積もり書のアイコン">
             </div>
-            <div class="step_img">
-                <img src="./images/1x/about_icon05.svg" alt="メールのアイコン">
-            </div>
-            <p class="step_discription">
+            <p class="step_discription03">
                 Web相談後、正式なお見積もりをメールにてご案内いたします。ご確認の上問題なければご契約を取り交わし、制作を開始いたします。お客さまの課題解決に貢献できるよう、精神誠意取り組んでまいります。
             </p>
-        </div>
-
-
+         </ol>
+         </div>
        </section>
+
+
+      <!-- 中間のスクロールバー -->
+      <div class="bar">
+        <div></div>
+      </div>
+
        <!-- コンタクト -->
       <section class="contact_section about_contact_section" id="c-form">
         <h2 class="contact_header"><span>Contact</span></h2>
@@ -289,6 +325,7 @@
           alt="∞マークの装飾"
         />
       </div>
+      <p class="about_copyright">&copy;2025 Kiyori Iwasawa</p>
     </footer>
 
     <!-- 共通：jquery -->

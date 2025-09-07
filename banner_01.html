@@ -21,7 +21,7 @@
             <a href="works_all.html">/ Works</a>
           </li>
           <li class="header_list_item">
-            <a href="about.html">/ About</a>
+            <a href="about_me.html">/ About</a>
           </li>
           <li class="header_list_item">
             <a href="index.html#c-form"
@@ -42,10 +42,10 @@
             <a href="index.html#top">/ Home</a>
           </li>
           <li class="works_banner_sp_header_list_item">
-            <a href="#works_all_top">/ Works</a>
+            <a href="works_all.html">/ Works</a>
           </li>
           <li class="works_banner_sp_header_list_item">
-            <a href="about.html#about_me">/ About</a>
+            <a href="about_me.html">/ About</a>
           </li>
           <li class="works_banner_sp_header_list_item">
             <a href="index.html#c-form"
@@ -130,6 +130,7 @@
 
           $(".mail_icon").toggleClass("invisible");
           $(".scroll_down").toggleClass("invisible");
+          $(".works_banner_bar").toggleClass("invisible");
         });
         //リンク飛んだ後元通りにする
         $(".works_banner_sp_header_list_item a").on("click", function () {
@@ -139,6 +140,7 @@
 
           $(".mail_icon").removeClass("invisible");
           $(".scroll_down").removeClass("invisible");
+          $(".works_banner_bar").removeClass("invisible");
         });
       });
     </script>

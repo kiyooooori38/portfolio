@@ -653,7 +653,8 @@ footer p {
 /*別ページ：WORKS_ALL*/
 .works_all_wrapper {
   max-width: 1000px;
-  margin: 308px auto 0 auto;
+  margin: 0 auto;
+  padding-top: 308px;
 }
 
 .works_all_header {
@@ -788,9 +789,6 @@ footer p {
 }
 
 /*別ページ　WORKSバナー０１*/
-.works_banner01 {
-  margin-top: 280px;
-}
 
 .banner_wrapper,
 .works_banner_bar {
@@ -798,8 +796,8 @@ footer p {
   margin: 0 auto;
 }
 
-.banner_wrapper > section {
-  margin-top: 280px;
+.banner_wrapper {
+  padding-top: 280px;
 }
 
 /*WORKSBANNER 配置*/
@@ -923,7 +921,7 @@ footer p {
   background: var(--accent_color_gd);
   animation: circlemove_banner 1.8s ease-in-out infinite,
     cirlemovehide 1.8s ease-out infinite;
-  z-index: 10;
+  z-index: 2;
 }
 
 @keyframes circlemove_banner {
@@ -951,14 +949,14 @@ footer p {
 }
 
 /*別ページ　WORKS SITE*/
+.site_main {
+  padding-top: 280px;
+}
+
 .site_wrapper01,
 .site_banner_bar {
   max-width: 830px;
   margin: 0 auto;
-}
-
-.site_wrapper01 {
-  margin-top: 280px;
 }
 
 /*WORK SITE 余白*/
@@ -1150,11 +1148,14 @@ footer p {
 } */
 
 /*ABOUT_ME PC版 */
+.about_me_main {
+  padding-top: 220px;
+}
+
 .about_me_section {
   background-image: url(../images/1x/about_back.png);
   background-size: 100% 100%;
   background-position: center;
-  margin-top: 224px;
   padding-bottom: 168px;
   box-sizing: border-box;
   position: relative;
@@ -1284,18 +1285,102 @@ footer p {
   margin-top: 48px;
 }
 
-.about_contact_section {
-  margin-top: 400px;
+/*PC 制作の流れ */
+.sp_step_title {
+  display: none;
 }
 
-/*PC 制作の流れ*/
+.sp_product_flow_title,
+.sp_product_flow_subtitle {
+  display: none;
+}
 .production_flow_flex {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   max-width: 830px;
   margin: 224px auto 0 auto;
 }
 
+.step_wrapper {
+  width: 27.7%;
+}
+
+.step_img {
+  width: 33%;
+  margin: 64px auto 0 auto;
+}
+
+.step_price_img {
+  width: 24%;
+  margin: 64px auto 0 auto;
+}
+
+.step_img > img {
+  width: 100%;
+}
+
+/**PC 制作の流れ　文字調整・余白*/
+.step_title p:first-child {
+  font-size: 0.875rem;
+}
+
+.step_title p:last-child {
+  font-size: 1.125rem;
+  margin-top: 10px;
+}
+
+.step_discription01,
+.step_discription02,
+.step_discription03 {
+  font-size: 0.875rem;
+  line-height: 1.86;
+}
+
+.step_discription01 {
+  margin-top: 58px;
+}
+.step_discription02 {
+  margin-top: 48px;
+}
+.step_discription03 {
+  margin-top: 35px;
+}
+
+.business_hours,
+.worksday,
+.holiday {
+  font-size: 0.75rem;
+  color: var(--accent_color01);
+}
+
+.business_hours {
+  margin-top: 22px;
+}
+
+.worksday,
+.holiday {
+  margin-top: 8px;
+}
+
+/*あしらい１０*/
+.roop_wrapper10 {
+  max-width: 1440px;
+  margin-left: auto;
+  position: absolute;
+  bottom: 100px;
+  right: 0;
+  width: 100%;
+}
+
+.roop_design10 {
+  width: 100%;
+}
+
+.about_copyright {
+  text-align: center;
+  font-size: 0.625rem;
+  padding-top: 300px;
+}
 /*FVコンセプトやスクロールバーの位置がおかしくなるタイミングで切り替え*/
 @media screen and (max-width: 1150px) {
   /* コンセプト・スクロールバー*/
@@ -1353,7 +1438,7 @@ footer p {
     cursor: pointer;
     /* 位置の調整 */
     position: absolute;
-    top: -270px;
+    top: 32px;
     right: 32px;
     z-index: 100; /*positionが設定されていないと効果なし*/
   }
@@ -1363,7 +1448,7 @@ footer p {
     cursor: pointer;
     /* 位置の調整 */
     position: absolute;
-    top: -250px;
+    top: 32px;
     right: 32px;
     z-index: 100;
   }
@@ -1423,7 +1508,7 @@ footer p {
 
   .works_all_sp_nav {
     position: absolute;
-    top: -308px;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
@@ -1447,7 +1532,7 @@ footer p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 150px;
+    padding-top: 150px;
     gap: 56px;
     height: 100%;
     z-index: 1000;
@@ -1503,6 +1588,7 @@ footer p {
 
   /* トップWORKS SP*/
   /*配置*/
+
   .works_section {
     margin: 96px auto 0 auto;
   }
@@ -1863,6 +1949,18 @@ footer p {
   .roop_wrapper07 {
     bottom: 250px;
   }
+
+  /*ABOUT ME 1150 */
+  .about_me_main {
+    padding-top: 111px;
+  }
+
+  .about_me_wrapper,
+  .service_flex,
+  .from_author,
+  .production_flow_flex {
+    padding: 0 20px;
+  }
 }
 /*957px版*/
 @media screen and (max-width: 957px) {
@@ -1906,20 +2004,24 @@ footer p {
 
 /*830pxスマフォ版*/
 @media screen and (max-width: 830px) {
-  /*画像*/
   .main_visual {
-    width: 100%;
+    width: 370 px;
   }
 
-  .hero_img {
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
+  .pf_concept {
+    width: 160px;
+  }
+
+  .pf_title > div p {
+    font-size: 1rem;
   }
 
   h1 {
-    top: 200px;
-    left: 10%;
+    left: -35%;
+  }
+
+  h1 div:last-child {
+    margin-top: 16px;
   }
 
   .roop_wrapper01 {
@@ -1943,8 +2045,7 @@ footer p {
   /*SP版ABOUT*/
   /*flex解除 floatがきかない・・・*/
 
-  .about_header,
-  .about_me_header {
+  .about_header {
     max-width: 83.3%;
     padding-top: 64px;
   }
@@ -1953,8 +2054,7 @@ footer p {
     margin-top: 126px;
   }
 
-  .about_wrapper,
-  .about_me_wrapper {
+  .about_wrapper {
     display: block;
     max-width: 83.3%;
     margin-top: 16px;
@@ -1973,21 +2073,18 @@ footer p {
     margin: 0 0 16px 16px;
   }
 
-  .name_wrapper,
-  .about_name_wrapper {
+  .name_wrapper {
     flex-direction: column;
   }
 
-  .name_wrapper p:first-child,
-  .about_name_wrapper p:first-child {
+  .name_wrapper p:first-child {
     display: block;
     margin-right: auto;
     margin-top: 16px;
     font-size: 0.875rem; /* 1つ目のp */
   }
 
-  .name_wrapper p:last-child,
-  .about_name_wrapper p:last-child {
+  .name_wrapper p:last-child {
     display: block;
     margin-right: auto;
     font-size: 0.625rem; /* 2つ目のp */
@@ -1995,11 +2092,7 @@ footer p {
     padding-left: 0;
   }
 
-  .about_discription,
-  .about_me_discription01,
-  .about_me_discription02,
-  .about_me_discription03,
-  .about_me_discription04 {
+  .about_discription {
     font-size: 0.812rem;
     line-height: 1.54;
     padding-top: 32px;
@@ -2071,6 +2164,159 @@ footer p {
     margin: 268px 0 48px 0;
   }
 
+  /*ABOUT ME 830*/
+  /*自己紹介830*/
+
+  .about_me_wrapper {
+    display: block;
+    margin-top: 32px;
+    padding-bottom: 120px;
+  }
+
+  .about_header {
+    padding-top: 64px;
+  }
+
+  .about_name_wrapper p:first-child {
+    margin-top: 22px;
+    font-size: 1rem; /* 1つ目のp */
+  }
+
+  .about_name_wrapper p:last-child {
+    font-size: 0.65rem; /* 2つ目のp */
+    padding-left: 8px;
+  }
+
+  .about_me_discription01,
+  .about_me_discription02,
+  .about_me_discription03,
+  .about_me_discription04 {
+    padding-top: 34px;
+  }
+
+  /*サービス 830*/
+  .service_header {
+    padding-top: 0;
+  }
+
+  .service_flex {
+    flex-direction: column;
+    margin-top: 40px;
+  }
+
+  .service_wrapper {
+    width: 100%;
+  }
+
+  .service_title {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service_title p:first-child {
+    font-size: 1.375rem;
+  }
+
+  .service_title p:last-child {
+    padding: 4px 0 0 0;
+  }
+
+  .service_img {
+    width: 12%;
+    margin-top: 40px;
+  }
+
+  .service_discription {
+    margin-top: 24px;
+  }
+
+  .servic_skill {
+    margin-top: 16px;
+  }
+
+  .coding_flex {
+    margin-top: 56px;
+  }
+
+  .from_author {
+    margin-top: 115px;
+  }
+
+  /*830 制作の流れ*/
+  .sp_product_flow_title,
+  .sp_product_flow_subtitle {
+    display: block;
+    text-align: center;
+  }
+
+  .sp_product_flow_title {
+    font-size: 1.125rem;
+    margin-top: 168px;
+  }
+  .sp_product_flow_subtitle {
+    font-size: 0.65rem;
+  }
+
+  .production_flow_flex {
+    margin-top: 56px;
+    flex-direction: column;
+  }
+
+  .pc_step_title {
+    display: none;
+  }
+
+  .step_wrapper {
+    width: 68%;
+    margin: 0 auto;
+  }
+
+  .step_title p {
+    text-align: center;
+  }
+
+  .step_title p:last-child {
+    margin-top: 48px;
+  }
+
+  .sp_step_title {
+    display: block;
+    font-size: 1.125rem;
+  }
+
+  .step_img {
+    width: 30%;
+    margin-top: 28px;
+  }
+
+  .step_price_img {
+    width: 21%;
+    margin-top: 28px;
+  }
+  .step_discription01 {
+    margin-top: 40px;
+  }
+
+  .step_discription01,
+  .holiday {
+    padding-bottom: 88px;
+  }
+
+  /*830 制作の流れ 点線 koko*/
+  .sp_line_flex {
+    /* display: flex;
+    flex-direction: column; */
+    position: relative;
+  }
+  .sp_line {
+    border-bottom: 1px dotted var(--accent_color01);
+    width: 410px;
+    rotate: 90deg;
+    position: absolute;
+    top: 232px;
+    left: -195px;
+  }
+
   /*830px あしらい*/
   /*WORKS_ALL*/
   .roop_design04 {
@@ -2089,15 +2335,29 @@ footer p {
   }
 }
 
+/*FV調整　580*/
+@media screen and (max-width: 750px) {
+  /*画像*/
+  .main_visual {
+    width: 100%;
+  }
+
+  .hero_img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+  }
+
+  h1 {
+    top: 150px;
+    left: 10%;
+  }
+}
+
 /*
 〜新しい質問〜
-・WORKSBANNERのバーガーメニュー。背景、ずれる。
-・WORKSBANNERのSP版上部マージントップ縮めたいのに縮まらない     
-・動画再生されない・・・
-・動画進捗に合わせてバーがすすむのはどうやるのか？
-・諸々の動きの確認
-・ABOUTME元の写真荒くないけど・・・差し込むと荒い？
-・divにしたけどul liタグの方がよいのか？
+・.sp_line　画面縮小時、線がはみでてしまう。位置調整方法も現場がベストか？
+・about sp画面　serviceというタイトル　デザインのように上の背景にかぶせたい。service_section毎、positionを使って上にずらしてあげるのがよいか？
 
 〜未対応メモ（自分で挑戦）〜
 ・残りのあしらい（レスポンシブの０２・０３は完全未対応。０１は、一番小さい画面時が残っている。WORKS SITEの上部のあしらい）
@@ -2159,6 +2419,9 @@ floatで試してみましたが、文章と画像が２段に分かれてしま
 →あしらい２　−３０００pxに設定しているけど・・・一般的にはもっと近いものを基準とする・・・？→works_sectionにあしらい②をいれて、そこを基準にする。遠く離れば離れるほど画面縮小などしたときに乖離する
 
 ・WORKS「ポートフォリオ」などはpではなくh３がよかった？→個別のページはh3に変える
+WORKSBANNERのバーガーメニュー。背景、ずれる。→marginは親要素を飛びでる性質あり。うまくいかなかったらpaddingを検討してみる。
+・ポートフォリオの動画再生されない・・・→videoタグだけでは動かない、autoplayなど設定が必要
+
 〜自分用メモ〜
 ・ヘッダーの視認性UPどうするか
 ・画像を入れ替え
