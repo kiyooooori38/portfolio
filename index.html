@@ -166,7 +166,7 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
 
       <!-- SP固定メールあいこん -->
       <a href="#c-form"
-        ><div class="mail_icon">
+        ><div id="mail" class="mail_icon">
           <img src="./images/1x/SP_mail_icon.svg" alt="メールのアイコン" />
         </div>
       </a>
@@ -357,7 +357,7 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
                 2025年10月より、地域でお店を営んでいる方や、個人でサービスを提供されている事業者さまを中心に、ホームページやバナー制作を承っております。<br />お客さまに安心いただけるよう、丁寧なヒアリングと適切な進捗のご報告を心がけながら、一つ一つ誠実に制作を進めてまいります。<br />
                 制作を開始する前には、まずWEB面談にてご要望や状況をお伺いしております。その上で、ご依頼いただくかどうかをご判断いただけますので、ぜひお気軽にご相談ください。
               </p>
-              <a class="about_btn" href="about.html"
+              <a class="about_btn" href="about_me.html"
                 ><span class="about_btn_span">View more</span></a
               >
             </div>
@@ -366,7 +366,7 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
       </section>
 
       <!-- 中間のスクロールバー -->
-      <div class="bar">
+      <div id="top-bar" class="bar">
         <div></div>
       </div>
 
@@ -526,6 +526,44 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
 
     <!-- jquery -->
     <script>
+      //メールアイコンをふわっと表示させて一定の場所で非表示、上スクロールで再表示
+      document.addEventListener("DOMContentLoaded", function () {
+        const pageTop = document.querySelector("#mail");
+        const scrollThreshold = 100;
+
+        function scrollTop() {
+          window.scroll({
+            top: 0,
+            behavior: "smooth",
+          });
+        }
+
+        function scrollEvent() {
+          if (window.scrollY > scrollThreshold) {
+            pageTop.style.opacity = "1";
+          } else {
+            pageTop.style.opacity = "0";
+          }
+        }
+
+        function Position() {
+          const scrollHeight = document.documentElement.scrollHeight;
+          const scrollPosition = window.innerHeight + window.scrollY;
+          const footHeight = document.querySelector("#c-form").offsetHeight;
+
+          if (scrollHeight - scrollPosition <= footHeight) {
+            pageTop.style.position = "absolute";
+            pageTop.style.bottom = footHeight + "px";
+          } else {
+            pageTop.style.position = "fixed";
+            pageTop.style.bottom = "0";
+          }
+        }
+
+        pageTop.addEventListener("click", scrollTop);
+        window.addEventListener("scroll", scrollEvent);
+        window.addEventListener("scroll", Position);
+      });
       //ローディング
       document.addEventListener("DOMContentLoaded", function () {
         const loading = document.querySelector(".loading");

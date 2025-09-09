@@ -850,8 +850,23 @@ footer p {
 .works_all_header > span {
   /* グラデーション 動きをつける*/
   background: linear-gradient(90deg, #181e4d, 80%, #8aecff);
+  background-size: 200% 100%; /* 動かす分だけ広げる */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: gradientMove 4s linear infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 100% 0%;
+  } /* 右端スタート */
+  50% {
+    background-position: 0% 0%;
+  } /* 右端まで移動 */
+
+  100% {
+    background-position: 100% 0%;
+  }
 }
 
 .works_all_section {
@@ -1417,9 +1432,24 @@ footer p {
 
 .service_header > span {
   /* グラデーション 動きをつける*/
-  background: linear-gradient(90deg, #181e4d, 80%, #8aecff);
+  background: linear-gradient(90deg, #181e4d, 60%, #8aecff);
+  background-size: 200% 100%; /* 動かす分だけ広げる */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: gradientMove 4s linear infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 100% 0%;
+  } /* 右端スタート */
+  50% {
+    background-position: 0% 0%;
+  } /* 右端まで移動 */
+
+  100% {
+    background-position: 100% 0%;
+  }
 }
 
 .service_flex {
@@ -2682,6 +2712,8 @@ path {
 ・トップページのABOUT画像を入れ替えたら大きさが変わったため、調整しようと.about_img_wrapperに
 max-widthを指定した。デベロッパーツールだときちんと反映されるのに、ファイルの変更は全く反映されない。
 ・roop_wrapper02、roop_wrapper03,動くするようにすると見切れてしまう
+・SP版にした際、スクロールに合わせて追従するメールアイコンがあるが、コンタクトフォームにさしかかったら非表示になるようにしたい。
+いまは、コンタクトフォーム下部に到達したら非表示になるようになってしまっている。
 
 〜未対応メモ（自分で挑戦）〜
 ・画像入れ替え
