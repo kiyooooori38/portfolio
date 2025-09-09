@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1336 462.15">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-3 {
+        fill: url(#_名称未設定グラデーション_45);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-1" width="1336" height="462.15"/>
+    </clipPath>
+    <linearGradient id="_名称未設定グラデーション_45" data-name="名称未設定グラデーション 45" x1="668.33" y1="462.15" x2="668.33" y2="109.55" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8aecff"/>
+      <stop offset="0" stop-color="#75c8e0"/>
+      <stop offset="0" stop-color="#5186a7"/>
+      <stop offset=".42" stop-color="#35547b"/>
+      <stop offset=".8" stop-color="#202c59"/>
+      <stop offset="1" stop-color="#181e4d"/>
+    </linearGradient>
+  </defs>
+  <g id="_編集_ワイヤーフレーム" data-name="編集_ワイヤーフレーム">
+    <g class="cls-2">
+      <path class="cls-3" d="M1372.01,462.15c-118.78-207.6-389.15-352.6-703.67-352.6S83.44,254.55-35.34,462.15h1407.35Z"/>
+    </g>
+  </g>
+</svg>

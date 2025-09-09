@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="./css/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- あしらいにアニメーションをつけるために以下を読み込む -->
-    <script src="js/vivus.min.js"></script>
+    <script src="
+https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
+"></script>
   </head>
   <body>
     <!-- カーソルの見た目を変更 -->
@@ -60,12 +62,60 @@
             srcset="./images/1x/roop_design01_sp.svg"
             media="(max-width:830px)"
           />
-          <!--アニメーション用にidを追加・svgタグに変更　チェック-->
+          <!--アニメーション-->
+          <?xml version="1.0" encoding="UTF-8"?>
           <svg
             id="layer"
             class="roop_design01"
-            src="./images/1x/roop_design01.svg"
-          ></svg>
+            data-name="レイヤー 2"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 1302.01 965.23"
+          >
+            <defs>
+              <style>
+                .cls-1,
+                .cls-2 {
+                  fill: none;
+                }
+
+                .cls-2 {
+                  stroke: url(#_名称未設定グラデーション_126);
+                  stroke-miterlimit: 10;
+                }
+
+                .cls-3 {
+                  clip-path: url(#clippath);
+                }
+              </style>
+              <clipPath id="clippath">
+                <rect class="cls-1" width="1302.01" height="965.23" />
+              </clipPath>
+              <linearGradient
+                id="_名称未設定グラデーション_126"
+                data-name="名称未設定グラデーション 126"
+                x1="64.53"
+                y1="577.09"
+                x2="1378.81"
+                y2="464.13"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset="0" stop-color="#181e4d" />
+                <stop offset=".57" stop-color="#5a95b4" />
+                <stop offset="1" stop-color="#8aecff" />
+              </linearGradient>
+            </defs>
+            <g id="_編集_ワイヤーフレーム" data-name="編集_ワイヤーフレーム">
+              <g class="cls-3">
+                <path
+                  class="cls-2"
+                  fill="none"
+                  stroke="#000"
+                  d="M1330.96,104.89c-131.83,114.47-231.17,260.87-345.93,392.45-95.64,109.66-203.27,210.09-326.84,286.91-123.57,76.83-263.81,129.54-408.93,140.16-42.01,3.08-87.85,4.57-122.45-23.41-23.85-19.28-39.02-48.9-40.73-79.52-2.31-41.42,19.41-81.53,50.06-109.49,89.61-81.74,238.32-91.22,352.9-105.63,134.13-16.86,267.31-30.93,399.45-59.83,131.58-28.78,261.46-65.33,388.74-109.4,32.14-11.13,64.33-22.43,96.17-34.33"
+                />
+              </g>
+            </g>
+          </svg>
         </picture>
       </div>
 
@@ -140,7 +190,9 @@
                   コンセプト設定から実装まで、いまの自分にできる全てをこのポートフォリオに詰め込みました。“お客さまに長く愛されるデザインを届けたい”<br />“人と人のつながりを大切にし、長く寄り添える存在でありたい”<br />そんな想いから「∞（インフィニティ）」と「輪（つながり）」をコンセプトにしています。
                 </p>
                 <p class="works_sub_category">[ Category : design, coding ]</p>
-                <a class="works_btn" href="website_01.html">View more</a>
+                <a class="works_btn" href="website_01.html"
+                  ><span class="works_btn_span">View more</span></a
+                >
               </div>
 
               <div>
@@ -171,7 +223,9 @@
                   仮想のヘアサロンサイトをデザインしました。コーポレートカラーのピンクを基調に、お店の雰囲気や人が感じられるサイトに仕上げました。
                 </p>
                 <p class="works_sub_category02">[ Category : design ]</p>
-                <a class="works_btn02" href="works_hairsalon.html">View more</a>
+                <a class="works_btn02" href="works_hairsalon.html"
+                  ><span class="works_btn_span">View more</span></a
+                >
               </div>
             </div>
           </article>
@@ -186,7 +240,9 @@
                   仮想のカフェサイトを制作しました。レスポンシブ対応で、スマートフォンからPCまで快適に閲覧できるよう設計しています。また、jQueryを活用し、スクロールやボタン操作にアニメーションを取り入れることで、サイト全体にやさしい動きを加え心地よく閲覧できる工夫をこらしました。
                 </p>
                 <p class="works_sub_category03">[ Category : coding ]</p>
-                <a class="works_btn" href="works_cafesite.html">View more</a>
+                <a class="works_btn" href="works_cafesite.html"
+                  ><span class="works_btn_span">View more</span></a
+                >
               </div>
 
               <div class="order">
@@ -448,18 +504,18 @@
         });
       });
 
-      /*あしらいアニメーション　チェック*/
+      /* あしらいアニメーション */
       $(function () {
         new Vivus(
           "layer",
           {
-            duration: 120,
+            duration: 400,
             start: "autostart",
             type: "scenario",
             pathTimingFunction: Vivus.EASE_OUT,
           },
           function (obj) {
-            $("#layer").addClass("done");
+            obj.reset().play();
           }
         );
       });

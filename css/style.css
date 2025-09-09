@@ -418,6 +418,7 @@ article:not(:first-of-type) > div > div {
   justify-content: center;
   align-items: center;
   margin-top: 48px;
+  position: relative;
 }
 
 .works_btn::after,
@@ -427,9 +428,10 @@ article:not(:first-of-type) > div > div {
   width: 0; /*元々16px*/
   border-bottom: 1px solid var(--base_color_light);
   margin-left: 16px;
-
   animation: lineDraw 1.5s infinite;
   animation-delay: 1s;
+  position: absolute;
+  right: 60px;
 }
 
 @keyframes lineDraw {
@@ -437,8 +439,12 @@ article:not(:first-of-type) > div > div {
     width: 0;
   }
   100% {
-    width: 20px; /* 最終的に伸ばす長さ */
+    width: 25px; /* 最終的に伸ばす長さ */
   }
+}
+
+.works_btn_span {
+  margin-right: 50px;
 }
 
 /*WORKS_ViewAllボタン*/
@@ -1265,13 +1271,14 @@ footer p {
 
 /*あしらい０8*/
 
-/* .roop_wrapper08 {
+.roop_wrapper08 {
   max-width: 1440px;
   position: absolute;
-  top: 0;
+  top: 1500px;
   right: 0;
   width: 100%;
-} */
+  z-index: -1;
+}
 
 /*ABOUT_ME PC版 */
 .about_me_main {
@@ -1336,6 +1343,10 @@ footer p {
 }
 
 /*PC版サービスセクション */
+.service_section {
+  position: relative;
+}
+
 .service_header {
   max-width: 1000px;
   margin: 0 auto;
@@ -1427,9 +1438,13 @@ footer p {
   margin: 224px auto 0 auto;
 }
 
-.step_wrapper {
-  width: 27.7%;
+.sp_flow_flex {
+  max-width: 27.7%;
 }
+
+.step_wrapper {
+  width: 100%;
+} /*koko*/
 
 .step_img {
   width: 33%;
@@ -1488,6 +1503,17 @@ footer p {
   margin-top: 8px;
 }
 
+/*あしらい09*/
+.roop_wrapper09 {
+  max-width: 1440px;
+  margin-left: auto;
+  position: absolute;
+  bottom: 1850px;
+  left: 0;
+  transform: scaleX(-1);
+  width: 100%;
+}
+
 /*あしらい１０*/
 .roop_wrapper10 {
   max-width: 1440px;
@@ -1512,23 +1538,11 @@ footer p {
 path {
   fill: none;
   fill-opacity: 0;
-  transition: fill-opacity 0.5s;
 }
-/* .done .cls-1 {
-  fill: #8b6039;
-  fill-opacity: 1;
-}
-.done .cls-2 {
-  fill: #ec5247;
-  fill-opacity: 1;
-}
-.done .cls-3 {
-  fill: #c39868;
-  fill-opacity: 1;
-} */
-.done path {
+
+/* .done path {
   stroke: none;
-}
+} */
 
 /*FVコンセプトやスクロールバーの位置がおかしくなるタイミングで切り替え*/
 @media screen and (max-width: 1150px) {
@@ -1724,12 +1738,12 @@ path {
     border-radius: 5px 0 0 5px;
     background-color: var(--accent_color02);
     position: fixed;
-    bottom: 0;
+    bottom: 20px;
     right: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 999;
   }
 
   .mail_icon > img {
@@ -2111,6 +2125,7 @@ path {
   .production_flow_flex {
     padding: 0 20px;
   }
+
   .service_section {
     margin-top: -200px;
   }
@@ -2118,6 +2133,19 @@ path {
   /*1150 あしらい*/
   .roop_wrapper02 {
     bottom: -600px;
+  }
+
+  /*あしらい０8*/
+  .roop_wrapper08 {
+    display: none;
+  }
+
+  .roop_wrapper09 {
+    bottom: 1900px;
+  }
+
+  .roop_wrapper {
+    bottom: 195px;
   }
 }
 /*957px版*/
@@ -2157,6 +2185,14 @@ path {
     100% {
       top: 890px;
     }
+  }
+
+  .roop_wrapper09 {
+    bottom: 1969px;
+  }
+
+  .roop_wrapper {
+    bottom: 285px;
   }
 }
 
@@ -2420,6 +2456,10 @@ path {
     display: none;
   }
 
+  .sp_flow_flex {
+    max-width: 100%;
+  }
+
   .step_wrapper {
     width: 68%;
     margin: 0 auto;
@@ -2477,80 +2517,101 @@ path {
   /*WORKS_ALL*/
   .roop_wrapper01 {
     width: 100%;
-    right: auto;
-    left: -140px;
-  }
-
-  .roop_wrapper02 {
-    width: 80%;
+    /* right: auto;
+    left: -140px; */
     transform: scaleX(-1);
-    bottom: -300px;
-    left: auto;
-    right: 0;
+
+    .roop_wrapper02 {
+      width: 80%;
+      transform: scaleX(-1);
+      bottom: -300px;
+      left: auto;
+      right: 0;
+    }
+
+    .roop_wrapper03 {
+      width: 100%;
+      transform: scaleX(-1);
+      bottom: -200px;
+      right: auto;
+    }
+
+    .roop_wrapper05 {
+      top: -280px;
+    }
+
+    .roop_wrapper06 {
+      bottom: 323px;
+    }
+
+    .roop_wrapper07 {
+      bottom: 10px;
+    }
+
+    .roop_wrapper09 {
+      display: none;
+    }
+
+    .roop_wrapper {
+      bottom: 100px;
+    }
   }
 
-  .roop_wrapper03 {
-    width: 100%;
-    transform: scaleX(-1);
-    bottom: -200px;
-    right: auto;
+  /*FV調整　750*/
+  @media screen and (max-width: 750px) {
+    /*画像*/
+    .main_visual {
+      width: 100%;
+    }
+
+    .hero_img {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+    }
+
+    h1 {
+      top: 150px;
+      left: 10%;
+    }
+
+    /*750 あしらい*/
+    .roop_wrapper01 {
+      bottom: -150px;
+      left: -130px;
+    }
+
+    .roop_wrapper04 {
+      display: none;
+    }
+
+    .roop_wrapper07 {
+      bottom: 0;
+    }
   }
 
-  .roop_wrapper05 {
-    top: -280px;
-  }
+  /*520 あしらい*/
+  @media screen and (max-width: 520px) {
+    .roop_wrapper01 {
+      bottom: -150px;
+      left: -95px;
+    }
 
-  .roop_wrapper06 {
-    bottom: 400px;
-  }
+    .roop_wrapper02 {
+      bottom: -250px;
+    }
 
-  .roop_wrapper07 {
-    bottom: 130px;
-  }
-}
+    .roop_wrapper03 {
+      bottom: -100px;
+    }
 
-/*FV調整　750*/
-@media screen and (max-width: 750px) {
-  /*画像*/
-  .main_visual {
-    width: 100%;
-  }
+    .roop_wrapper07 {
+      bottom: 100px;
+    }
 
-  .hero_img {
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-  }
-
-  h1 {
-    top: 150px;
-    left: 10%;
-  }
-
-  /*750 あしらい*/
-  .roop_wrapper01 {
-    bottom: -150px;
-    left: -130px;
-  }
-
-  .roop_wrapper04 {
-    display: none;
-  }
-}
-
-/*520 あしらい*/
-@media screen and (max-width: 520px) {
-  .roop_wrapper01 {
-    bottom: -150px;
-    left: -95px;
-  }
-
-  .roop_wrapper02 {
-    bottom: -250px;
-  }
-
-  .roop_wrapper03 {
-    bottom: -100px;
+    .roop_wrapper10 {
+      display: none;
+    }
   }
 }
 
@@ -2564,7 +2625,6 @@ https://oku-log.com/blog/vivus/
 
 
 〜未対応メモ（自分で挑戦）〜
-・残りのあしらい（レスポンシブの０２・０３は完全未対応。０１は、一番小さい画面時が残っている。WORKS SITEの上部のあしらい）
 ・画像入れ替え
 ・ページ上部に戻るボタンの実装
 ・footer copyright 位置が上すぎるよね？
