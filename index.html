@@ -45,10 +45,13 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
           </div>
         </h1>
         <picture>
-          <source srcset="./images/1x/FV_SP-80.jpg" media="(max-width:750px)" />
+          <source
+            srcset="./images/1x/FV_SP@3x-80.jpg"
+            media="(max-width:750px)"
+          />
           <img
             class="hero_img"
-            src="./images/1x/fv-80.jpg"
+            src="./images/1x/fv@2x-80.jpg"
             alt="メインビジュアル_ポートフォリオ作者の画像"
           />
         </picture>
@@ -63,7 +66,7 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
             media="(max-width:830px)"
           />
           <!--アニメーション-->
-          <?xml version="1.0" encoding="UTF-8"?>
+
           <svg
             id="layer"
             class="roop_design01"
@@ -265,17 +268,69 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
           <div class="view_all_wrapper">
             <a href="works_all.html">
               <img src="./images/1x/ViewAllボタン.svg" alt="ボタンの画像" />
-              <p>View all Works</p>
+              <p><span class="view_all_btn_span">View all Works</span></p>
             </a>
           </div>
 
           <!-- あしらい２ -->
           <div class="roop_wrapper02">
-            <img
+            <!-- <img
               class="roop_design02"
               src="./images/1x/roop_design02.svg"
               alt="∞マークの装飾"
-            />
+            /> -->
+            <svg
+              id="layer02"
+              class="roop_design02"
+              data-name="レイヤー 2"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 1335.46 1173.81"
+            >
+              <defs>
+                <style>
+                  .cls-1,
+                  .cls-2 {
+                    fill: none;
+                  }
+
+                  .cls-2 {
+                    stroke: url(#_名称未設定グラデーション_3);
+                    stroke-miterlimit: 10;
+                    stroke-width: 1.16px;
+                  }
+
+                  .cls-3 {
+                    clip-path: url(#clippath);
+                  }
+                </style>
+                <clipPath id="clippath">
+                  <rect class="cls-1" y="0" width="1335.46" height="1173.81" />
+                </clipPath>
+                <linearGradient
+                  id="_名称未設定グラデーション_3"
+                  data-name="名称未設定グラデーション 3"
+                  x1="5184.42"
+                  y1="1404.39"
+                  x2="6659.23"
+                  y2="1404.39"
+                  gradientTransform="translate(6599.37 809.38) rotate(-164.33) scale(1 -1)"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0" stop-color="#8aecff" />
+                  <stop offset=".43" stop-color="#5a95b4" />
+                  <stop offset="1" stop-color="#181e4d" />
+                </linearGradient>
+              </defs>
+              <g id="_編集_ワイヤーフレーム" data-name="編集_ワイヤーフレーム">
+                <g class="cls-3">
+                  <path
+                    class="cls-2"
+                    d="M-64.12-21.97C56.78,131.28,135.34,312.81,233.91,481.28c82.15,140.41,179.41,273.17,299.1,383.35,119.69,110.18,262.71,197.34,419.89,239.3,45.5,12.15,95.54,23.35,139.38-.15,30.22-16.2,53.06-45.57,61.33-78.84,11.18-45.01-4.3-93.6-32.13-130.71-81.36-108.48-242.72-149.93-365.56-189.67-143.81-46.52-287.14-89.76-426.25-149.09-138.51-59.08-273.54-126.33-404.14-201.31-32.97-18.93-65.97-38.07-98.46-57.78"
+                  />
+                </g>
+              </g>
+            </svg>
           </div>
         </div>
       </section>
@@ -288,7 +343,7 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
             <div calss="about_img_wrapper">
               <img
                 class="about_img"
-                src="./images/1x/about.png"
+                src="./images/1x/about@2x.png"
                 alt="岩沢 清里の写真"
               />
             </div>
@@ -302,7 +357,9 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
                 2025年10月より、地域でお店を営んでいる方や、個人でサービスを提供されている事業者さまを中心に、ホームページやバナー制作を承っております。<br />お客さまに安心いただけるよう、丁寧なヒアリングと適切な進捗のご報告を心がけながら、一つ一つ誠実に制作を進めてまいります。<br />
                 制作を開始する前には、まずWEB面談にてご要望や状況をお伺いしております。その上で、ご依頼いただくかどうかをご判断いただけますので、ぜひお気軽にご相談ください。
               </p>
-              <a class="about_btn" href="about.html">View more</a>
+              <a class="about_btn" href="about.html"
+                ><span class="about_btn_span">View more</span></a
+              >
             </div>
           </div>
         </div>
@@ -335,7 +392,7 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
                 >貴社名</label
               >
               <input
-                name="entry.193574675"
+                name="entry.366340186"
                 type="text"
                 class="c-form_input"
                 id="field_company_name"
@@ -346,7 +403,7 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
             <div class="c-form_item">
               <label class="c-form_label" for="field_name">お名前</label>
               <input
-                name="entry.479767945"
+                name="entry.1067791974"
                 type="text"
                 class="c-form_input"
                 id="field_name"
@@ -360,8 +417,8 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
                 >メールアドレス</label
               >
               <input
-                name="entry.575046759"
-                type="text"
+                name="entry.1795311363"
+                type="email"
                 class="c-form_input"
                 id="field_mail"
                 placeholder=" info@sample.co.jp"
@@ -372,8 +429,8 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
             <div class="c-form_item">
               <label class="c-form_label" for="field_phone_num">電話番号</label>
               <input
-                name="entry.1542452913"
-                type="text"
+                name="entry.307859011"
+                type="tel"
                 class="c-form_input"
                 id="field_phone_num"
                 placeholder=" 090-1234-5678"
@@ -385,7 +442,7 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
                 >お問い合わせ内容</label
               >
               <textarea
-                name="entry.1725306659"
+                name="entry.648122247"
                 class="c-form_input"
                 id="field_message"
                 required="required"
@@ -396,7 +453,7 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
             <div class="c-form_submit">
               <button type="submit">
                 <img src="./images/1x/送信ボタン.svg" alt="ボタンの画像" />
-                <p>内容を送信する</p>
+                <p><span class="c-form_span">内容を送信する</span></p>
               </button>
             </div>
           </form>
@@ -406,57 +463,69 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
     <footer>
       <!-- あしらい3 -->
       <div class="roop_wrapper03">
-        <img
+        <!-- <img
           class="roop_design03"
           src="./images/1x/roop_design03.svg"
           alt="∞マークの装飾"
-        />
+        /> -->
+        <svg
+          id="layer03"
+          class="roop_design03"
+          data-name="レイヤー 2"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 1301.44 1180"
+        >
+          <defs>
+            <style>
+              .cls-1,
+              .cls-2 {
+                fill: none;
+              }
+
+              .cls-2 {
+                stroke: url(#_名称未設定グラデーション_126);
+                stroke-miterlimit: 10;
+                stroke-width: 1.07px;
+              }
+
+              .cls-3 {
+                clip-path: url(#clippath);
+              }
+            </style>
+            <clipPath id="clippath">
+              <rect class="cls-1" width="1301.44" height="1180" />
+            </clipPath>
+            <linearGradient
+              id="_名称未設定グラデーション_126"
+              data-name="名称未設定グラデーション 126"
+              x1="881.05"
+              y1="243.37"
+              x2="2234.09"
+              y2="243.37"
+              gradientTransform="translate(-803.25 795.98) rotate(-12.48)"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop offset="0" stop-color="#181e4d" />
+              <stop offset=".57" stop-color="#5a95b4" />
+              <stop offset="1" stop-color="#8aecff" />
+            </linearGradient>
+          </defs>
+          <g id="_編集_ワイヤーフレーム" data-name="編集_ワイヤーフレーム">
+            <g class="cls-3">
+              <path
+                class="cls-2"
+                d="M1333.48,192.07c-118.58,134.2-199.81,296.46-298.72,445.75-82.43,124.42-178.3,241.06-293.57,335.87-115.27,94.81-250.73,167.34-396.85,197.74-42.3,8.8-88.71,16.51-127.67-7.26-26.85-16.38-46.28-44.45-52.15-75.35-7.94-41.8,8.72-85.52,36.11-118.09,80.07-95.21,230-124.93,344.55-155.06,134.11-35.26,267.61-67.55,398.07-114.78,129.9-47.03,257.02-101.74,380.48-163.74,31.17-15.66,62.38-31.5,93.14-47.9"
+              />
+            </g>
+          </g>
+        </svg>
       </div>
       <p>&copy;2025 Kiyori Iwasawa</p>
     </footer>
 
     <!-- jquery -->
     <script>
-      //カーソルの見た目を変更
-      var cursor = $("#cursor");
-      //ちょっと遅れてついてくるストーカー要素の指定
-      var stalker = $("#stalker");
-
-      //mousemoveイベントでカーソル要素を移動させる
-      $(document).on("mousemove", function (e) {
-        //カーソルの座標位置を取得
-        var x = e.clientX;
-        var y = e.clientY;
-        //カーソル要素のcssを書き換える用
-        cursor.css({
-          opacity: "1",
-          top: y + "px",
-          left: x + "px",
-        });
-
-        //ストーカー要素のcssを書き換える用
-        setTimeout(function () {
-          stalker.css({
-            opacity: "0.4",
-            top: y + "px",
-            left: x + "px",
-          });
-        }, 140); //カーソルより遅れる時間を指定
-      });
-
-      //aタグホバー
-      $("a").on({
-        mouseenter: function () {
-          //activeクラス付与
-          cursor.addClass("active");
-          stalker.addClass("active");
-        },
-        mouseleave: function () {
-          cursor.removeClass("active");
-          stalker.removeClass("active");
-        },
-      });
-
       //ローディング
       document.addEventListener("DOMContentLoaded", function () {
         const loading = document.querySelector(".loading");
@@ -502,22 +571,112 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
           $(".mail_icon").removeClass("invisible");
           $(".scroll_down").removeClass("invisible");
         });
-      });
 
-      /* あしらいアニメーション */
-      $(function () {
-        new Vivus(
-          "layer",
-          {
-            duration: 400,
-            start: "autostart",
-            type: "scenario",
-            pathTimingFunction: Vivus.EASE_OUT,
+        //あしらい1
+        const vivus = new Vivus("layer", {
+          duration: 350,
+          start: "autostart",
+          type: "scenario",
+          pathTimingFunction: Vivus.EASE_OUT,
+        });
+
+        function playForward() {
+          vivus.play(1, function () {
+            setTimeout(playBackward, 350);
+          });
+        }
+
+        function playBackward() {
+          vivus.play(-1, function () {
+            setTimeout(playForward, 350);
+          });
+        }
+
+        playForward();
+
+        //あしらい2
+        const vivus02 = new Vivus("layer02", {
+          duration: 350,
+          start: "autostart",
+          type: "scenario",
+          pathTimingFunction: Vivus.EASE_OUT,
+        });
+
+        function playForward02() {
+          vivus02.play(1, function () {
+            setTimeout(playBackward02, 350);
+          });
+        }
+
+        function playBackward02() {
+          vivus02.play(-1, function () {
+            setTimeout(playForward02, 350);
+          });
+        }
+
+        playForward02();
+
+        //あしらい3
+        const vivus03 = new Vivus("layer03", {
+          duration: 350,
+          start: "autostart",
+          type: "scenario",
+          pathTimingFunction: Vivus.EASE_OUT,
+        });
+
+        function playForward03() {
+          vivus03.play(1, function () {
+            setTimeout(playBackward03, 350);
+          });
+        }
+
+        function playBackward03() {
+          vivus03.play(-1, function () {
+            setTimeout(playForward03, 350);
+          });
+        }
+
+        playForward03();
+
+        //カーソルの見た目を変更
+        var cursor = $("#cursor");
+        //ちょっと遅れてついてくるストーカー要素の指定
+        var stalker = $("#stalker");
+
+        //mousemoveイベントでカーソル要素を移動させる
+        $(document).on("mousemove", function (e) {
+          //カーソルの座標位置を取得
+          var x = e.clientX;
+          var y = e.clientY;
+          //カーソル要素のcssを書き換える用
+          cursor.css({
+            opacity: "1",
+            top: y + "px",
+            left: x + "px",
+          });
+
+          //ストーカー要素のcssを書き換える用
+          setTimeout(function () {
+            stalker.css({
+              opacity: "0.4",
+              top: y + "px",
+              left: x + "px",
+            });
+          }, 140); //カーソルより遅れる時間を指定
+        });
+
+        //aタグホバー
+        $("a").on({
+          mouseenter: function () {
+            //activeクラス付与
+            cursor.addClass("active");
+            stalker.addClass("active");
           },
-          function (obj) {
-            obj.reset().play();
-          }
-        );
+          mouseleave: function () {
+            cursor.removeClass("active");
+            stalker.removeClass("active");
+          },
+        });
       });
     </script>
   </body>

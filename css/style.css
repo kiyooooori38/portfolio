@@ -35,7 +35,7 @@ body {
 }
 #cursor.active,
 #stalker.active {
-  transform: scale(1.4);
+  transform: scale(1.6);
 }
 
 /*ローディング画面*/
@@ -288,11 +288,11 @@ h1 div:last-child {
 
 .works_header span {
   /* グラデーション 動きをつける*/
-  background: linear-gradient(90deg, #181e4d, 80%, #8aecff);
+  background: linear-gradient(90deg, #181e4d, 60%, #8aecff);
   background-size: 200% 100%; /* 動かす分だけ広げる */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: gradientMove 6s linear infinite;
+  animation: gradientMove 4s linear infinite;
 }
 
 @keyframes gradientMove {
@@ -405,7 +405,7 @@ article:not(:first-of-type) > div > div {
   border-bottom: 1px dotted var(--accent_color01);
   padding-top: 4px;
 }
-/*WORKS_ボタン*/
+/*WORKS_ボタン anime*/
 .works_btn,
 .works_btn02 {
   display: inline-block;
@@ -431,7 +431,7 @@ article:not(:first-of-type) > div > div {
   animation: lineDraw 1.5s infinite;
   animation-delay: 1s;
   position: absolute;
-  right: 60px;
+  left: 52%; /*調整*/
 }
 
 @keyframes lineDraw {
@@ -479,7 +479,16 @@ article:not(:first-of-type) > div > div {
   border-bottom: 1px solid #fff;
   border-radius: 5px;
   margin-left: 16px;
+  animation: lineDraw 1.5s infinite;
+  animation-delay: 1s;
+  position: absolute;
+  left: 57%;
 }
+
+.view_all_btn_span {
+  margin-right: 50px;
+}
+
 /*あしらい０2*/
 .roop_wrapper02 {
   max-width: 1440px;
@@ -535,8 +544,8 @@ article:not(:first-of-type) > div > div {
 }
 
 .about_img_wrapper {
-  width: 312px;
-  max-width: 312px;
+  /* width: 312px; */
+  max-width: 37%;
 }
 
 .name_wrapper,
@@ -581,6 +590,7 @@ article:not(:first-of-type) > div > div {
   justify-content: center;
   align-items: center;
   margin-top: 48px;
+  position: relative;
 }
 
 .about_btn::after {
@@ -589,6 +599,23 @@ article:not(:first-of-type) > div > div {
   width: 16px;
   border-bottom: 1px solid var(--base_color_light);
   margin-left: 16px;
+  animation: lineDraw 1.5s infinite;
+  animation-delay: 1s;
+  position: absolute;
+  left: 56%;
+}
+
+@keyframes lineDraw {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 25px; /* 最終的に伸ばす長さ */
+  }
+}
+
+.about_btn_span {
+  margin-right: 36px;
 }
 
 /*ページ中間のバー*/
@@ -619,8 +646,8 @@ article:not(:first-of-type) > div > div {
   height: 12px;
   border-radius: 50%;
   background: var(--accent_color_gd);
-  animation: circlemove_aaa 1.8s ease-in-out infinite,
-    cirlemovehide 1.8s ease-out infinite;
+  animation: circlemove_aaa 4s ease-in-out infinite,
+    cirlemovehide 4s ease-out infinite;
   z-index: 10;
 }
 
@@ -628,6 +655,7 @@ article:not(:first-of-type) > div > div {
   0% {
     transform: translate(-50%, -50%) translateY(-72px);
   }
+
   100% {
     transform: translate(-50%, -50%) translateY(88px);
   }
@@ -649,9 +677,24 @@ article:not(:first-of-type) > div > div {
 
 .contact_header > span {
   /* グラデーション 動きをつける*/
-  background: linear-gradient(90deg, #181e4d, 80%, #8aecff);
+  background: linear-gradient(90deg, #181e4d, 60%, #8aecff);
+  background-size: 200% 100%; /* 動かす分だけ広げる */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: gradientMove 4s linear infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 100% 0%;
+  } /* 右端スタート */
+  50% {
+    background-position: 0% 0%;
+  } /* 右端まで移動 */
+
+  100% {
+    background-position: 100% 0%;
+  }
 }
 
 .contact_wrapper {
@@ -752,6 +795,7 @@ textarea.c-form_input {
   transform: translate(-50%, -50%);
   color: #fff;
 }
+
 .c-form_submit p::after {
   content: "";
   display: inline-block;
@@ -759,6 +803,14 @@ textarea.c-form_input {
   border-bottom: 1px solid #fff;
   border-radius: 5px;
   margin-left: 20px;
+  animation: lineDraw 1.5s infinite;
+  animation-delay: 1s;
+  position: absolute;
+  left: 57%;
+}
+
+.c-form_span {
+  margin-right: 40px;
 }
 
 /* フッター */
@@ -1216,6 +1268,14 @@ footer p {
   border-bottom: 1px solid #fff;
   border-radius: 5px;
   margin-left: 16px;
+  animation: lineDraw 1.5s infinite;
+  animation-delay: 1s;
+  position: absolute;
+  left: 62%; /*調整*/
+}
+
+.site_btn_span {
+  margin-right: 50px;
 }
 
 /*WORKS SITE ページ毎の画像　PC*/
@@ -2527,6 +2587,7 @@ path {
       bottom: -300px;
       left: auto;
       right: 0;
+      z-index: 2;
     }
 
     .roop_wrapper03 {
@@ -2617,12 +2678,10 @@ path {
 
 /*
 〜新しい質問〜
-・トップぺーじ一番最初のroop_design01を以下参考に、線が徐々に絵ががれるような動きをつけようと思ったが、できない・・・
-https://oku-log.com/blog/vivus/
-
-・トップ画面worksのボタンにある直線にアニメーションをかけたものの、文字の場所は固定したい・線だけ動かしたいのに、線が伸びるにつれて文字まで位置が変わってし合う
-
-
+・バーの速度、ループまでの開始時間を少し遅らせることができるのか？
+・トップページのABOUT画像を入れ替えたら大きさが変わったため、調整しようと.about_img_wrapperに
+max-widthを指定した。デベロッパーツールだときちんと反映されるのに、ファイルの変更は全く反映されない。
+・roop_wrapper02、roop_wrapper03,動くするようにすると見切れてしまう
 
 〜未対応メモ（自分で挑戦）〜
 ・画像入れ替え
@@ -2631,11 +2690,6 @@ https://oku-log.com/blog/vivus/
 ・全ページナビゲーション、カーソルの部分再調整
 ・ローディング画面のときスクロールさせない
 ・スマフォの確認　画像非表示・・・
-・about　制作の流れ　PC版がおかしくなってしまった
-
-〜授業時に確認〜
-・文字のグラデーション・・・なんかイメージと違うな・・・
-・コンタクトフォーム　飛ぶところおかしいよね？
 
 
 〜回答済み〜
@@ -2688,6 +2742,10 @@ floatで試してみましたが、文章と画像が２段に分かれてしま
 ・WORKS「ポートフォリオ」などはpではなくh３がよかった？→個別のページはh3に変える
 WORKSBANNERのバーガーメニュー。背景、ずれる。→marginは親要素を飛びでる性質あり。うまくいかなかったらpaddingを検討してみる。
 ・ポートフォリオの動画再生されない・・・→videoタグだけでは動かない、autoplayなど設定が必要
+・トップぺーじ一番最初のroop_design01を以下参考に、線が徐々に絵ががれるような動きをつけようと思ったが、できない・・・
+https://oku-log.com/blog/vivus/
+
+・トップ画面worksのボタンにある直線にアニメーションをかけたものの、文字の場所は固定したい・線だけ動かしたいのに、線が伸びるにつれて文字まで位置が変わってし合う
 
 〜自分用メモ〜
 ・ヘッダーの視認性UPどうするか
