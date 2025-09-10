@@ -68,7 +68,7 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
 
       <!-- SP固定メールあいこん -->
       <a href="index.html#c-form"
-        ><div class="mail_icon">
+        ><div id="mail" class="mail_icon">
           <img src="./images/1x/SP_mail_icon.svg" alt="メールのアイコン" />
         </div>
       </a>
@@ -276,7 +276,7 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
       </section>
     </main>
 
-    <footer>
+    <footer id="c-form">
       <!-- あしらい5 -->
       <div class="roop_wrapper05">
         <!-- <img
@@ -347,6 +347,46 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
 
     <!-- 共通：jquery -->
     <script>
+      //メールアイコンをふわっと表示させて一定の場所で非表示、上スクロールで再表示
+      document.addEventListener("DOMContentLoaded", function () {
+        const pageTop = document.querySelector("#mail");
+        const scrollThreshold = 100;
+
+        function scrollTop() {
+          window.scroll({
+            top: 0,
+            behavior: "smooth",
+          });
+        }
+
+        function scrollEvent() {
+          if (window.scrollY > scrollThreshold) {
+            pageTop.style.opacity = "1";
+          } else {
+            pageTop.style.opacity = "0";
+          }
+        }
+
+        function Position() {
+          const scrollHeight = document.documentElement.scrollHeight;
+          const scrollPosition = window.innerHeight + window.scrollY;
+          const footHeight = document.querySelector("#c-form").offsetHeight;
+          const footTop = document.querySelector("#c-form").offsetTop;
+
+          if (scrollPosition >= footTop) {
+            pageTop.style.position = "absolute";
+            pageTop.style.bottom = footHeight + "px";
+          } else {
+            pageTop.style.position = "fixed";
+            pageTop.style.bottom = "0";
+          }
+        }
+
+        // pageTop.addEventListener("click", scrollTop);
+        window.addEventListener("scroll", scrollEvent);
+        window.addEventListener("scroll", Position);
+      });
+
       //カーソルの見た目を変更
       var cursor = $("#cursor");
       //ちょっと遅れてついてくるストーカー要素の指定

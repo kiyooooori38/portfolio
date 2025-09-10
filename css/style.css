@@ -482,7 +482,7 @@ article:not(:first-of-type) > div > div {
   animation: lineDraw 1.5s infinite;
   animation-delay: 1s;
   position: absolute;
-  left: 57%;
+  left: 59%;
 }
 
 .view_all_btn_span {
@@ -1385,7 +1385,7 @@ footer p {
 }
 
 .about_me_img_wrapper {
-  width: 32%;
+  width: 42%;
 }
 
 .about_me_img {
@@ -2458,6 +2458,10 @@ path {
     padding-bottom: 120px;
   }
 
+  .about_me_img_wrapper {
+    width: 100%;
+  }
+
   .about_header {
     padding-top: 64px;
   }
@@ -2717,6 +2721,10 @@ path {
 
 /*
 〜新しい質問〜
+・作品全紹介ページ、sp表示時のメールアイコン、トップとフッター到達時に消えるようにしたい。
+同じidをつけたつもりだが、どうして表示されないのか・・・
+
+
 ・バーの速度、ループまでの開始時間を少し遅らせることができるのか？
 ・トップページのABOUT画像を入れ替えたら大きさが変わったため、調整しようと.about_img_wrapperに
 max-widthを指定した。デベロッパーツールだときちんと反映されるのに、ファイルの変更は全く反映されない。

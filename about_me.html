@@ -67,7 +67,7 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
 
   <!-- SP固定メールあいこん -->
       <a href="index.html#c-form"
-        ><div class="mail_icon">
+        ><div id="mail" class="mail_icon">
           <img src="./images/1x/SP_mail_icon.svg" alt="メールのアイコン" />
         </div>
       </a>
@@ -84,10 +84,10 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
         <div>
           <h2 class="about_me_header">About</h2>
           <div class="about_me_wrapper">
-            <div calss="about_me_img_wrapper">
+            <div class="about_me_img_wrapper">
               <img
                 class="about_me_img"
-                src="./images/1x/about_me01-80.jpg"
+                src="./images/1x/about_me@2x-80.jpg"
                 alt="岩沢 清里の写真"
               />
             </div>
@@ -332,7 +332,7 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
             <!-- 送信ボタン -->
             <div class="c-form_submit">
               <button type="submit">
-                <img src="./images/1x/送信ボタン.svg" alt="ボタンの画像" />
+                <img src="./images/1x/send_mail_btn.svg" alt="ボタンの画像" />
                 <p><span class="c-form_span">内容を送信する</span></p>
               </button>
             </div>
@@ -438,6 +438,46 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
 
     <!-- 共通：jquery -->
     <script>
+        //メールアイコンをふわっと表示させて一定の場所で非表示、上スクロールで再表示
+      document.addEventListener("DOMContentLoaded", function () {
+        const pageTop = document.querySelector("#mail");
+        const scrollThreshold = 100;
+
+        function scrollTop() {
+          window.scroll({
+            top: 0,
+            behavior: "smooth",
+          });
+        }
+
+        function scrollEvent() {
+          if (window.scrollY > scrollThreshold) {
+            pageTop.style.opacity = "1";
+          } else {
+            pageTop.style.opacity = "0";
+          }
+        }
+
+        function Position() {
+          const scrollHeight = document.documentElement.scrollHeight;
+          const scrollPosition = window.innerHeight + window.scrollY;
+          const footHeight = document.querySelector("#c-form").offsetHeight;
+          const footTop = document.querySelector("#c-form").offsetTop;
+
+          if (scrollPosition >= footTop) {
+            pageTop.style.position = "absolute";
+            pageTop.style.bottom = footHeight + "px";
+          } else {
+            pageTop.style.position = "fixed";
+            pageTop.style.bottom = "0";
+          }
+        }
+
+        pageTop.addEventListener("click", scrollTop);
+        window.addEventListener("scroll", scrollEvent);
+        window.addEventListener("scroll", Position);
+      });
+
         //カーソルの見た目を変更
       var cursor = $("#cursor");
       //ちょっと遅れてついてくるストーカー要素の指定

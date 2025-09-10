@@ -554,8 +554,9 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
           const scrollHeight = document.documentElement.scrollHeight;
           const scrollPosition = window.innerHeight + window.scrollY;
           const footHeight = document.querySelector("#c-form").offsetHeight;
+          const footTop = document.querySelector("#c-form").offsetTop;
 
-          if (scrollHeight - scrollPosition <= footHeight) {
+          if (scrollPosition >= footTop) {
             pageTop.style.position = "absolute";
             pageTop.style.bottom = footHeight + "px";
           } else {
@@ -564,7 +565,7 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
           }
         }
 
-        pageTop.addEventListener("click", scrollTop);
+        // pageTop.addEventListener("click", scrollTop);
         window.addEventListener("scroll", scrollEvent);
         window.addEventListener("scroll", Position);
       });
