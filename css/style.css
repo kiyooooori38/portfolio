@@ -646,8 +646,8 @@ article:not(:first-of-type) > div > div {
   height: 12px;
   border-radius: 50%;
   background: var(--accent_color_gd);
-  animation: circlemove_aaa 4s ease-in-out infinite,
-    cirlemovehide 4s ease-out infinite;
+  animation: circlemove_aaa 1.8s ease-in-out infinite,
+    cirlemovehide 1.8s ease-out infinite;
   z-index: 10;
 }
 
@@ -1944,6 +1944,11 @@ path {
     margin-top: 24px;
   }
 
+  .works_discription br {
+    display: none;
+  }
+
+  .works
   /*SPカテゴリーの青い点線*/
   .works_sub_category::after {
     content: "";
