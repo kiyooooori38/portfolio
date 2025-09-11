@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="./css/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- あしらいにアニメーションをつけるために以下を読み込む -->
-    <script src="
-https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
-"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js"></script>
+    <!-- gsap cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
   </head>
   <body id="works_all_top">
     <!-- カーソルの見た目を変更 -->
@@ -94,7 +94,7 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
               <p class="pc_portfolio">ポートフォリオ</p>
             </div>
             <div class="sp_flex_01">
-              <div class="flex_item">
+              <div class="flex_item card">
                 <a href="website_01.html"
                   ><img
                     class="flex_item_img"
@@ -113,7 +113,7 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
               <p>Re LIFE様</p>
             </div>
 
-            <div class="flex_item">
+            <div class="flex_item card">
               <a href="#"
                 ><img
                   class="flex_item_img"
@@ -126,7 +126,7 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
               <p class="works_all_title">#Webbanner</p>
               <p>夏限定アイスクリーム</p>
             </div>
-            <div class="flex_item">
+            <div class="flex_item card">
               <a href="banner_01.html"
                 ><img
                   class="flex_item_img"
@@ -214,7 +214,7 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
               <p>夏限定アイスクリーム</p>
             </div>
 
-            <div class="flex_item">
+            <div class="flex_item card">
               <a href="#"
                 ><img
                   class="flex_item_img"
@@ -230,7 +230,7 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
               <p class="works_all_title">#Website</p>
               <p>DESIGN CAFE 様</p>
             </div>
-            <div class="flex_item">
+            <div class="flex_item card">
               <a href="#"
                 ><img
                   class="flex_item_img"
@@ -246,7 +246,7 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
               <p class="works_all_title">#Webbanner</p>
               <p>新作ハンバーガー</p>
             </div>
-            <div class="flex_item">
+            <div class="flex_item card">
               <a href="#"
                 ><img
                   class="flex_item_img"
@@ -262,7 +262,7 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
               <p class="works_all_title">#Webbanner</p>
               <p>新作ハンバーガー</p>
             </div>
-            <div class="flex_item">
+            <div class="flex_item card">
               <a href="#"
                 ><img
                   class="flex_item_img"
@@ -347,6 +347,79 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
 
     <!-- 共通：jquery -->
     <script>
+      //gsap　画像アニメーション　koko
+      document.querySelectorAll(".card").forEach((card) => {
+        card.addEventListener("mousemove", (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+
+          const rotateX = (y / rect.height) * -40;
+          const rotateY = (x / rect.width) * 40;
+
+          gsap.to(card, {
+            rotationX: rotateX,
+            rotationY: rotateY,
+            scale: 1.2,
+            duration: 0.25,
+            ease: "power2.out",
+          });
+
+          gsap.to(card.querySelector(".flex_item_img"), {
+            opacity: 0.9,
+            filter: "blur(3px)",
+            duration: 0.25,
+            ease: "power2.out",
+          });
+        });
+
+        card.addEventListener("mouseleave", () => {
+          gsap.to(card, {
+            rotationX: 0,
+            rotationY: 0,
+            scale: 1,
+            duration: 0.4,
+            ease: "power2.out",
+          });
+
+          gsap.to(card.querySelector(".flex_item_img"), {
+            scale: 1,
+            opacity: 1,
+            filter: "grayscale(100%) blur(0px)",
+            duration: 0.4,
+            ease: "power2.out",
+          });
+        });
+      });
+      //gsap　画像アニメーション
+
+      // let mm = gsap.matchMedia();
+
+      // mm.add("(max-width: 1150px)", () => {
+      //   document.querySelectorAll(".card").forEach((card) => {
+      //     card.addEventListener("mousemove", (e) => {
+      //       const rect = card.getBoundingClientRect();
+      //       const x = e.clientX - rect.left - rect.width / 2;
+      //       const y = e.clientY - rect.top - rect.height / 2;
+
+      // ここでは scale と回転の角度だけ控えめに上書き
+      // const rotateX = (y / rect.height) * -15;
+      // const rotateY = (x / rect.width) * 15;
+
+      // gsap.to(card, {
+      //   rotationX: rotateX,
+      //   rotationY: rotateY,
+      //   scale: 1, // PCより控えめ
+      //       });
+
+      //       gsap.to(card.querySelector(""), {
+      //         scale: 1, // PCより控えめ
+      //       });
+      //     });
+      //   });
+      // });
+      //ここまで
+
       //メールアイコンをふわっと表示させて一定の場所で非表示、上スクロールで再表示
       document.addEventListener("DOMContentLoaded", function () {
         const pageTop = document.querySelector("#mail");

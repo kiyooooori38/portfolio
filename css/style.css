@@ -226,8 +226,8 @@ h1 div:last-child {
   height: 12px;
   border-radius: 50%;
   background: var(--accent_color_gd);
-  animation: circlemove 1.8s ease-in-out infinite,
-    cirlemovehide 1.8s ease-out infinite;
+  animation: circlemove 2s ease-in-out infinite,
+    cirlemovehide 2s ease-out infinite;
   z-index: 10;
 }
 
@@ -447,6 +447,19 @@ article:not(:first-of-type) > div > div {
   margin-right: 50px;
 }
 
+.works_btn:hover,
+.works_btn02:hover {
+  background: #273964;
+  color: #fff;
+  border: 1px dotted #fff;
+  transition: 0.5s;
+}
+
+.works_btn:hover::after,
+.works_btn02:hover::after {
+  border-bottom: 1px solid #fff;
+}
+
 /*WORKS_ViewAllボタン*/
 
 .view_all_wrapper {
@@ -497,7 +510,7 @@ article:not(:first-of-type) > div > div {
   position: absolute;
   bottom: -700px;
   left: 0px;
-  z-index: -2;
+  z-index: 1;
 }
 
 /* .roop_design02 {
@@ -527,7 +540,7 @@ article:not(:first-of-type) > div > div {
   box-sizing: border-box;
   position: relative;
   background-repeat: no-repeat;
-  z-index: -3;
+  z-index: 0;
 }
 
 .about_wrapper {
@@ -619,6 +632,17 @@ article:not(:first-of-type) > div > div {
   margin-right: 36px;
 }
 
+.about_btn:hover {
+  background: #273964;
+  color: #fff;
+  border: 1px dotted #fff;
+  transition: 0.5s;
+}
+
+.about_btn:hover::after {
+  border-bottom: 1px solid #fff;
+}
+
 /*ページ中間のバー*/
 .bar {
   height: 720px;
@@ -647,8 +671,8 @@ article:not(:first-of-type) > div > div {
   height: 12px;
   border-radius: 50%;
   background: var(--accent_color_gd);
-  animation: circlemove_aaa 1.8s ease-in-out infinite,
-    cirlemovehide 1.8s ease-out infinite;
+  animation: circlemove_aaa 2s ease-in-out infinite,
+    cirlemovehide 2s ease-out infinite;
   z-index: 10;
 }
 
@@ -775,6 +799,7 @@ textarea.c-form_input {
   margin-top: 56px;
   margin-left: auto;
   position: relative;
+  z-index: 1;
 }
 .c-form_submit img {
   width: 100%;
@@ -1124,8 +1149,8 @@ textarea.c-form_input {
   height: 12px;
   border-radius: 50%;
   background: var(--accent_color_gd);
-  animation: circlemove_banner 1.8s ease-in-out infinite,
-    cirlemovehide 1.8s ease-out infinite;
+  animation: circlemove_banner 2s ease-in-out infinite,
+    cirlemovehide 2s ease-out infinite;
   z-index: 2;
 }
 
@@ -1158,10 +1183,14 @@ textarea.c-form_input {
   padding-top: 280px;
 }
 
-.site_wrapper01,
+.site_wrapper01 {
+  max-width: 830px;
+  margin: 0 auto 56px auto;
+}
+
 .site_banner_bar {
   max-width: 830px;
-  margin: 0 auto;
+  margin: 0 auto 500px auto;
 }
 
 /*WORK SITE 余白*/
@@ -1252,8 +1281,8 @@ textarea.c-form_input {
   height: 12px;
   border-radius: 50%;
   background: var(--accent_color_gd);
-  animation: circlemove_banner 1.8s ease-in-out infinite,
-    cirlemovehide 1.8s ease-out infinite;
+  animation: circlemove_banner 2s ease-in-out infinite,
+    cirlemovehide 2s ease-out infinite;
   z-index: 10;
 }
 
@@ -1348,6 +1377,7 @@ textarea.c-form_input {
   bottom: 100px;
   left: 0;
   width: 100%;
+  z-index: 0;
 }
 
 /*あしらい０8*/
@@ -1618,6 +1648,7 @@ textarea.c-form_input {
   bottom: 100px;
   right: 0;
   width: 100%;
+  z-index: 0;
 }
 
 .roop_design10 {
@@ -1642,7 +1673,7 @@ path {
 
 #half-circle {
   position: relative;
-  bottom: -10px;
+  bottom: -80px;
 }
 
 /* .done path {
@@ -1654,9 +1685,8 @@ path {
 .fadein,
 .fadein_late {
   opacity: 0;
-  transform: translate(0, 0);
-  transition: all 2s;
-  transform: translate(0, 30px);
+  transition: all 2.5s;
+  transform: translate(0, 40px);
 }
 .fadein.scrollin {
   opacity: 1;
@@ -1664,8 +1694,8 @@ path {
 }
 
 .fadein_late.scrollin {
-  opacity: 1 !important;
-  transform: translate(0, 0) !important;
+  opacity: 1;
+  transform: translate(0, 0);
 }
 
 /*FVコンセプトやスクロールバーの位置がおかしくなるタイミングで切り替え*/

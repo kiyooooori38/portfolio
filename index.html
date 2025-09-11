@@ -8,11 +8,14 @@
     <link rel="icon" href="./images/1x/favicon.png" />
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
+    <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <!-- あしらいにアニメーションをつけるために以下を読み込む -->
-    <script src="
-https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
-"></script>
+    <!-- あしらいにアニメーションをつけるためにvivusを読み込む -->
+    <script src="https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js"></script>
+    <!-- tilt.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <!-- gsap -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
   </head>
   <body>
     <!-- カーソルの見た目を変更 -->
@@ -183,7 +186,7 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
       <section class="works_section" id="works_all">
         <div class="top_works_wrapper">
           <h2 class="works_header"><span>Works</span></h2>
-          <!-- ポートフォリオ -->
+          <!-- ポートフォリオ koko-->
           <article class="fadein">
             <div>
               <div class="works_content01">
@@ -193,7 +196,7 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
                   コンセプト設定から実装まで、いまの自分にできる全てをこのポートフォリオに詰め込みました。“お客さまに長く愛されるデザインを届けたい”<br />“人と人のつながりを大切にし、長く寄り添える存在でありたい”<br />そんな想いから「∞（インフィニティ）」と「輪（つながり）」をコンセプトにしています。
                 </p>
                 <p class="works_sub_category">[ Category : design, coding ]</p>
-                <a class="works_btn" href="website_01.html"
+                <a id="hover_trigger" class="works_btn" href="website_01.html"
                   ><span class="works_btn_span">View more</span></a
                 >
               </div>
@@ -265,10 +268,12 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
             ><p>View all Works</p></a
           >
         </div> -->
-          <div class="view_all_wrapper">
+          <div class="view_all_wrapper tilt_btn">
             <a href="works_all.html">
               <img src="./images/1x/view_all_btn.svg" alt="ボタンの画像" />
-              <p><span class="view_all_btn_span">View all Works</span></p>
+              <p class="tilt_btn">
+                <span class="view_all_btn_span">View all Works</span>
+              </p>
             </a>
           </div>
 
@@ -455,7 +460,7 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
             </div>
 
             <!-- 送信ボタン -->
-            <div class="c-form_submit">
+            <div class="c-form_submit tilt_btn02">
               <button type="submit">
                 <img src="./images/1x/send_mail_btn.svg" alt="ボタンの画像" />
                 <p><span class="c-form_span">内容を送信する</span></p>
@@ -745,6 +750,18 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
             stalker.removeClass("active");
           },
         });
+      });
+
+      // 画像入れ込みのボタンのアニメーション
+
+      VanillaTilt.init(document.querySelector(".tilt_btn"), {
+        max: 25,
+        speed: 700,
+      });
+
+      VanillaTilt.init(document.querySelector(".tilt_btn02"), {
+        max: 25,
+        speed: 700,
       });
     </script>
   </body>
