@@ -184,7 +184,7 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
         <div class="top_works_wrapper">
           <h2 class="works_header"><span>Works</span></h2>
           <!-- ポートフォリオ -->
-          <article>
+          <article class="fadein">
             <div>
               <div class="works_content01">
                 <p class="works_category">#Website</p>
@@ -209,7 +209,7 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
           </article>
 
           <!-- ヘアサイト -->
-          <article>
+          <article class="fadein_late">
             <div>
               <div>
                 <img
@@ -234,7 +234,7 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
           </article>
 
           <!-- カフェサイト -->
-          <article>
+          <article class="fadein_late">
             <div>
               <div class="works_content02">
                 <p class="works_category">#Website</p>
@@ -465,7 +465,7 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
         </div>
       </section>
     </main>
-    <footer>
+    <footer class="top_footer">
       <!-- あしらい3 -->
       <div class="roop_wrapper03">
         <!-- <img
@@ -569,6 +569,7 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
         window.addEventListener("scroll", scrollEvent);
         window.addEventListener("scroll", Position);
       });
+
       //ローディング
       document.addEventListener("DOMContentLoaded", function () {
         const loading = document.querySelector(".loading");
@@ -587,6 +588,30 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
           loading.style.display = "none";
           concept.classList.remove("loding_logo"); // アニメーション無効化
         }
+      });
+
+      //作品をふわっと表示させる
+      $(window).scroll(function () {
+        //一つ目
+        $(".fadein").each(function () {
+          var elemPos = $(this).offset().top,
+            scroll = $(window).scrollTop(),
+            windowHeight = $(window).height();
+
+          if (scroll > elemPos - windowHeight + 150) {
+            $(this).addClass("scrollin");
+          }
+        });
+        //二つ目
+        $(".fadein_late").each(function () {
+          var elemPos1 = $(this).offset().top,
+            scroll1 = $(window).scrollTop(),
+            windowHeight1 = $(window).height();
+
+          if (scroll1 > elemPos1 - windowHeight1 + 300) {
+            $(this).addClass("scrollin");
+          }
+        });
       });
 
       //バーガーメニュー

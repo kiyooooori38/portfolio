@@ -70,7 +70,7 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
 
       <!-- SP固定メールあいこん -->
       <a href="index.html#c-form"
-        ><div class="mail_icon">
+        ><div id="mail" class="mail_icon">
           <img src="./images/1x/SP_mail_icon.svg" alt="メールのアイコン" />
         </div>
       </a>
@@ -118,137 +118,178 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
     </main>
 
     <!-- <フッター> -->
-    <footer class="works_banner_footer">
-      <!-- あしらい6 -->
-      <div class="roop_wrapper06">
-        <!-- <img
+    <a href="works_all.html"
+      ><footer id="c-form" class="works_banner_footer">
+        <!-- あしらい6 -->
+        <div class="roop_wrapper06">
+          <!-- <img
           class="roop_design06"
           src="./images/1x/roop_design06.svg"
           alt="∞マークの装飾"
         /> -->
-        <svg
-          id="layer06"
-          class="roop_design06"
-          data-name="レイヤー 2"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          viewBox="0 0 1340.42 1032.19"
-        >
-          <defs>
-            <style>
-              .roop06-1,
-              .roop06-2 {
-                fill: none;
-              }
+          <svg
+            id="layer06"
+            class="roop_design06"
+            data-name="レイヤー 2"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 1340.42 1032.19"
+          >
+            <defs>
+              <style>
+                .roop06-1,
+                .roop06-2 {
+                  fill: none;
+                }
 
-              .roop06-2 {
-                stroke: url(#_名称未設定グラデーション_12);
-                stroke-miterlimit: 10;
-                stroke-width: 1.1px;
-              }
+                .roop06-2 {
+                  stroke: url(#_名称未設定グラデーション_12);
+                  stroke-miterlimit: 10;
+                  stroke-width: 1.1px;
+                }
 
-              .roop06-3 {
-                clip-path: url(#clippath06);
-              }
-            </style>
-            <clipPath id="clippath06">
-              <rect class="roop06-1" width="1340.42" height="1032.19" />
-            </clipPath>
-            <linearGradient
-              id="_名称未設定グラデーション_12"
-              data-name="名称未設定グラデーション 12"
-              x1="-3262.51"
-              y1="219.56"
-              x2="-1663.21"
-              y2="219.56"
-              gradientTransform="translate(-1727.92 -379.63) rotate(-164.8) scale(1 -1)"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop offset="0" stop-color="#8aecff" />
-              <stop offset=".19" stop-color="#88e8fc" />
-              <stop offset=".33" stop-color="#83dff4" />
-              <stop offset=".46" stop-color="#7acfe6" />
-              <stop offset=".58" stop-color="#6db8d2" />
-              <stop offset=".69" stop-color="#5d9ab8" />
-              <stop offset=".8" stop-color="#497699" />
-              <stop offset=".9" stop-color="#314c75" />
-              <stop offset="1" stop-color="#181e4d" />
-            </linearGradient>
-          </defs>
-          <g id="_編集_ワイヤーフレーム" data-name="編集_ワイヤーフレーム">
-            <g class="roop06-3">
-              <path
-                class="roop06-2"
-                d="M-67-22C72,107.78,165.94,259.67,281.19,401.37c96.06,118.09,208.29,230.31,344.07,324.55,135.78,94.24,296.07,170.17,469.85,209.23,50.31,11.31,105.53,21.97,152.46,3.84,32.34-12.49,56.03-36.06,63.61-63.25,10.25-36.79-8.83-77.29-40.9-108.67-93.78-91.75-272.11-130.51-408.23-166.77-159.35-42.44-318.04-82.17-472.82-135.04-154.12-52.64-304.78-111.93-450.94-177.45-36.9-16.54-73.84-33.26-110.24-50.44"
-              />
+                .roop06-3 {
+                  clip-path: url(#clippath06);
+                }
+              </style>
+              <clipPath id="clippath06">
+                <rect class="roop06-1" width="1340.42" height="1032.19" />
+              </clipPath>
+              <linearGradient
+                id="_名称未設定グラデーション_12"
+                data-name="名称未設定グラデーション 12"
+                x1="-3262.51"
+                y1="219.56"
+                x2="-1663.21"
+                y2="219.56"
+                gradientTransform="translate(-1727.92 -379.63) rotate(-164.8) scale(1 -1)"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset="0" stop-color="#8aecff" />
+                <stop offset=".19" stop-color="#88e8fc" />
+                <stop offset=".33" stop-color="#83dff4" />
+                <stop offset=".46" stop-color="#7acfe6" />
+                <stop offset=".58" stop-color="#6db8d2" />
+                <stop offset=".69" stop-color="#5d9ab8" />
+                <stop offset=".8" stop-color="#497699" />
+                <stop offset=".9" stop-color="#314c75" />
+                <stop offset="1" stop-color="#181e4d" />
+              </linearGradient>
+            </defs>
+            <g id="_編集_ワイヤーフレーム" data-name="編集_ワイヤーフレーム">
+              <g class="roop06-3">
+                <path
+                  class="roop06-2"
+                  d="M-67-22C72,107.78,165.94,259.67,281.19,401.37c96.06,118.09,208.29,230.31,344.07,324.55,135.78,94.24,296.07,170.17,469.85,209.23,50.31,11.31,105.53,21.97,152.46,3.84,32.34-12.49,56.03-36.06,63.61-63.25,10.25-36.79-8.83-77.29-40.9-108.67-93.78-91.75-272.11-130.51-408.23-166.77-159.35-42.44-318.04-82.17-472.82-135.04-154.12-52.64-304.78-111.93-450.94-177.45-36.9-16.54-73.84-33.26-110.24-50.44"
+                />
+              </g>
             </g>
-          </g>
-        </svg>
-      </div>
+          </svg>
+        </div>
 
-      <div class="scroll_circle_wrapper">
-        <!-- <img
+        <div class="scroll_circle_wrapper">
+          <!-- <img
           class="scrol_circle"
           src="./images/1x/scroll_circle.svg"
           alt="半円のデザイン"
         /> -->
-        <?xml version="1.0" encoding="UTF-8"?>
-        <svg
-          id="half-circle"
-          data-name="レイヤー 2"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          viewBox="0 0 1336 462.15"
-        >
-          <defs>
-            <style>
-              .cls-1 {
-                fill: none;
-              }
+          <svg
+            id="half-circle"
+            class="scroll_circle"
+            data-name="レイヤー 2"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 1336 462.15"
+          >
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: none;
+                }
 
-              .cls-2 {
-                clip-path: url(#clippath);
-              }
+                .cls-2 {
+                  clip-path: url(#clippath);
+                }
 
-              .cls-3 {
-                fill: url(#_名称未設定グラデーション_45);
-              }
-            </style>
-            <clipPath id="clippath">
-              <rect class="cls-1" width="1336" height="462.15" />
-            </clipPath>
-            <linearGradient
-              id="_名称未設定グラデーション_45"
-              data-name="名称未設定グラデーション 45"
-              x1="668.33"
-              y1="462.15"
-              x2="668.33"
-              y2="109.55"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop offset="0" stop-color="#8aecff" />
-              <stop offset="0" stop-color="#75c8e0" />
-              <stop offset="0" stop-color="#5186a7" />
-              <stop offset=".42" stop-color="#35547b" />
-              <stop offset=".8" stop-color="#202c59" />
-              <stop offset="1" stop-color="#181e4d" />
-            </linearGradient>
-          </defs>
-          <g id="circle" data-name="編集_ワイヤーフレーム">
-            <g class="cls-2">
-              <path
-                id="halfPath"
-                class="cls-3"
-                d="M1372.01,462.15c-118.78-207.6-389.15-352.6-703.67-352.6S83.44,254.55-35.34,462.15h1407.35Z"
-              />
+                .cls-3 {
+                  fill: url(#_名称未設定グラデーション_45);
+                }
+              </style>
+              <clipPath id="clippath">
+                <rect class="cls-1" width="1336" height="462.15" />
+              </clipPath>
+              <linearGradient
+                id="_名称未設定グラデーション_45"
+                data-name="名称未設定グラデーション 45"
+                x1="668.33"
+                y1="462.15"
+                x2="668.33"
+                y2="109.55"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset="0" stop-color="#8aecff" />
+                <stop offset="0" stop-color="#75c8e0" />
+                <stop offset="0" stop-color="#5186a7" />
+                <stop offset=".42" stop-color="#35547b" />
+                <stop offset=".8" stop-color="#202c59" />
+                <stop offset="1" stop-color="#181e4d" />
+              </linearGradient>
+            </defs>
+            <g id="circle" data-name="編集_ワイヤーフレーム">
+              <g class="cls-2">
+                <path
+                  id="halfPath"
+                  class="cls-3"
+                  d="M1372.01,462.15c-118.78-207.6-389.15-352.6-703.67-352.6S83.44,254.55-35.34,462.15h1407.35Z"
+                />
+              </g>
             </g>
-          </g>
-        </svg>
-      </div>
-    </footer>
+          </svg>
+        </div></footer
+    ></a>
 
     <!-- 共通：jquery -->
     <script>
+      //メールアイコンをふわっと表示させて一定の場所で非表示、上スクロールで再表示
+      document.addEventListener("DOMContentLoaded", function () {
+        const pageTop = document.querySelector("#mail");
+        const scrollThreshold = 100;
+
+        function scrollTop() {
+          window.scroll({
+            top: 0,
+            behavior: "smooth",
+          });
+        }
+
+        function scrollEvent() {
+          if (window.scrollY > scrollThreshold) {
+            pageTop.style.opacity = "1";
+          } else {
+            pageTop.style.opacity = "0";
+          }
+        }
+
+        function Position() {
+          const scrollHeight = document.documentElement.scrollHeight;
+          const scrollPosition = window.innerHeight + window.scrollY;
+          const footHeight = document.querySelector("#c-form").offsetHeight;
+          const footTop = document.querySelector("#c-form").offsetTop;
+
+          if (scrollPosition >= footTop) {
+            pageTop.style.position = "absolute";
+            pageTop.style.bottom = footHeight + "px";
+          } else {
+            pageTop.style.position = "fixed";
+            pageTop.style.bottom = "0";
+          }
+        }
+
+        // pageTop.addEventListener("click", scrollTop);
+        window.addEventListener("scroll", scrollEvent);
+        window.addEventListener("scroll", Position);
+      });
+
       //カーソルの見た目を変更
       var cursor = $("#cursor");
       //ちょっと遅れてついてくるストーカー要素の指定
@@ -338,26 +379,58 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
 
       playForward06();
 
-      //フッターのぐにょーん　試し
+      //フッターのぐにょーん
       // プラグインの登録
       $(function () {
         gsap.registerPlugin(ScrollTrigger);
 
-        // gsap.to("#halfPath", {
-        //   scaleY: 1.3, // 縦に1.3倍
-        //   transformOrigin: "50% 100%", // 下端を固定
-        //   duration: 1,
-        //   repeat: -1,
-        //   yoyo: true,
-        //   ease: "power1.inOut",
-        // });
+        const path = document.querySelector("#halfPath");
 
-        gsap.to("#half-circle", {
-          x: 200,
-          scrollTrigger: {
-            trigger: "#half-circle",
-            markers: true,
+        let overscroll = 0;
+        // 初期状態の半円の高さ
+        const baseHeight = 250;
+        // 半円の伸び幅
+        const maxExtra = 600;
+        let atBottom = false;
+
+        // パスを作る
+        function makePath(extraHeight) {
+          const topY = 462.15 - (baseHeight + extraHeight);
+          return `M0,462.15
+                  C334,${topY} 1002,${topY} 1336,462.15
+                  L1336,462.15 Z`;
+        }
+
+        // アニメーションの適用
+        function render() {
+          path.setAttribute("d", makePath(overscroll));
+        }
+
+        // ページ最下部にいるかどうか
+        window.addEventListener("scroll", () => {
+          const docHeight = document.documentElement.scrollHeight;
+          const winHeight = window.innerHeight;
+          const scrollY = window.scrollY;
+          atBottom = scrollY + winHeight >= docHeight - 1;
+        });
+
+        window.addEventListener(
+          "wheel",
+          (e) => {
+            if (atBottom && e.deltaY > 0) {
+              overscroll = Math.min(maxExtra, overscroll + e.deltaY);
+            }
           },
+          { passive: true }
+        );
+
+        // 戻っていく動き
+        gsap.ticker.add(() => {
+          if (!atBottom || overscroll > 0) {
+            overscroll *= 0.85;
+            if (overscroll < 0.5) overscroll = 0;
+            render();
+          }
         });
       });
     </script>

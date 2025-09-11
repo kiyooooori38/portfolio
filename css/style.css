@@ -497,7 +497,7 @@ article:not(:first-of-type) > div > div {
   position: absolute;
   bottom: -700px;
   left: 0px;
-  z-index: -1;
+  z-index: -2;
 }
 
 /* .roop_design02 {
@@ -527,7 +527,7 @@ article:not(:first-of-type) > div > div {
   box-sizing: border-box;
   position: relative;
   background-repeat: no-repeat;
-  z-index: -2;
+  z-index: -3;
 }
 
 .about_wrapper {
@@ -603,6 +603,7 @@ article:not(:first-of-type) > div > div {
   animation-delay: 1s;
   position: absolute;
   left: 56%;
+  pointer-events: none;
 }
 
 @keyframes lineDraw {
@@ -814,12 +815,16 @@ textarea.c-form_input {
 }
 
 /* フッター */
-footer {
-  margin: 672px 0 72px 0;
+.top_footer,
+.about_footer,
+.works_all_footer {
+  margin: 672px 0 300px 0;
   position: relative;
 }
 
-footer p {
+.top_footer p,
+.about_footer p,
+.works_all_footer p {
   font-size: 0.625rem;
   text-align: center;
 }
@@ -893,8 +898,8 @@ footer p {
   margin: 72px 0 700px 0;
 }
 
-.flex_01_innner,
-.flex_02_innner {
+.flex_01_inner,
+.flex_02_inner {
   max-width: 43.8%;
 }
 
@@ -1069,6 +1074,7 @@ footer p {
 /*WORKSBANNER フッター*/
 .works_banner_footer {
   position: relative;
+  margin-bottom: 0;
 }
 /*WOORKSBANNERあしらい*/
 .roop_wrapper06 {
@@ -1630,9 +1636,37 @@ path {
   fill-opacity: 0;
 }
 
+#halfPath {
+  fill-opacity: 1;
+}
+
+#half-circle {
+  position: relative;
+  bottom: -10px;
+}
+
 /* .done path {
   stroke: none;
 } */
+
+/*追加のアニメーション*/
+/*top 画像フェードイン*/
+.fadein,
+.fadein_late {
+  opacity: 0;
+  transform: translate(0, 0);
+  transition: all 2s;
+  transform: translate(0, 30px);
+}
+.fadein.scrollin {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.fadein_late.scrollin {
+  opacity: 1 !important;
+  transform: translate(0, 0) !important;
+}
 
 /*FVコンセプトやスクロールバーの位置がおかしくなるタイミングで切り替え*/
 @media screen and (max-width: 1150px) {
@@ -2006,8 +2040,8 @@ path {
     margin: 0 auto;
   }
 
-  .flex_01_innner,
-  .flex_02_innner {
+  .flex_01_inner,
+  .flex_02_inner {
     max-width: 100%;
   }
 
@@ -2350,7 +2384,9 @@ path {
   .about_profile_wrapper {
     width: 100%;
   }
-
+  .about_img_wrapper {
+    max-width: 100%;
+  }
   .about_img {
     width: 186px;
     max-width: 186px;
@@ -2445,7 +2481,9 @@ path {
   }
 
   /* SP版フッター */
-  footer {
+  .top_footer,
+  .about_footer,
+  .works_all_footer {
     margin: 268px 0 48px 0;
   }
 
@@ -2619,118 +2657,121 @@ path {
     /* right: auto;
     left: -140px; */
     transform: scaleX(-1);
-
-    .roop_wrapper02 {
-      width: 80%;
-      transform: scaleX(-1);
-      bottom: -300px;
-      left: auto;
-      right: 0;
-      z-index: 2;
-    }
-
-    .roop_wrapper03 {
-      width: 100%;
-      transform: scaleX(-1);
-      bottom: -200px;
-      right: auto;
-    }
-
-    .roop_wrapper05 {
-      top: -280px;
-    }
-
-    .roop_wrapper06 {
-      bottom: 323px;
-    }
-
-    .roop_wrapper07 {
-      bottom: 10px;
-    }
-
-    .roop_wrapper09 {
-      display: none;
-    }
-
-    .roop_wrapper {
-      bottom: 100px;
-    }
   }
 
-  /*FV調整　750*/
-  @media screen and (max-width: 750px) {
-    /*画像*/
-    .main_visual {
-      width: 100%;
-    }
-
-    .hero_img {
-      width: 100%;
-      height: 100vh;
-      object-fit: cover;
-    }
-
-    h1 {
-      top: 150px;
-      left: 10%;
-    }
-
-    /*750 あしらい*/
-    .roop_wrapper01 {
-      bottom: -150px;
-      left: -130px;
-    }
-
-    .roop_wrapper04 {
-      display: none;
-    }
-
-    .roop_wrapper07 {
-      bottom: 0;
-    }
+  .roop_wrapper02 {
+    width: 80%;
+    transform: scaleX(-1);
+    bottom: -300px;
+    left: auto;
+    right: 0;
+    z-index: 2;
   }
 
-  /*520 あしらい*/
-  @media screen and (max-width: 520px) {
-    .roop_wrapper01 {
-      bottom: -150px;
-      left: -95px;
-    }
+  .roop_wrapper03 {
+    width: 100%;
+    transform: scaleX(-1);
+    bottom: -200px;
+    right: auto;
+  }
 
-    .roop_wrapper02 {
-      bottom: -250px;
-    }
+  .roop_wrapper05 {
+    top: -280px;
+  }
 
-    .roop_wrapper03 {
-      bottom: -100px;
-    }
+  .roop_wrapper06 {
+    bottom: 323px;
+  }
 
-    .roop_wrapper07 {
-      bottom: 100px;
-    }
+  .roop_wrapper07 {
+    bottom: 10px;
+  }
 
-    .roop_wrapper10 {
-      display: none;
-    }
+  .roop_wrapper09 {
+    display: none;
+  }
 
-    .sp_margin01 {
-      margin-top: 8px;
-    }
+  .roop_wrapper {
+    bottom: 100px;
+  }
+}
+
+/*FV調整　750*/
+@media screen and (max-width: 750px) {
+  /*画像*/
+  .main_visual {
+    width: 100%;
+  }
+
+  .hero_img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+  }
+
+  h1 {
+    top: 150px;
+    left: 10%;
+  }
+
+  /*750 あしらい*/
+  .roop_wrapper01 {
+    bottom: -150px;
+    left: -130px;
+  }
+
+  .roop_wrapper04 {
+    display: none;
+  }
+
+  .roop_wrapper07 {
+    bottom: 0;
+  }
+}
+
+/*520 あしらい*/
+@media screen and (max-width: 520px) {
+  .roop_wrapper01 {
+    bottom: -150px;
+    left: -95px;
+  }
+
+  .roop_wrapper02 {
+    bottom: -250px;
+  }
+
+  .roop_wrapper03 {
+    bottom: -100px;
+  }
+
+  .roop_wrapper07 {
+    bottom: 100px;
+  }
+
+  .roop_wrapper10 {
+    display: none;
+  }
+
+  .sp_margin01 {
+    margin-top: 8px;
   }
 }
 
 /*
 〜新しい質問〜
-・作品全紹介ページ、sp表示時のメールアイコン、トップとフッター到達時に消えるようにしたい。
-同じidをつけたつもりだが、どうして表示されないのか・・・
+・バナーページの半円のアニメーション部分作成ありがとうございました（すごい・・・
+半円の高さを出したいと思い、高さを指定したところ伸び切ったところで半円が途切れてしまいます。
+画像の高さが足りないからでしょうか？余白を指定してみたりしたものの、解消することができませんでした。
+
+・また、上記の箇所フッター全体をリンクにしたいのですが、もっと上の部分を押しても別ページにとんでしまう。
+・Websitteのページにも半円を反映しようとしたものの、単純にコピペしているつもりが配置がおかしかったりエラーが出てしまいます。
+同じ画像を使っていますが、数値の調整が必要なのでしょうか・・・
+
+・トップページ　ABOUTのボタンが押せなくなってしまいました・・・。
 
 
-・バーの速度、ループまでの開始時間を少し遅らせることができるのか？
-・トップページのABOUT画像を入れ替えたら大きさが変わったため、調整しようと.about_img_wrapperに
-max-widthを指定した。デベロッパーツールだときちんと反映されるのに、ファイルの変更は全く反映されない。
-・roop_wrapper02、roop_wrapper03,動くするようにすると見切れてしまう
-・SP版にした際、スクロールに合わせて追従するメールアイコンがあるが、コンタクトフォームにさしかかったら非表示になるようにしたい。
-いまは、コンタクトフォーム下部に到達したら非表示になるようになってしまっている。
+
+
 
 〜未対応メモ（自分で挑戦）〜
 ・画像入れ替え

@@ -12,6 +12,9 @@
     <script src="
 https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
 "></script>
+ <!-- 下スクロールのためのgsap cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
   </head>
   <body class="works_website01">
     <!-- カーソルの見た目を変更 -->
@@ -67,7 +70,7 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
 
       <!-- SP固定メールあいこん -->
       <a href="index.html#c-form"
-        ><div class="mail_icon">
+        ><div id="mail" class="mail_icon">
           <img src="./images/1x/SP_mail_icon.svg" alt="メールのアイコン" />
         </div>
       </a>
@@ -213,7 +216,7 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
     </main>
 
     <!-- <フッター> -->
-    <footer class="works_banner_footer">
+    <footer id="c-form" class="works_banner_footer">
       <!-- あしらい7 -->
       <div class="roop_wrapper07">
         <!-- <img
@@ -279,11 +282,110 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
             </g>
           </g>
         </svg>
-      </div>
+
+        <div class="scroll_circle_wrapper">
+          <img
+          class="scrol_circle"
+          src="./images/1x/scroll_circle.svg"
+          alt="半円のデザイン"
+        />
+          <!-- <svg
+            id="half-circle"
+            class="scroll_circle"
+            data-name="レイヤー 2"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 1336 462.15"
+          >
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: none;
+                }
+
+                .cls-2 {
+                  clip-path: url(#clippath);
+                }
+
+                .cls-3 {
+                  fill: url(#_名称未設定グラデーション_45);
+                }
+              </style>
+              <clipPath id="clippath">
+                <rect class="cls-1" width="1336" height="462.15" />
+              </clipPath>
+              <linearGradient
+                id="_名称未設定グラデーション_45"
+                data-name="名称未設定グラデーション 45"
+                x1="668.33"
+                y1="462.15"
+                x2="668.33"
+                y2="109.55"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset="0" stop-color="#8aecff" />
+                <stop offset="0" stop-color="#75c8e0" />
+                <stop offset="0" stop-color="#5186a7" />
+                <stop offset=".42" stop-color="#35547b" />
+                <stop offset=".8" stop-color="#202c59" />
+                <stop offset="1" stop-color="#181e4d" />
+              </linearGradient>
+            </defs>
+            <g id="circle" data-name="編集_ワイヤーフレーム">
+              <g class="cls-2">
+                <path
+                  id="halfPath"
+                  class="cls-3"
+                  d="M1372.01,462.15c-118.78-207.6-389.15-352.6-703.67-352.6S83.44,254.55-35.34,462.15h1407.35Z"
+                />
+              </g>
+            </g>
+          </svg> -->
+        </div>
     </footer>
 
     <!-- 共通：jquery -->
     <script>
+      //メールアイコンをふわっと表示させて一定の場所で非表示、上スクロールで再表示
+      document.addEventListener("DOMContentLoaded", function () {
+        const pageTop = document.querySelector("#mail");
+        const scrollThreshold = 100;
+
+        function scrollTop() {
+          window.scroll({
+            top: 0,
+            behavior: "smooth",
+          });
+        }
+
+        function scrollEvent() {
+          if (window.scrollY > scrollThreshold) {
+            pageTop.style.opacity = "1";
+          } else {
+            pageTop.style.opacity = "0";
+          }
+        }
+
+        function Position() {
+          const scrollHeight = document.documentElement.scrollHeight;
+          const scrollPosition = window.innerHeight + window.scrollY;
+          const footHeight = document.querySelector("#c-form").offsetHeight;
+          const footTop = document.querySelector("#c-form").offsetTop;
+
+          if (scrollPosition >= footTop) {
+            pageTop.style.position = "absolute";
+            pageTop.style.bottom = footHeight + "px";
+          } else {
+            pageTop.style.position = "fixed";
+            pageTop.style.bottom = "0";
+          }
+        }
+
+        // pageTop.addEventListener("click", scrollTop);
+        window.addEventListener("scroll", scrollEvent);
+        window.addEventListener("scroll", Position);
+      });
+
       //カーソルの見た目を変更
       var cursor = $("#cursor");
       //ちょっと遅れてついてくるストーカー要素の指定
@@ -346,50 +448,104 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
           $(".mail_icon").removeClass("invisible");
           $(".scroll_down").removeClass("invisible");
         });
+      });
+      //あしらい7
+      const vivus07 = new Vivus("layer07", {
+        duration: 350,
+        start: "autostart",
+        type: "scenario",
+        pathTimingFunction: Vivus.EASE_OUT,
+      });
 
-        //あしらい7
-        const vivus07 = new Vivus("layer07", {
-          duration: 350,
-          start: "autostart",
-          type: "scenario",
-          pathTimingFunction: Vivus.EASE_OUT,
+      function playForward07() {
+        vivus07.play(1, function () {
+          setTimeout(playBackward07, 350);
+        });
+      }
+
+      function playBackward07() {
+        vivus07.play(-1, function () {
+          setTimeout(playForward07, 350);
+        });
+      }
+
+      playForward07();
+
+      //あしらい8
+      const vivus08 = new Vivus("layer08", {
+        duration: 350,
+        start: "autostart",
+        type: "scenario",
+        pathTimingFunction: Vivus.EASE_OUT,
+      });
+
+      function playForward08() {
+        vivus08.play(1, function () {
+          setTimeout(playBackward08, 350);
+        });
+      }
+
+      function playBackward08() {
+        vivus08.play(-1, function () {
+          setTimeout(playForward08, 350);
+        });
+      }
+
+      playForward08();
+
+      //フッターのぐにょーん
+      // プラグインの登録
+      $(function () {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const path = document.querySelector("#halfPath");
+
+        let overscroll = 0;
+        // 初期状態の半円の高さ
+        const baseHeight = 250;
+        // 半円の伸び幅
+        const maxExtra = 600;
+        let atBottom = false;
+
+        // パスを作る
+        function makePath(extraHeight) {
+          const topY = 462.15 - (baseHeight + extraHeight);
+          return `M0,462.15
+                  C334,${topY} 1002,${topY} 1336,462.15
+                  L1336,462.15 Z`;
+        }
+
+        // アニメーションの適用
+        function render() {
+          path.setAttribute("d", makePath(overscroll));
+        }
+
+        // ページ最下部にいるかどうか
+        window.addEventListener("scroll", () => {
+          const docHeight = document.documentElement.scrollHeight;
+          const winHeight = window.innerHeight;
+          const scrollY = window.scrollY;
+          atBottom = scrollY + winHeight >= docHeight - 1;
         });
 
-        function playForward07() {
-          vivus07.play(1, function () {
-            setTimeout(playBackward07, 350);
-          });
-        }
+        window.addEventListener(
+          "wheel",
+          (e) => {
+            if (atBottom && e.deltaY > 0) {
+              overscroll = Math.min(maxExtra, overscroll + e.deltaY);
+            }
+          },
+          { passive: true }
+        );
 
-        function playBackward07() {
-          vivus07.play(-1, function () {
-            setTimeout(playForward07, 350);
-          });
-        }
-
-        playForward07();
-
-        //あしらい8
-        const vivus08 = new Vivus("layer08", {
-          duration: 350,
-          start: "autostart",
-          type: "scenario",
-          pathTimingFunction: Vivus.EASE_OUT,
+        // 戻っていく動き
+        gsap.ticker.add(() => {
+          if (!atBottom || overscroll > 0) {
+            overscroll *= 0.85;
+            if (overscroll < 0.5) overscroll = 0;
+            render();
+          }
         });
-
-        function playForward08() {
-          vivus08.play(1, function () {
-            setTimeout(playBackward08, 350);
-          });
-        }
-
-        function playBackward08() {
-          vivus08.play(-1, function () {
-            setTimeout(playForward08, 350);
-          });
-        }
-
-        playForward08();
       });
     </script>
   </body>
