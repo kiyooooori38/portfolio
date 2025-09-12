@@ -419,6 +419,7 @@ article:not(:first-of-type) > div > div {
   align-items: center;
   margin-top: 48px;
   position: relative;
+  z-index: 10;
 }
 
 .works_btn::after,
@@ -466,6 +467,7 @@ article:not(:first-of-type) > div > div {
   max-width: 312px;
   margin: 150px auto 0 auto;
   position: relative;
+  z-index: 10;
 }
 
 .view_all_wrapper img {
