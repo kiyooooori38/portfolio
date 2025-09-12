@@ -414,10 +414,37 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
         });
 
         window.addEventListener(
+          // PC：スクロール操作
           "wheel",
           (e) => {
             if (atBottom && e.deltaY > 0) {
               overscroll = Math.min(maxExtra, overscroll + e.deltaY);
+            }
+          },
+          { passive: true }
+        );
+
+        // SP: タッチ操作
+        let touchStartY = 0;
+
+        window.addEventListener(
+          "touchstart",
+          (e) => {
+            // 指を置いたときのY座標を記録
+            touchStartY = e.touches[0].clientY;
+          },
+          { passive: true }
+        );
+
+        window.addEventListener(
+          "touchmove",
+          (e) => {
+            if (atBottom) {
+              const currentY = e.touches[0].clientY;
+              const deltaY = touchStartY - currentY; // 下方向にスワイプした量
+              if (deltaY > 0) {
+                overscroll = Math.min(maxExtra, overscroll + deltaY);
+              }
             }
           },
           { passive: true }
