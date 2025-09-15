@@ -514,15 +514,41 @@
           atBottom = scrollY + winHeight >= docHeight - 1;
         });
 
-        window.addEventListener(
-          "wheel",
-          (e) => {
-            if (atBottom && e.deltaY > 0) {
-              overscroll = Math.min(maxExtra, overscroll + e.deltaY);
-            }
-          },
-          { passive: true }
-        );
+ //スクロール４回目で画面遷移
+       let overscrollCount = 0; // カウンター
+let reachedMax = false; // maxExtra到達フラグ
+
+// PC: wheelイベント
+window.addEventListener(
+  "wheel",
+  (e) => {
+    if (atBottom && e.deltaY > 0) {
+      overscroll = Math.min(maxExtra, overscroll + e.deltaY);
+
+      if (overscroll >= maxExtra && !reachedMax) {
+        overscrollCount++;
+        reachedMax = true; // この一回だけカウント
+
+        if (overscrollCount === 4) {
+          window.location.href = "works_all.html";
+        }
+      } else if (overscroll < maxExtra) {
+        reachedMax = false; // maxに達してないときはフラグを戻す
+      }
+    }
+  },
+  { passive: true }
+);
+
+        // window.addEventListener(
+        //   "wheel",
+        //   (e) => {
+        //     if (atBottom && e.deltaY > 0) {
+        //       overscroll = Math.min(maxExtra, overscroll + e.deltaY);
+        //     }
+        //   },
+        //   { passive: true }
+        // );
 
         // SP: タッチ操作
         let touchStartY = 0;
@@ -535,20 +561,46 @@
           },
           { passive: true }
         );
+        
+//SP版スクロールで画面遷移を試すため
+window.addEventListener(
+  "touchmove",
+  (e) => {
+    if (atBottom) {
+      const currentY = e.touches[0].clientY;
+      const deltaY = touchStartY - currentY;
 
-        window.addEventListener(
-          "touchmove",
-          (e) => {
-            if (atBottom) {
-              const currentY = e.touches[0].clientY;
-              const deltaY = touchStartY - currentY; // 下方向にスワイプした量
-              if (deltaY > 0) {
-                overscroll = Math.min(maxExtra, overscroll + deltaY);
-              }
-            }
-          },
-          { passive: true }
-        );
+      if (deltaY > 0) {
+        overscroll = Math.min(maxExtra, overscroll + deltaY);
+
+        if (overscroll >= maxExtra && !reachedMax) {
+          overscrollCount++;
+          reachedMax = true;
+
+          if (overscrollCount === 3) {
+            window.location.href = "works_all.html";
+          }
+        } else if (overscroll < maxExtra) {
+          reachedMax = false;
+        }
+      }
+    }
+  },
+  { passive: true }
+);
+        // window.addEventListener(
+        //   "touchmove",
+        //   (e) => {
+        //     if (atBottom) {
+        //       const currentY = e.touches[0].clientY;
+        //       const deltaY = touchStartY - currentY; // 下方向にスワイプした量
+        //       if (deltaY > 0) {
+        //         overscroll = Math.min(maxExtra, overscroll + deltaY);
+        //       }
+        //     }
+        //   },
+        //   { passive: true }
+        // );
 
         // 戻っていく動き
         gsap.ticker.add(() => {
