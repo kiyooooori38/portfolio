@@ -214,6 +214,7 @@
     </main>
 
     <!-- <フッター> -->
+     <a href="works_all.html">
     <footer id="c-form" class="works_banner_footer">
       <!-- あしらい7 -->
       <div class="roop_wrapper07">
@@ -280,63 +281,64 @@
             </g>
           </g>
         </svg>
+      </div>
 
-        <a href="works_all.html">
+      
         <div class="scroll_circle_wrapper">
           <!-- <img
           class="scrol_circle"
           src="./images/1x/scroll_circle.svg"
           alt="半円のデザイン"
         /> -->
-        <svg
-          id="half-circle"
-          class="scroll_circle"
-          data-name="レイヤー 2"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          viewBox="0 -200 1336 662.15"
-        >
-          <defs>
-            <style>
-              .cls-1 {
-                fill: none;
-              }
+          <svg
+            id="half-circle"
+            class="scroll_circle"
+            data-name="レイヤー 2"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 -200 1336 662.15"
+          >
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: none;
+                }
 
-              .cls-3 {
-                fill: url(#_名称未設定グラデーション_45);
-              }
-            </style>
-            <clipPath id="clippath">
-              <rect class="cls-1" width="1336" height="462.15" />
-            </clipPath>
-            <linearGradient
-              id="_名称未設定グラデーション_45"
-              data-name="名称未設定グラデーション 45"
-              x1="668.33"
-              y1="462.15"
-              x2="668.33"
-              y2="109.55"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop offset="0" stop-color="#8aecff" />
-              <stop offset="0" stop-color="#75c8e0" />
-              <stop offset="0" stop-color="#5186a7" />
-              <stop offset=".42" stop-color="#35547b" />
-              <stop offset=".8" stop-color="#202c59" />
-              <stop offset="1" stop-color="#181e4d" />
-            </linearGradient>
-          </defs>
-          <g id="circle" data-name="編集_ワイヤーフレーム">
-            <g class="cls-2">
-              <path
-                id="halfPath"
-                class="cls-3"
-                d="M1372.01,462.15c-118.78-207.6-389.15-352.6-703.67-352.6S83.44,254.55-35.34,462.15h1407.35Z"
-              />
+                .cls-3 {
+                  fill: url(#_名称未設定グラデーション_45);
+                }
+              </style>
+              <clipPath id="clippath">
+                <rect class="cls-1" width="1336" height="462.15" />
+              </clipPath>
+              <linearGradient
+                id="_名称未設定グラデーション_45"
+                data-name="名称未設定グラデーション 45"
+                x1="668.33"
+                y1="462.15"
+                x2="668.33"
+                y2="109.55"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset="0" stop-color="#8aecff" />
+                <stop offset="0" stop-color="#75c8e0" />
+                <stop offset="0" stop-color="#5186a7" />
+                <stop offset=".42" stop-color="#35547b" />
+                <stop offset=".8" stop-color="#202c59" />
+                <stop offset="1" stop-color="#181e4d" />
+              </linearGradient>
+            </defs>
+            <g id="circle" data-name="編集_ワイヤーフレーム">
+              <g class="cls-2">
+                <path
+                  id="halfPath"
+                  class="cls-3"
+                  d="M1372.01,462.15c-118.78-207.6-389.15-352.6-703.67-352.6S83.44,254.55-35.34,462.15h1407.35Z"
+                />
+              </g>
             </g>
-          </g>
-        </svg>
-      </div></a>
+          </svg></div
+      ></a>
     </footer>
 
     <!-- 共通：jquery -->
@@ -344,7 +346,8 @@
       //メールアイコンをふわっと表示させて一定の場所で非表示、上スクロールで再表示
       document.addEventListener("DOMContentLoaded", function () {
         const pageTop = document.querySelector("#mail");
-        const scrollThreshold = 100;
+        const form = document.querySelector("#c-form");
+        // const scrollThreshold = 100;
 
         function scrollTop() {
           window.scroll({
@@ -353,32 +356,20 @@
           });
         }
 
-        function scrollEvent() {
-          if (window.scrollY > scrollThreshold) {
-            pageTop.style.opacity = "1";
-          } else {
+        function handleScroll() {
+          const formTop = form.offsetTop;
+          const scrollPosition = window.scrollY + window.innerHeight;
+
+          // #c-formに到達したら非表示、それ以外は表示
+          if (scrollPosition >= formTop) {
             pageTop.style.opacity = "0";
-          }
-        }
-
-        function Position() {
-          const scrollHeight = document.documentElement.scrollHeight;
-          const scrollPosition = window.innerHeight + window.scrollY;
-          const footHeight = document.querySelector("#c-form").offsetHeight;
-          const footTop = document.querySelector("#c-form").offsetTop;
-
-          if (scrollPosition >= footTop) {
-            pageTop.style.position = "absolute";
-            pageTop.style.bottom = footHeight + "px";
           } else {
-            pageTop.style.position = "fixed";
-            pageTop.style.bottom = "0";
+            pageTop.style.opacity = "1";
           }
         }
 
-        // pageTop.addEventListener("click", scrollTop);
-        window.addEventListener("scroll", scrollEvent);
-        window.addEventListener("scroll", Position);
+        pageTop.addEventListener("click", scrollTop);
+        window.addEventListener("scroll", handleScroll);
       });
 
       //カーソルの見た目を変更

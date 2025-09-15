@@ -439,7 +439,8 @@
         //メールアイコンをふわっと表示させて一定の場所で非表示、上スクロールで再表示
       document.addEventListener("DOMContentLoaded", function () {
         const pageTop = document.querySelector("#mail");
-        const scrollThreshold = 100;
+        const form = document.querySelector("#c-form");
+        // const scrollThreshold = 100;
 
         function scrollTop() {
           window.scroll({
@@ -448,34 +449,21 @@
           });
         }
 
-        function scrollEvent() {
-          if (window.scrollY > scrollThreshold) {
-            pageTop.style.opacity = "1";
-          } else {
+        function handleScroll() {
+          const formTop = form.offsetTop;
+          const scrollPosition = window.scrollY + window.innerHeight;
+
+          // #c-formに到達したら非表示、それ以外は表示
+          if (scrollPosition >= formTop) {
             pageTop.style.opacity = "0";
-          }
-        }
-
-        function Position() {
-          const scrollHeight = document.documentElement.scrollHeight;
-          const scrollPosition = window.innerHeight + window.scrollY;
-          const footHeight = document.querySelector("#c-form").offsetHeight;
-          const footTop = document.querySelector("#c-form").offsetTop;
-
-          if (scrollPosition >= footTop) {
-            pageTop.style.position = "absolute";
-            pageTop.style.bottom = footHeight + "px";
           } else {
-            pageTop.style.position = "fixed";
-            pageTop.style.bottom = "0";
+            pageTop.style.opacity = "1";
           }
         }
 
         pageTop.addEventListener("click", scrollTop);
-        window.addEventListener("scroll", scrollEvent);
-        window.addEventListener("scroll", Position);
+        window.addEventListener("scroll", handleScroll);
       });
-
         //カーソルの見た目を変更
       var cursor = $("#cursor");
       //ちょっと遅れてついてくるストーカー要素の指定

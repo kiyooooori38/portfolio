@@ -1192,7 +1192,7 @@ textarea.c-form_input {
 
 .site_banner_bar {
   max-width: 830px;
-  margin: 0 auto 500px auto;
+  margin: 0 auto 200px auto;
 }
 
 /*WORK SITE 余白*/
@@ -1376,7 +1376,7 @@ textarea.c-form_input {
 .roop_wrapper07 {
   max-width: 1440px;
   position: absolute;
-  bottom: 100px;
+  bottom: 500px;
   left: 0;
   width: 100%;
   z-index: 0;
@@ -1698,6 +1698,8 @@ path {
 .fadein_late.scrollin {
   opacity: 1;
   transform: translate(0, 0);
+  position: relative;
+  z-index: 10;
 }
 
 /*FVコンセプトやスクロールバーの位置がおかしくなるタイミングで切り替え*/
@@ -2272,7 +2274,7 @@ path {
   }
   /*WORKS SITE 1150 あしらい０７*/
   .roop_wrapper07 {
-    bottom: -100px;
+    bottom: 300px;
   }
 
   /*ABOUT ME 1150 */
@@ -2393,6 +2395,9 @@ path {
     display: none;
   }
 
+  .top_works_wrapper {
+    margin-top: 250px;
+  }
   /*SP版ABOUT*/
   /*flex解除 floatがきかない・・・*/
 
@@ -2716,7 +2721,7 @@ path {
   }
 
   .roop_wrapper07 {
-    bottom: 10px;
+    bottom: 300px;
   }
 
   .roop_wrapper09 {

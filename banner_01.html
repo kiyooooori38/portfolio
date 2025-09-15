@@ -117,7 +117,7 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
       </div>
     </main>
 
-    <!-- <フッター> -->
+    <!-- <フッター> --><a href="works_all.html">
     <footer id="c-form" class="works_banner_footer">
       <!-- あしらい6 -->
       <div class="roop_wrapper06">
@@ -186,7 +186,7 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
         </svg>
       </div>
 
-      <a href="works_all.html">
+      
         <div class="scroll_circle_wrapper">
           <!-- <img
           class="scrol_circle"
@@ -250,9 +250,10 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
     <!-- 共通：jquery -->
     <script>
       //メールアイコンをふわっと表示させて一定の場所で非表示、上スクロールで再表示
-      document.addEventListener("DOMContentLoaded", function () {
+     document.addEventListener("DOMContentLoaded", function () {
         const pageTop = document.querySelector("#mail");
-        const scrollThreshold = 100;
+        const form = document.querySelector("#c-form");
+        // const scrollThreshold = 100;
 
         function scrollTop() {
           window.scroll({
@@ -261,33 +262,22 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
           });
         }
 
-        function scrollEvent() {
-          if (window.scrollY > scrollThreshold) {
-            pageTop.style.opacity = "1";
-          } else {
+        function handleScroll() {
+          const formTop = form.offsetTop;
+          const scrollPosition = window.scrollY + window.innerHeight;
+
+          // #c-formに到達したら非表示、それ以外は表示
+          if (scrollPosition >= formTop) {
             pageTop.style.opacity = "0";
-          }
-        }
-
-        function Position() {
-          const scrollHeight = document.documentElement.scrollHeight;
-          const scrollPosition = window.innerHeight + window.scrollY;
-          const footHeight = document.querySelector("#c-form").offsetHeight;
-          const footTop = document.querySelector("#c-form").offsetTop;
-
-          if (scrollPosition >= footTop) {
-            pageTop.style.position = "absolute";
-            pageTop.style.bottom = footHeight + "px";
           } else {
-            pageTop.style.position = "fixed";
-            pageTop.style.bottom = "0";
+            pageTop.style.opacity = "1";
           }
         }
 
-        // pageTop.addEventListener("click", scrollTop);
-        window.addEventListener("scroll", scrollEvent);
-        window.addEventListener("scroll", Position);
+        pageTop.addEventListener("click", scrollTop);
+        window.addEventListener("scroll", handleScroll);
       });
+
 
       //カーソルの見た目を変更
       var cursor = $("#cursor");
@@ -413,16 +403,41 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
           atBottom = scrollY + winHeight >= docHeight - 1;
         });
 
-        window.addEventListener(
-          // PC：スクロール操作
-          "wheel",
-          (e) => {
-            if (atBottom && e.deltaY > 0) {
-              overscroll = Math.min(maxExtra, overscroll + e.deltaY);
-            }
-          },
-          { passive: true }
-        );
+       let overscrollCount = 0; // カウンター
+let reachedMax = false; // maxExtra到達フラグ
+
+// PC: wheelイベント
+window.addEventListener(
+  "wheel",
+  (e) => {
+    if (atBottom && e.deltaY > 0) {
+      overscroll = Math.min(maxExtra, overscroll + e.deltaY);
+
+      if (overscroll >= maxExtra && !reachedMax) {
+        overscrollCount++;
+        reachedMax = true; // この一回だけカウント
+
+        if (overscrollCount === 4) {
+          window.location.href = "works_all.html";
+        }
+      } else if (overscroll < maxExtra) {
+        reachedMax = false; // maxに達してないときはフラグを戻す
+      }
+    }
+  },
+  { passive: true }
+);
+
+        // window.addEventListener(
+        //   // PC：スクロール操作
+        //   "wheel",
+        //   (e) => {
+        //     if (atBottom && e.deltaY > 0) {
+        //       overscroll = Math.min(maxExtra, overscroll + e.deltaY);
+        //     }
+        //   },
+        //   { passive: true }
+        // );
 
         // SP: タッチ操作
         let touchStartY = 0;
@@ -435,20 +450,46 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
           },
           { passive: true }
         );
+//SP版スクロールで画面遷移を試すため
+window.addEventListener(
+  "touchmove",
+  (e) => {
+    if (atBottom) {
+      const currentY = e.touches[0].clientY;
+      const deltaY = touchStartY - currentY;
 
-        window.addEventListener(
-          "touchmove",
-          (e) => {
-            if (atBottom) {
-              const currentY = e.touches[0].clientY;
-              const deltaY = touchStartY - currentY; // 下方向にスワイプした量
-              if (deltaY > 0) {
-                overscroll = Math.min(maxExtra, overscroll + deltaY);
-              }
-            }
-          },
-          { passive: true }
-        );
+      if (deltaY > 0) {
+        overscroll = Math.min(maxExtra, overscroll + deltaY);
+
+        if (overscroll >= maxExtra && !reachedMax) {
+          overscrollCount++;
+          reachedMax = true;
+
+          if (overscrollCount === 3) {
+            window.location.href = "nextpage.html";
+          }
+        } else if (overscroll < maxExtra) {
+          reachedMax = false;
+        }
+      }
+    }
+  },
+  { passive: true }
+);
+//スクロールで画面遷移を試すために、一旦削除
+        // window.addEventListener(
+        //   "touchmove",
+        //   (e) => {
+        //     if (atBottom) {
+        //       const currentY = e.touches[0].clientY;
+        //       const deltaY = touchStartY - currentY; // 下方向にスワイプした量
+        //       if (deltaY > 0) {
+        //         overscroll = Math.min(maxExtra, overscroll + deltaY);
+        //       }
+        //     }
+        //   },
+        //   { passive: true }
+        // );
 
         // 戻っていく動き
         gsap.ticker.add(() => {
