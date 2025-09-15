@@ -347,6 +347,7 @@
 
     <!-- 共通：jquery -->
     <script>
+      //画像にふしぎな動きをつける ここから
       const cards = document.querySelectorAll(".card");
 
       // イベントを登録する関数
@@ -368,7 +369,7 @@
           gsap.set(card.querySelector(".flex_item_img"), {
             scale: 1,
             opacity: 1,
-            filter: "grayscale(100%) blur(0px)",
+            // filter: "grayscale(100%) blur(0px)",
           });
         });
       }
@@ -483,6 +484,7 @@
       //     });
       //   });
       // });
+      //画像にふしぎな動きをつける ここまで
 
       //メールアイコンをふわっと表示させて一定の場所で非表示、上スクロールで再表示
       document.addEventListener("DOMContentLoaded", function () {
