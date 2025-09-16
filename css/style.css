@@ -392,18 +392,20 @@ article:not(:first-of-type) > div > div {
 .works_sub_category::after {
   content: "";
   display: block;
-  width: 149px;
+  width: 135px;
   border-bottom: 1px dotted var(--accent_color01);
   padding-top: 4px;
+  margin-left: 8px;
 }
 
 .works_sub_category03::after,
 .works_sub_category02::after {
   content: "";
   display: block;
-  width: 108px;
+  width: 93px;
   border-bottom: 1px dotted var(--accent_color01);
   padding-top: 4px;
+  margin-left: 8px;
 }
 /*WORKS_ボタン anime*/
 .works_btn,
@@ -1093,9 +1095,10 @@ textarea.c-form_input {
 .tool::after {
   content: "";
   display: block;
-  width: 254px;
+  width: 244px;
   border-bottom: 1px dotted var(--accent_color01);
   margin-left: auto;
+  margin-right: 4px;
 }
 
 /*WORKSBANNER フッター*/
@@ -1358,6 +1361,7 @@ textarea.c-form_input {
   display: flex;
   justify-content: space-around;
   padding: 0 20px;
+  flex-wrap: wrap;
 }
 
 .site_pageSP_img {
@@ -1366,6 +1370,10 @@ textarea.c-form_input {
   border: 1px solid #ccc;
   background-color: #fff;
   border-radius: 5px;
+}
+
+.site_gap {
+  margin-top: 36px;
 }
 
 .site_pageSP_img > img {
@@ -2024,15 +2032,17 @@ path {
     width: 149px;
     border-bottom: 1px dotted var(--accent_color01);
     padding-top: 4px;
+    margin-left: 7px;
   }
 
   .works_sub_category02::after,
   .works_sub_category03::after {
     content: "";
     display: block;
-    width: 108px;
+    width: 91px;
     border-bottom: 1px dotted var(--accent_color01);
     padding-top: 4px;
+    margin-left: 9px;
   }
   /*SP版WORKS_ボタン*/
   .works_btn,
@@ -2166,7 +2176,7 @@ path {
   }
 
   .tool::after {
-    width: 178px;
+    width: 166px;
   }
 
   .works_banner_bar,
@@ -2223,6 +2233,11 @@ path {
 
   .site_pageSP_img01 {
     margin-top: 48px;
+  }
+
+  .site_gap_hidden {
+    display: block;
+    margin-top: 24px;
   }
 
   .site_launch_btn {
