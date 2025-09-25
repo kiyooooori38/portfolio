@@ -869,6 +869,11 @@ textarea.c-form_input {
 }
 
 /*別ページ：WORKS_ALL*/
+.works_hidden {
+  /*一時的に非表示*/
+  display: none;
+}
+
 .works_all_wrapper {
   max-width: 1000px;
   margin: 0 auto;
@@ -924,7 +929,7 @@ textarea.c-form_input {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: 72px 0 700px 0;
+  margin: 0px 0 700px 0;
 }
 
 .flex_01_inner,
@@ -1181,6 +1186,12 @@ textarea.c-form_input {
   100% {
     opacity: 0;
   }
+}
+/*WEB BANNER 02：POPハンバーガー*/
+/*WEB BANNER 03：高級ハンバーガー*/
+.pop_hamburger,
+.lux_hambuger {
+  width: 98%;
 }
 
 /*別ページ　WORKS SITE*/

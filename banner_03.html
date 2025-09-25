@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>portfolio - 作品紹介</title>
+    <link rel="icon" href="./images/1x/favicon.png" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- あしらいにアニメーションをつけるために以下を読み込む -->
+    <script src="
+https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
+"></script>
+    <!-- 下スクロールのためのgsap cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  </head>
+  <body class="works_banner01">
+    <!-- カーソルの見た目を変更 -->
+    <div id="cursor"></div>
+    <div id="stalker"></div>
+    <header>
+      <!-- 共通：PCナビゲーション -->
+      <nav class="pc_nav">
+        <ul class="header_list">
+          <li class="header_list_item">
+            <a href="index.html">/ Home</a>
+          </li>
+          <li class="header_list_item">
+            <a href="works_all.html">/ Works</a>
+          </li>
+          <li class="header_list_item">
+            <a href="about_me.html">/ About</a>
+          </li>
+          <li class="header_list_item">
+            <a href="index.html#c-form"
+              ><img
+                class="header_nav_btn"
+                src="./images/1x/header_nav.svg"
+                alt="contact button"
+            /></a>
+          </li>
+        </ul>
+      </nav>
+
+      <!--共通：SPナビゲーション -->
+      <div class="works_banner_sp_btn"><span></span><span></span></div>
+      <nav class="works_banner_sp_nav">
+        <ul class="works_banner_sp_header_list">
+          <li class="works_banner_sp_header_list_item">
+            <a href="index.html#top">/ Home</a>
+          </li>
+          <li class="works_banner_sp_header_list_item">
+            <a href="works_all.html">/ Works</a>
+          </li>
+          <li class="works_banner_sp_header_list_item">
+            <a href="about_me.html">/ About</a>
+          </li>
+          <li class="works_banner_sp_header_list_item">
+            <a href="index.html#c-form"
+              ><img
+                class="works_banner_sp_header_list_item"
+                src="./images/1x/header_nav.svg"
+                alt="contact button"
+            /></a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- SP固定メールあいこん -->
+      <a href="index.html#c-form"
+        ><div id="mail" class="mail_icon">
+          <img src="./images/1x/SP_mail_icon.svg" alt="メールのアイコン" />
+        </div>
+      </a>
+    </header>
+
+    <!-- 共通：FVスクロールバー -->
+    <div class="scroll_down no_scroll">
+      <p>SCROLL</p>
+    </div>
+    h
+
+    <!-- WORKS BANNER01 紹介ページ内容 -->
+    <main class="banner_wrapper">
+      <section>
+        <p>#Webbanner</p>
+        <h3>新作ハンバーガー</h3>
+
+        <div class="banner_img">
+          <img
+            class="lux_hambuger"
+            src="./images/1x/banner03.jpg"
+            alt="バナー作品の画像"
+          />
+        </div>
+
+        <p class="banner_sub_category">[ Category : design ]</p>
+
+        <p class="banner_discription">
+          新商品のハンバーガーを紹介する告知バナーを制作しました。
+          ゴールド系のグラデーションを背景に使用することで、シンプルながらも上質な雰囲気を演出。余白を多めにとり、文字や写真の要素を引き立たせています。商品写真は中央寄せに配置し、無駄を削ぎ落としたデザインにすることで、バーガーそのものの存在感とクオリティを強調しました。
+        </p>
+
+        <div class="banner_flex">
+          <p>Point</p>
+          <div class="banner_inner">
+            <p>
+              このデザインでは「高級感」「上質さ」という印象を与えることを意識しています。力強い縦書きの大きな文字と、背景に映える白文字を組み合わせることで、視線を強く引きつける効果をもたらしています。あえて色数を抑え、金と白を基調にすることで「プレミアム感」や「特別感」を表現しました。また、シンプルだけど余白の使い方に変化を持たせ、飽きさせないデザインを心がけています。
+            </p>
+            <p>
+              メインターゲットは20代後半〜40代の社会人層を想定しています。普段からグルメ志向が高く、品質や特別感に価値を感じる層に向けたデザインです。特に「ちょっと贅沢なランチ」や「ご褒美的な食事」を楽しみたい層に響くよう、シックで大人向けの雰囲気を重視しました。
+            </p>
+          </div>
+        </div>
+        <p class="tool">【 Tool : Adobe Illustrator,Photoshop 】</p>
+      </section>
+
+      <div class="works_banner_bar">
+        <p>Works all</p>
+        <div></div>
+      </div>
+    </main>
+
+    <!-- <フッター> -->
+    <footer id="c-form" class="works_banner_footer">
+      <!-- あしらい6 -->
+      <div class="roop_wrapper06">
+        <!-- <img
+          class="roop_design06"
+          src="./images/1x/roop_design06.svg"
+          alt="∞マークの装飾"
+        /> -->
+        <svg
+          id="layer06"
+          class="roop_design06"
+          data-name="レイヤー 2"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 1340.42 1032.19"
+        >
+          <defs>
+            <style>
+              .roop06-1,
+              .roop06-2 {
+                fill: none;
+              }
+
+              .roop06-2 {
+                stroke: url(#_名称未設定グラデーション_12);
+                stroke-miterlimit: 10;
+                stroke-width: 1.1px;
+              }
+
+              .roop06-3 {
+                clip-path: url(#clippath06);
+              }
+            </style>
+            <clipPath id="clippath06">
+              <rect class="roop06-1" width="1340.42" height="1032.19" />
+            </clipPath>
+            <linearGradient
+              id="_名称未設定グラデーション_12"
+              data-name="名称未設定グラデーション 12"
+              x1="-3262.51"
+              y1="219.56"
+              x2="-1663.21"
+              y2="219.56"
+              gradientTransform="translate(-1727.92 -379.63) rotate(-164.8) scale(1 -1)"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop offset="0" stop-color="#8aecff" />
+              <stop offset=".19" stop-color="#88e8fc" />
+              <stop offset=".33" stop-color="#83dff4" />
+              <stop offset=".46" stop-color="#7acfe6" />
+              <stop offset=".58" stop-color="#6db8d2" />
+              <stop offset=".69" stop-color="#5d9ab8" />
+              <stop offset=".8" stop-color="#497699" />
+              <stop offset=".9" stop-color="#314c75" />
+              <stop offset="1" stop-color="#181e4d" />
+            </linearGradient>
+          </defs>
+          <g id="_編集_ワイヤーフレーム" data-name="編集_ワイヤーフレーム">
+            <g class="roop06-3">
+              <path
+                class="roop06-2"
+                d="M-67-22C72,107.78,165.94,259.67,281.19,401.37c96.06,118.09,208.29,230.31,344.07,324.55,135.78,94.24,296.07,170.17,469.85,209.23,50.31,11.31,105.53,21.97,152.46,3.84,32.34-12.49,56.03-36.06,63.61-63.25,10.25-36.79-8.83-77.29-40.9-108.67-93.78-91.75-272.11-130.51-408.23-166.77-159.35-42.44-318.04-82.17-472.82-135.04-154.12-52.64-304.78-111.93-450.94-177.45-36.9-16.54-73.84-33.26-110.24-50.44"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+
+      <div class="scroll_circle_wrapper">
+        <!-- <img
+          class="scrol_circle"
+          src="./images/1x/scroll_circle.svg"
+          alt="半円のデザイン"
+        /> -->
+
+        <svg
+          id="half-circle"
+          class="scroll_circle"
+          data-name="レイヤー 2"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 -200 1336 662.15"
+        >
+          <defs>
+            <style>
+              .cls-1 {
+                fill: none;
+              }
+
+              .cls-3 {
+                fill: url(#_名称未設定グラデーション_45);
+              }
+            </style>
+            <clipPath id="clippath">
+              <rect class="cls-1" width="1336" height="462.15" />
+            </clipPath>
+            <linearGradient
+              id="_名称未設定グラデーション_45"
+              data-name="名称未設定グラデーション 45"
+              x1="668.33"
+              y1="462.15"
+              x2="668.33"
+              y2="109.55"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop offset="0" stop-color="#8aecff" />
+              <stop offset="0" stop-color="#75c8e0" />
+              <stop offset="0" stop-color="#5186a7" />
+              <stop offset=".42" stop-color="#35547b" />
+              <stop offset=".8" stop-color="#202c59" />
+              <stop offset="1" stop-color="#181e4d" />
+            </linearGradient>
+          </defs>
+
+          <g id="circle" data-name="編集_ワイヤーフレーム">
+            <g class="cls-2">
+              <path
+                id="halfPath"
+                class="cls-3"
+                d="M1372.01,462.15c-118.78-207.6-389.15-352.6-703.67-352.6S83.44,254.55-35.34,462.15h1407.35Z"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </footer>
+
+    <!-- 共通：jquery -->
+    <script>
+      //メールアイコンをふわっと表示させて一定の場所で非表示、上スクロールで再表示
+      document.addEventListener("DOMContentLoaded", function () {
+        const pageTop = document.querySelector("#mail");
+        const form = document.querySelector("#c-form");
+        // const scrollThreshold = 100;
+
+        function scrollTop() {
+          window.scroll({
+            top: 0,
+            behavior: "smooth",
+          });
+        }
+
+        function handleScroll() {
+          const formTop = form.offsetTop;
+          const scrollPosition = window.scrollY + window.innerHeight;
+
+          // #c-formに到達したら非表示、それ以外は表示
+          if (scrollPosition >= formTop) {
+            pageTop.style.opacity = "0";
+          } else {
+            pageTop.style.opacity = "1";
+          }
+        }
+
+        pageTop.addEventListener("click", scrollTop);
+        window.addEventListener("scroll", handleScroll);
+      });
+
+      //カーソルの見た目を変更
+      var cursor = $("#cursor");
+      //ちょっと遅れてついてくるストーカー要素の指定
+      var stalker = $("#stalker");
+
+      //mousemoveイベントでカーソル要素を移動させる
+      $(document).on("mousemove", function (e) {
+        //カーソルの座標位置を取得
+        var x = e.clientX;
+        var y = e.clientY;
+        //カーソル要素のcssを書き換える用
+        cursor.css({
+          opacity: "1",
+          top: y + "px",
+          left: x + "px",
+        });
+
+        //ストーカー要素のcssを書き換える用
+        setTimeout(function () {
+          stalker.css({
+            opacity: "0.4",
+            top: y + "px",
+            left: x + "px",
+          });
+        }, 140); //カーソルより遅れる時間を指定
+      });
+
+      //aタグホバー
+      $("a").on({
+        mouseenter: function () {
+          //activeクラス付与
+          cursor.addClass("active");
+          stalker.addClass("active");
+        },
+        mouseleave: function () {
+          cursor.removeClass("active");
+          stalker.removeClass("active");
+        },
+      });
+
+      //バーガーメニュー
+
+      $(function () {
+        $(".works_banner_sp_btn").on("click", function () {
+          // メニュー閉じたり開いたり
+          $(".works_banner_sp_btn").toggleClass("open");
+          $(".works_banner_sp_nav").fadeToggle();
+          $("body").toggleClass("menu_fix");
+
+          //コンセプトやメールアイコンを非表示
+
+          $(".mail_icon").toggleClass("invisible");
+          $(".scroll_down").toggleClass("invisible");
+          $(".works_banner_bar").toggleClass("invisible");
+        });
+        //リンク飛んだ後元通りにする
+        $(".works_banner_sp_header_list_item a").on("click", function () {
+          $("body").removeClass("menu_fix");
+          $(".works_banner_sp_nav").fadeToggle();
+          $(".works_banner_sp_btn").removeClass("open");
+
+          $(".mail_icon").removeClass("invisible");
+          $(".scroll_down").removeClass("invisible");
+          $(".works_banner_bar").removeClass("invisible");
+        });
+      });
+
+      //あしらい3
+      const vivus06 = new Vivus("layer06", {
+        duration: 350,
+        start: "autostart",
+        type: "scenario",
+        pathTimingFunction: Vivus.EASE_OUT,
+      });
+
+      function playForward06() {
+        vivus06.play(1, function () {
+          setTimeout(playBackward06, 350);
+        });
+      }
+
+      function playBackward06() {
+        vivus06.play(-1, function () {
+          setTimeout(playForward06, 350);
+        });
+      }
+
+      playForward06();
+
+      //フッターのぐにょーん
+      // プラグインの登録
+      $(function () {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const path = document.querySelector("#halfPath");
+
+        let overscroll = 0;
+        // 初期状態の半円の高さ
+        const baseHeight = 400;
+        // 半円の伸び幅
+        const maxExtra = 500;
+        let atBottom = false;
+
+        // パスを作る
+        function makePath(extraHeight) {
+          const topY = 462.15 - (baseHeight + extraHeight);
+          return `M0,462.15
+                  C334,${topY} 1002,${topY} 1336,462.15
+                  L1336,462.15 Z`;
+        }
+
+        // アニメーションの適用
+        function render() {
+          path.setAttribute("d", makePath(overscroll));
+        }
+
+        // ページ最下部にいるかどうか
+        window.addEventListener("scroll", () => {
+          const docHeight = document.documentElement.scrollHeight;
+          const winHeight = window.innerHeight;
+          const scrollY = window.scrollY;
+          atBottom = scrollY + winHeight >= docHeight - 1;
+        });
+
+        //スクロール４回目で画面遷移
+        let overscrollCount = 0; // カウンター
+        let reachedMax = false; // maxExtra到達フラグ
+
+        // PC: wheelイベント
+        window.addEventListener(
+          "wheel",
+          (e) => {
+            if (atBottom && e.deltaY > 0) {
+              overscroll = Math.min(maxExtra, overscroll + e.deltaY);
+
+              if (overscroll >= maxExtra && !reachedMax) {
+                overscrollCount++;
+                reachedMax = true; // この一回だけカウント
+
+                if (overscrollCount === 3) {
+                  window.location.href = "works_all.html";
+                }
+              } else if (overscroll < maxExtra) {
+                reachedMax = false; // maxに達してないときはフラグを戻す
+              }
+            }
+          },
+          { passive: true }
+        );
+
+        // window.addEventListener(
+        //   // PC：スクロール操作
+        //   "wheel",
+        //   (e) => {
+        //     if (atBottom && e.deltaY > 0) {
+        //       overscroll = Math.min(maxExtra, overscroll + e.deltaY);
+        //     }
+        //   },
+        //   { passive: true }
+        // );
+
+        // SP: タッチ操作
+        let touchStartY = 0;
+
+        window.addEventListener(
+          "touchstart",
+          (e) => {
+            // 指を置いたときのY座標を記録
+            touchStartY = e.touches[0].clientY;
+          },
+          { passive: true }
+        );
+        //SP版スクロールで画面遷移を試すため
+        window.addEventListener(
+          "touchmove",
+          (e) => {
+            if (atBottom) {
+              const currentY = e.touches[0].clientY;
+              const deltaY = touchStartY - currentY;
+
+              if (deltaY > 0) {
+                overscroll = Math.min(maxExtra, overscroll + deltaY);
+
+                if (overscroll >= maxExtra && !reachedMax) {
+                  overscrollCount++;
+                  reachedMax = true;
+
+                  if (overscrollCount === 3) {
+                    window.location.href = "works_all.html";
+                  }
+                } else if (overscroll < maxExtra) {
+                  reachedMax = false;
+                }
+              }
+            }
+          },
+          { passive: true }
+        );
+        //スクロールで画面遷移を試すために、一旦削除
+        // window.addEventListener(
+        //   "touchmove",
+        //   (e) => {
+        //     if (atBottom) {
+        //       const currentY = e.touches[0].clientY;
+        //       const deltaY = touchStartY - currentY; // 下方向にスワイプした量
+        //       if (deltaY > 0) {
+        //         overscroll = Math.min(maxExtra, overscroll + deltaY);
+        //       }
+        //     }
+        //   },
+        //   { passive: true }
+        // );
+
+        // 戻っていく動き
+        gsap.ticker.add(() => {
+          if (!atBottom || overscroll > 0) {
+            overscroll *= 0.85;
+            if (overscroll < 0.5) overscroll = 0;
+            render();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

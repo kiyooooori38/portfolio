@@ -155,6 +155,7 @@
 
         <p class="site_discription">
           「洗練された印象と親しみやすさの両立」をテーマに、配色は落ち着いたトーンを基調にしつつ、アクセントカラーで温かみを加えています。お客さまに「なりたい自分」をイメージしてもらいやすいよう、写真を大きく・バランス良く配置するよう工夫しました。また、余白を活かしたレイアウトにすることで、全体の見やすさと清潔感を意識しています。
+        </p>
 
         <div class="site_flex">
           <p>Point</p>
@@ -188,7 +189,7 @@
           <img src="./images/1x/works_site02_03-80.jpg" alt="作品の画像" />
         </div>
 
-          <div class="site_page_img">
+        <div class="site_page_img">
           <img src="./images/1x/works_site02_04-80.jpg" alt="作品の画像" />
         </div>
 
@@ -228,7 +229,7 @@
     </main>
 
     <!-- <フッター> -->
-     <a href="works_all.html">
+
     <footer id="c-form" class="works_banner_footer">
       <!-- あしらい7 -->
       <div class="roop_wrapper07">
@@ -297,62 +298,61 @@
         </svg>
       </div>
 
-      
-        <div class="scroll_circle_wrapper">
-          <!-- <img
+      <div class="scroll_circle_wrapper">
+        <!-- <img
           class="scrol_circle"
           src="./images/1x/scroll_circle.svg"
           alt="半円のデザイン"
         /> -->
-          <svg
-            id="half-circle"
-            class="scroll_circle"
-            data-name="レイヤー 2"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 -200 1336 662.15"
-          >
-            <defs>
-              <style>
-                .cls-1 {
-                  fill: none;
-                }
+        <svg
+          id="half-circle"
+          class="scroll_circle"
+          data-name="レイヤー 2"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 -200 1336 662.15"
+        >
+          <defs>
+            <style>
+              .cls-1 {
+                fill: none;
+              }
 
-                .cls-3 {
-                  fill: url(#_名称未設定グラデーション_45);
-                }
-              </style>
-              <clipPath id="clippath">
-                <rect class="cls-1" width="1336" height="462.15" />
-              </clipPath>
-              <linearGradient
-                id="_名称未設定グラデーション_45"
-                data-name="名称未設定グラデーション 45"
-                x1="668.33"
-                y1="462.15"
-                x2="668.33"
-                y2="109.55"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop offset="0" stop-color="#8aecff" />
-                <stop offset="0" stop-color="#75c8e0" />
-                <stop offset="0" stop-color="#5186a7" />
-                <stop offset=".42" stop-color="#35547b" />
-                <stop offset=".8" stop-color="#202c59" />
-                <stop offset="1" stop-color="#181e4d" />
-              </linearGradient>
-            </defs>
-            <g id="circle" data-name="編集_ワイヤーフレーム">
-              <g class="cls-2">
-                <path
-                  id="halfPath"
-                  class="cls-3"
-                  d="M1372.01,462.15c-118.78-207.6-389.15-352.6-703.67-352.6S83.44,254.55-35.34,462.15h1407.35Z"
-                />
-              </g>
+              .cls-3 {
+                fill: url(#_名称未設定グラデーション_45);
+              }
+            </style>
+            <clipPath id="clippath">
+              <rect class="cls-1" width="1336" height="462.15" />
+            </clipPath>
+            <linearGradient
+              id="_名称未設定グラデーション_45"
+              data-name="名称未設定グラデーション 45"
+              x1="668.33"
+              y1="462.15"
+              x2="668.33"
+              y2="109.55"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop offset="0" stop-color="#8aecff" />
+              <stop offset="0" stop-color="#75c8e0" />
+              <stop offset="0" stop-color="#5186a7" />
+              <stop offset=".42" stop-color="#35547b" />
+              <stop offset=".8" stop-color="#202c59" />
+              <stop offset="1" stop-color="#181e4d" />
+            </linearGradient>
+          </defs>
+          <g id="circle" data-name="編集_ワイヤーフレーム">
+            <g class="cls-2">
+              <path
+                id="halfPath"
+                class="cls-3"
+                d="M1372.01,462.15c-118.78-207.6-389.15-352.6-703.67-352.6S83.44,254.55-35.34,462.15h1407.35Z"
+              />
             </g>
-          </svg></div
-      ></a>
+          </g>
+        </svg>
+      </div>
     </footer>
 
     <!-- 共通：jquery -->
@@ -528,31 +528,31 @@
           atBottom = scrollY + winHeight >= docHeight - 1;
         });
 
- //スクロール４回目で画面遷移
-       let overscrollCount = 0; // カウンター
-let reachedMax = false; // maxExtra到達フラグ
+        //スクロール４回目で画面遷移
+        let overscrollCount = 0; // カウンター
+        let reachedMax = false; // maxExtra到達フラグ
 
-// PC: wheelイベント
-window.addEventListener(
-  "wheel",
-  (e) => {
-    if (atBottom && e.deltaY > 0) {
-      overscroll = Math.min(maxExtra, overscroll + e.deltaY);
+        // PC: wheelイベント
+        window.addEventListener(
+          "wheel",
+          (e) => {
+            if (atBottom && e.deltaY > 0) {
+              overscroll = Math.min(maxExtra, overscroll + e.deltaY);
 
-      if (overscroll >= maxExtra && !reachedMax) {
-        overscrollCount++;
-        reachedMax = true; // この一回だけカウント
+              if (overscroll >= maxExtra && !reachedMax) {
+                overscrollCount++;
+                reachedMax = true; // この一回だけカウント
 
-        if (overscrollCount === 3) {
-          window.location.href = "works_all.html";
-        }
-      } else if (overscroll < maxExtra) {
-        reachedMax = false; // maxに達してないときはフラグを戻す
-      }
-    }
-  },
-  { passive: true }
-);
+                if (overscrollCount === 3) {
+                  window.location.href = "works_all.html";
+                }
+              } else if (overscroll < maxExtra) {
+                reachedMax = false; // maxに達してないときはフラグを戻す
+              }
+            }
+          },
+          { passive: true }
+        );
 
         // window.addEventListener(
         //   "wheel",
@@ -575,33 +575,33 @@ window.addEventListener(
           },
           { passive: true }
         );
-        
-//SP版スクロールで画面遷移を試すため
-window.addEventListener(
-  "touchmove",
-  (e) => {
-    if (atBottom) {
-      const currentY = e.touches[0].clientY;
-      const deltaY = touchStartY - currentY;
 
-      if (deltaY > 0) {
-        overscroll = Math.min(maxExtra, overscroll + deltaY);
+        //SP版スクロールで画面遷移を試すため
+        window.addEventListener(
+          "touchmove",
+          (e) => {
+            if (atBottom) {
+              const currentY = e.touches[0].clientY;
+              const deltaY = touchStartY - currentY;
 
-        if (overscroll >= maxExtra && !reachedMax) {
-          overscrollCount++;
-          reachedMax = true;
+              if (deltaY > 0) {
+                overscroll = Math.min(maxExtra, overscroll + deltaY);
 
-          if (overscrollCount === 3) {
-            window.location.href = "works_all.html";
-          }
-        } else if (overscroll < maxExtra) {
-          reachedMax = false;
-        }
-      }
-    }
-  },
-  { passive: true }
-);
+                if (overscroll >= maxExtra && !reachedMax) {
+                  overscrollCount++;
+                  reachedMax = true;
+
+                  if (overscrollCount === 3) {
+                    window.location.href = "works_all.html";
+                  }
+                } else if (overscroll < maxExtra) {
+                  reachedMax = false;
+                }
+              }
+            }
+          },
+          { passive: true }
+        );
         // window.addEventListener(
         //   "touchmove",
         //   (e) => {

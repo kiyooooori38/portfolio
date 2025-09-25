@@ -117,7 +117,7 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
       </div>
     </main>
 
-    <!-- <フッター> --><a href="works_all.html">
+    <!-- <フッター> -->
     <footer id="c-form" class="works_banner_footer">
       <!-- あしらい6 -->
       <div class="roop_wrapper06">
@@ -186,71 +186,69 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
         </svg>
       </div>
 
-      
-        <div class="scroll_circle_wrapper">
-          <!-- <img
+      <div class="scroll_circle_wrapper">
+        <!-- <img
           class="scrol_circle"
           src="./images/1x/scroll_circle.svg"
           alt="半円のデザイン"
         /> -->
 
-          <svg
-            id="half-circle"
-            class="scroll_circle"
-            data-name="レイヤー 2"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 -200 1336 662.15"
-          >
-            <defs>
-              <style>
-                .cls-1 {
-                  fill: none;
-                }
+        <svg
+          id="half-circle"
+          class="scroll_circle"
+          data-name="レイヤー 2"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 -200 1336 662.15"
+        >
+          <defs>
+            <style>
+              .cls-1 {
+                fill: none;
+              }
 
-                .cls-3 {
-                  fill: url(#_名称未設定グラデーション_45);
-                }
-              </style>
-              <clipPath id="clippath">
-                <rect class="cls-1" width="1336" height="462.15" />
-              </clipPath>
-              <linearGradient
-                id="_名称未設定グラデーション_45"
-                data-name="名称未設定グラデーション 45"
-                x1="668.33"
-                y1="462.15"
-                x2="668.33"
-                y2="109.55"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop offset="0" stop-color="#8aecff" />
-                <stop offset="0" stop-color="#75c8e0" />
-                <stop offset="0" stop-color="#5186a7" />
-                <stop offset=".42" stop-color="#35547b" />
-                <stop offset=".8" stop-color="#202c59" />
-                <stop offset="1" stop-color="#181e4d" />
-              </linearGradient>
-            </defs>
+              .cls-3 {
+                fill: url(#_名称未設定グラデーション_45);
+              }
+            </style>
+            <clipPath id="clippath">
+              <rect class="cls-1" width="1336" height="462.15" />
+            </clipPath>
+            <linearGradient
+              id="_名称未設定グラデーション_45"
+              data-name="名称未設定グラデーション 45"
+              x1="668.33"
+              y1="462.15"
+              x2="668.33"
+              y2="109.55"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop offset="0" stop-color="#8aecff" />
+              <stop offset="0" stop-color="#75c8e0" />
+              <stop offset="0" stop-color="#5186a7" />
+              <stop offset=".42" stop-color="#35547b" />
+              <stop offset=".8" stop-color="#202c59" />
+              <stop offset="1" stop-color="#181e4d" />
+            </linearGradient>
+          </defs>
 
-            <g id="circle" data-name="編集_ワイヤーフレーム">
-              <g class="cls-2">
-                <path
-                  id="halfPath"
-                  class="cls-3"
-                  d="M1372.01,462.15c-118.78-207.6-389.15-352.6-703.67-352.6S83.44,254.55-35.34,462.15h1407.35Z"
-                />
-              </g>
+          <g id="circle" data-name="編集_ワイヤーフレーム">
+            <g class="cls-2">
+              <path
+                id="halfPath"
+                class="cls-3"
+                d="M1372.01,462.15c-118.78-207.6-389.15-352.6-703.67-352.6S83.44,254.55-35.34,462.15h1407.35Z"
+              />
             </g>
-          </svg>
-        </div>
-      </a>
+          </g>
+        </svg>
+      </div>
     </footer>
 
     <!-- 共通：jquery -->
     <script>
       //メールアイコンをふわっと表示させて一定の場所で非表示、上スクロールで再表示
-     document.addEventListener("DOMContentLoaded", function () {
+      document.addEventListener("DOMContentLoaded", function () {
         const pageTop = document.querySelector("#mail");
         const form = document.querySelector("#c-form");
         // const scrollThreshold = 100;
@@ -277,7 +275,6 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
         pageTop.addEventListener("click", scrollTop);
         window.addEventListener("scroll", handleScroll);
       });
-
 
       //カーソルの見た目を変更
       var cursor = $("#cursor");
@@ -404,30 +401,30 @@ https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js
         });
 
         //スクロール４回目で画面遷移
-       let overscrollCount = 0; // カウンター
-let reachedMax = false; // maxExtra到達フラグ
+        let overscrollCount = 0; // カウンター
+        let reachedMax = false; // maxExtra到達フラグ
 
-// PC: wheelイベント
-window.addEventListener(
-  "wheel",
-  (e) => {
-    if (atBottom && e.deltaY > 0) {
-      overscroll = Math.min(maxExtra, overscroll + e.deltaY);
+        // PC: wheelイベント
+        window.addEventListener(
+          "wheel",
+          (e) => {
+            if (atBottom && e.deltaY > 0) {
+              overscroll = Math.min(maxExtra, overscroll + e.deltaY);
 
-      if (overscroll >= maxExtra && !reachedMax) {
-        overscrollCount++;
-        reachedMax = true; // この一回だけカウント
+              if (overscroll >= maxExtra && !reachedMax) {
+                overscrollCount++;
+                reachedMax = true; // この一回だけカウント
 
-        if (overscrollCount === 3) {
-          window.location.href = "works_all.html";
-        }
-      } else if (overscroll < maxExtra) {
-        reachedMax = false; // maxに達してないときはフラグを戻す
-      }
-    }
-  },
-  { passive: true }
-);
+                if (overscrollCount === 3) {
+                  window.location.href = "works_all.html";
+                }
+              } else if (overscroll < maxExtra) {
+                reachedMax = false; // maxに達してないときはフラグを戻す
+              }
+            }
+          },
+          { passive: true }
+        );
 
         // window.addEventListener(
         //   // PC：スクロール操作
@@ -451,33 +448,33 @@ window.addEventListener(
           },
           { passive: true }
         );
-//SP版スクロールで画面遷移を試すため
-window.addEventListener(
-  "touchmove",
-  (e) => {
-    if (atBottom) {
-      const currentY = e.touches[0].clientY;
-      const deltaY = touchStartY - currentY;
+        //SP版スクロールで画面遷移を試すため
+        window.addEventListener(
+          "touchmove",
+          (e) => {
+            if (atBottom) {
+              const currentY = e.touches[0].clientY;
+              const deltaY = touchStartY - currentY;
 
-      if (deltaY > 0) {
-        overscroll = Math.min(maxExtra, overscroll + deltaY);
+              if (deltaY > 0) {
+                overscroll = Math.min(maxExtra, overscroll + deltaY);
 
-        if (overscroll >= maxExtra && !reachedMax) {
-          overscrollCount++;
-          reachedMax = true;
+                if (overscroll >= maxExtra && !reachedMax) {
+                  overscrollCount++;
+                  reachedMax = true;
 
-          if (overscrollCount === 3) {
-            window.location.href = "works_all.html";
-          }
-        } else if (overscroll < maxExtra) {
-          reachedMax = false;
-        }
-      }
-    }
-  },
-  { passive: true }
-);
-//スクロールで画面遷移を試すために、一旦削除
+                  if (overscrollCount === 3) {
+                    window.location.href = "works_all.html";
+                  }
+                } else if (overscroll < maxExtra) {
+                  reachedMax = false;
+                }
+              }
+            }
+          },
+          { passive: true }
+        );
+        //スクロールで画面遷移を試すために、一旦削除
         // window.addEventListener(
         //   "touchmove",
         //   (e) => {
